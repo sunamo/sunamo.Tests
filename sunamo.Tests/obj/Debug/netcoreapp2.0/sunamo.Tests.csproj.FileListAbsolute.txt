@@ -1,0 +1,52 @@
+D:\Documents\Visual Studio 2017\Projects\sunamo.Tests\sunamo.Tests\bin\Debug\netcoreapp2.0\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+D:\Documents\Visual Studio 2017\Projects\sunamo.Tests\sunamo.Tests\bin\Debug\netcoreapp2.0\xunit.runner.reporters.netcoreapp10.dll
+D:\Documents\Visual Studio 2017\Projects\sunamo.Tests\sunamo.Tests\bin\Debug\netcoreapp2.0\xunit.runner.utility.netcoreapp10.dll
+D:\Documents\Visual Studio 2017\Projects\sunamo.Tests\sunamo.Tests\bin\Debug\netcoreapp2.0\sunamo.Tests.deps.json
+D:\Documents\Visual Studio 2017\Projects\sunamo.Tests\sunamo.Tests\bin\Debug\netcoreapp2.0\sunamo.Tests.runtimeconfig.json
+D:\Documents\Visual Studio 2017\Projects\sunamo.Tests\sunamo.Tests\bin\Debug\netcoreapp2.0\sunamo.Tests.runtimeconfig.dev.json
+D:\Documents\Visual Studio 2017\Projects\sunamo.Tests\sunamo.Tests\bin\Debug\netcoreapp2.0\sunamo.Tests.dll
+D:\Documents\Visual Studio 2017\Projects\sunamo.Tests\sunamo.Tests\bin\Debug\netcoreapp2.0\sunamo.Tests.pdb
+D:\Documents\Visual Studio 2017\Projects\sunamo.Tests\sunamo.Tests\bin\Debug\netcoreapp2.0\desktop.dll
+D:\Documents\Visual Studio 2017\Projects\sunamo.Tests\sunamo.Tests\bin\Debug\netcoreapp2.0\shared.dll
+D:\Documents\Visual Studio 2017\Projects\sunamo.Tests\sunamo.Tests\bin\Debug\netcoreapp2.0\sunamo.dll
+D:\Documents\Visual Studio 2017\Projects\sunamo.Tests\sunamo.Tests\bin\Debug\netcoreapp2.0\Microsoft.WindowsAPICodePack.Shell.dll
+D:\Documents\Visual Studio 2017\Projects\sunamo.Tests\sunamo.Tests\bin\Debug\netcoreapp2.0\System.Management.Automation.dll
+D:\Documents\Visual Studio 2017\Projects\sunamo.Tests\sunamo.Tests\bin\Debug\netcoreapp2.0\Microsoft.WindowsAPICodePack.dll
+D:\Documents\Visual Studio 2017\Projects\sunamo.Tests\sunamo.Tests\bin\Debug\netcoreapp2.0\desktop.pdb
+D:\Documents\Visual Studio 2017\Projects\sunamo.Tests\sunamo.Tests\bin\Debug\netcoreapp2.0\shared.pdb
+D:\Documents\Visual Studio 2017\Projects\sunamo.Tests\sunamo.Tests\bin\Debug\netcoreapp2.0\sunamo.pdb
+D:\Documents\Visual Studio 2017\Projects\sunamo.Tests\sunamo.Tests\bin\Debug\netcoreapp2.0\Microsoft.WindowsAPICodePack.Shell.xml
+D:\Documents\Visual Studio 2017\Projects\sunamo.Tests\sunamo.Tests\bin\Debug\netcoreapp2.0\Microsoft.WindowsAPICodePack.xml
+D:\Documents\Visual Studio 2017\Projects\sunamo.Tests\sunamo.Tests\obj\Debug\netcoreapp2.0\sunamo.Tests.csprojResolveAssemblyReference.cache
+D:\Documents\Visual Studio 2017\Projects\sunamo.Tests\sunamo.Tests\obj\Debug\netcoreapp2.0\sunamo.Tests.csproj.CoreCompileInputs.cache
+D:\Documents\Visual Studio 2017\Projects\sunamo.Tests\sunamo.Tests\obj\Debug\netcoreapp2.0\sunamo.Tests.AssemblyInfoInputs.cache
+D:\Documents\Visual Studio 2017\Projects\sunamo.Tests\sunamo.Tests\obj\Debug\netcoreapp2.0\sunamo.Tests.AssemblyInfo.cs
+D:\Documents\Visual Studio 2017\Projects\sunamo.Tests\sunamo.Tests\obj\Debug\netcoreapp2.0\sunamo.Tests.csproj.CopyComplete
+D:\Documents\Visual Studio 2017\Projects\sunamo.Tests\sunamo.Tests\obj\Debug\netcoreapp2.0\sunamo.Tests.dll
+D:\Documents\Visual Studio 2017\Projects\sunamo.Tests\sunamo.Tests\obj\Debug\netcoreapp2.0\sunamo.Tests.pdb
+D:\Documents\vs\sunamo.Tests\sunamo.Tests\bin\Debug\netcoreapp2.0\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+D:\Documents\vs\sunamo.Tests\sunamo.Tests\bin\Debug\netcoreapp2.0\xunit.runner.reporters.netcoreapp10.dll
+D:\Documents\vs\sunamo.Tests\sunamo.Tests\bin\Debug\netcoreapp2.0\xunit.runner.utility.netcoreapp10.dll
+D:\Documents\vs\sunamo.Tests\sunamo.Tests\bin\Debug\netcoreapp2.0\sunamo.Tests.deps.json
+D:\Documents\vs\sunamo.Tests\sunamo.Tests\bin\Debug\netcoreapp2.0\sunamo.Tests.runtimeconfig.json
+D:\Documents\vs\sunamo.Tests\sunamo.Tests\bin\Debug\netcoreapp2.0\sunamo.Tests.runtimeconfig.dev.json
+D:\Documents\vs\sunamo.Tests\sunamo.Tests\bin\Debug\netcoreapp2.0\sunamo.Tests.dll
+D:\Documents\vs\sunamo.Tests\sunamo.Tests\bin\Debug\netcoreapp2.0\sunamo.Tests.pdb
+D:\Documents\vs\sunamo.Tests\sunamo.Tests\bin\Debug\netcoreapp2.0\desktop.dll
+D:\Documents\vs\sunamo.Tests\sunamo.Tests\bin\Debug\netcoreapp2.0\shared.dll
+D:\Documents\vs\sunamo.Tests\sunamo.Tests\bin\Debug\netcoreapp2.0\sunamo.dll
+D:\Documents\vs\sunamo.Tests\sunamo.Tests\bin\Debug\netcoreapp2.0\Microsoft.WindowsAPICodePack.Shell.dll
+D:\Documents\vs\sunamo.Tests\sunamo.Tests\bin\Debug\netcoreapp2.0\System.Management.Automation.dll
+D:\Documents\vs\sunamo.Tests\sunamo.Tests\bin\Debug\netcoreapp2.0\Microsoft.WindowsAPICodePack.dll
+D:\Documents\vs\sunamo.Tests\sunamo.Tests\bin\Debug\netcoreapp2.0\desktop.pdb
+D:\Documents\vs\sunamo.Tests\sunamo.Tests\bin\Debug\netcoreapp2.0\shared.pdb
+D:\Documents\vs\sunamo.Tests\sunamo.Tests\bin\Debug\netcoreapp2.0\sunamo.pdb
+D:\Documents\vs\sunamo.Tests\sunamo.Tests\bin\Debug\netcoreapp2.0\Microsoft.WindowsAPICodePack.Shell.xml
+D:\Documents\vs\sunamo.Tests\sunamo.Tests\bin\Debug\netcoreapp2.0\Microsoft.WindowsAPICodePack.xml
+D:\Documents\vs\sunamo.Tests\sunamo.Tests\obj\Debug\netcoreapp2.0\sunamo.Tests.csprojResolveAssemblyReference.cache
+D:\Documents\vs\sunamo.Tests\sunamo.Tests\obj\Debug\netcoreapp2.0\sunamo.Tests.csproj.CoreCompileInputs.cache
+D:\Documents\vs\sunamo.Tests\sunamo.Tests\obj\Debug\netcoreapp2.0\sunamo.Tests.AssemblyInfoInputs.cache
+D:\Documents\vs\sunamo.Tests\sunamo.Tests\obj\Debug\netcoreapp2.0\sunamo.Tests.AssemblyInfo.cs
+D:\Documents\vs\sunamo.Tests\sunamo.Tests\obj\Debug\netcoreapp2.0\sunamo.Tests.csproj.CopyComplete
+D:\Documents\vs\sunamo.Tests\sunamo.Tests\obj\Debug\netcoreapp2.0\sunamo.Tests.dll
+D:\Documents\vs\sunamo.Tests\sunamo.Tests\obj\Debug\netcoreapp2.0\sunamo.Tests.pdb
