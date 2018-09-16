@@ -71,5 +71,18 @@ namespace CoreFx.Tests.System.Collections.Generic
         {
             return CA.ToEnumerable(coll);
         }
+
+        [Fact]
+        public void RemoveAll()
+        {
+            List<string> actual = TestData.listABC;
+            var excepted = TestData.listAC;
+
+            var equalTo = TestData.listB;
+
+            actual.RemoveAll(d => CA.IsEqualToAnyElement(d, equalTo));
+
+            Assert.Equal(actual, excepted);
+        }
     }
 }

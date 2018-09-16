@@ -16,5 +16,11 @@ namespace sunamo.Tests.Helpers.List
 
             Assert.Equal<string>(expected, result);
         }
+
+        [Fact]
+        public void RemoveWildcard()
+        {
+
+        }
     }
 }
