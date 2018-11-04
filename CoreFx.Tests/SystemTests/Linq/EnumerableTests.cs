@@ -4,7 +4,7 @@ using System.Text;
 using System.Linq;
 using Xunit;
 
-namespace CoreFx.Tests.System.Linq
+namespace CoreFx.Tests.SystemTests.Linq
 {
     public class EnumerableTests
     {

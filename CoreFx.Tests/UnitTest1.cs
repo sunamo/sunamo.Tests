@@ -1,7 +1,7 @@
 ﻿using System;
 using Xunit;
 
-namespace CoreFx.Tests.System
+namespace CoreFx.Tests.SystemTests
 {
     public class UnitTest1
     {

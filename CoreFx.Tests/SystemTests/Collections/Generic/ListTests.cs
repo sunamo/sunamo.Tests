@@ -6,7 +6,7 @@ using System.Linq;
 using System.Collections;
 //using Microsoft.VisualStudio.TestPlatform.
 
-namespace CoreFx.Tests.System.Collections.Generic
+namespace CoreFx.Tests.SystemTests.Collections.Generic
 {
     public class ListTests
     {

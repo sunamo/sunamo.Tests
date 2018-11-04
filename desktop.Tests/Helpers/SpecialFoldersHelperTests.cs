@@ -8,7 +8,6 @@ namespace desktop.Tests
         [Fact]
         public void ApplicationData()
         {
-            
             string expected = @"C:\Users\n\AppData\";
             string real = SpecialFoldersHelper.ApplicationData();
             Assert.Equal(expected, real);
