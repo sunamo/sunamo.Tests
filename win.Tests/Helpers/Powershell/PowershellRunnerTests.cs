@@ -17,14 +17,12 @@ namespace win.Tests.Helpers.Powershell
     public class PowershellRunnerTests
     {
         [TestMethod]
-        public void WaitForResultTest()
+        public void InvokeTest()
         {
-            const string excepted = "s";
-            var result = WaitForResult();
+            var result = Invoke();
             Assert.AreEqual(2, result.Count);
-            Assert.AreEqual(excepted, result[0][0]);
-            Assert.AreEqual(excepted, result[1][0]);
-
+            // First is from cd - empty strings
+            Assert.AreEqual(exceptedPath, result[1][0]);
         }
 
         [TestMethod]
@@ -39,13 +37,16 @@ namespace win.Tests.Helpers.Powershell
             Assert.AreEqual(excepted, result[1][0]);
         }
 
-
-
         string usedCommand = "";
-
-        string waitCommand = "Start-sleep -Milliseconds 1000 ";
+        const string exceptedPath = "D:\\Documents\\Visual Studio 2017\\Projects\\sunamo.Tests\\win.Tests";
+        const string cd = "cd \""+exceptedPath+"\"";
+        const string appendToFile = "Out-File -Append -Literal-Path ";
+        const string getActualFolder = "(Get-Item -Path \".\\\").FullName";
+        const string getClipboard = "Get-Clipboard";
+        string waitCommand = "Start-sleep -Milliseconds 1000";
         string echoCommand = "echo s";
         int miliseconds = 1000;
+
         /// <summary>
         /// Path should be in full path, Path is not supported here
         /// </summary>
@@ -56,7 +57,7 @@ namespace win.Tests.Helpers.Powershell
             usedCommand = echoCommand;
         }
 
-        public List<List<string>> WaitForResult()
+        private List<List<string>> Invoke()
         {
             List<List<string>> result = new List<List<string>>();
             int repeat = 2;
@@ -64,15 +65,16 @@ namespace win.Tests.Helpers.Powershell
 
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
-            for (int i = 0; i < repeat; i++)
-            {
-                var list = PowershellRunner.WaitForResult(CA.ToListString(echoCommand));
+            var listCmd = CA.ToListString(cd, getActualFolder);
+
+
+                var list = PowershellRunner.Invoke(listCmd);
 
                 foreach (var item in list)
                 {
                     result.Add(item);
                 }
-            }
+            
             /*
              * 1 - 
              * 3 - 3514
@@ -99,7 +101,6 @@ namespace win.Tests.Helpers.Powershell
             {
                 commands.Add(usedCommand);
                 // vzdycky vrati vysledky jen 1, at volam skript treba 9x
-
             }
             result = await PowershellRunner.InvokeAsync(commands.ToArray());
             /*
@@ -111,27 +112,6 @@ namespace win.Tests.Helpers.Powershell
             DebugLogger.Instance.WriteLine("elapsed", stopwatch.ElapsedMilliseconds);
 
             return result;
-        }
-
-        public async void DontWaitForResultAsync()
-        {
-            int repeat = 3;
-            int maxMs = repeat * miliseconds;
-
-            Stopwatch stopwatch = new Stopwatch();
-            stopwatch.Start();
-            for (int i = 0; i < repeat; i++)
-            {
-                await PowershellRunner.DontWaitForResultAsync(CA.ToListString(usedCommand));
-            }
-            /*
-             * 1 - 
-             * 3 - 3514
-             */
-            stopwatch.Stop();
-            DebugLogger.Instance.WriteLine("max", maxMs);
-            DebugLogger.Instance.WriteLine("elapsed", stopwatch.ElapsedMilliseconds);
-
         }
     }
 }

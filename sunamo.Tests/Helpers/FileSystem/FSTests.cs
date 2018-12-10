@@ -2,6 +2,7 @@
 using sunamo.Values;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using Xunit;
 
@@ -149,6 +150,15 @@ namespace sunamo.Tests.Helpers.FileSystem
         #endregion
 
         [Fact]
+        public void AllExtensionsInFolders()
+        {
+            string folder = @"d:\_Test\sunamo\Helpers\FileSystem\FS\AllExtensionsInFolders\";
+            var excepted = CA.ToListString(".html", ".bowerrc", ".php");
+            var actual = FS.AllExtensionsInFolders(System.IO.SearchOption.TopDirectoryOnly, folder);
+            Assert.Equal<string>(excepted, actual);
+        }
+
+        [Fact]
         public void DeleteSerieDirectoryOrCreateNewTest()
         {
             string folder = @"D:\_Test\sunamo\Helpers\FileSystem\DeleteSerieDirectoryOrCreateNew\";
@@ -168,6 +178,43 @@ namespace sunamo.Tests.Helpers.FileSystem
 
             var filesExcepted = CA.ToListString(TestDataTxt.a, TestDataTxt.ab);
             Assert.Equal<string>(filesExcepted, files);
+        }
+
+        [Fact]
+        public void DeleteFilesWithSameContentBytes()
+        {
+            string folder = @"d:\_Test\sunamo\Helpers\FileSystem\FS\DeleteFilesWithSameContentBytes\";
+
+            var files = FS.GetFiles(folder, "*.txt", System.IO.SearchOption.AllDirectories, false);
+            FS.DeleteFilesWithSameContentBytes(files);
+
+            files = FS.GetFiles(folder, "*.txt", System.IO.SearchOption.AllDirectories, true);
+
+            var filesExcepted = CA.ToListString(TestDataTxt.a, TestDataTxt.ab);
+            Assert.Equal<string>(filesExcepted, files);
+        }
+
+        [Fact]
+        public void DeleteAllEmptyDirectoriesTest()
+        {
+            string folder = @"d:\_Test\sunamo\Helpers\FileSystem\FS\DeleteAllEmptyDirectories\";
+            
+                FS.DeleteAllEmptyDirectories(folder);
+            
+            
+            int actual = FS.GetFolders(folder, SearchOption.AllDirectories).Count;
+            Assert.Equal(2, actual);
+        }
+
+        [Fact]
+        public void DeleteEmptyFilesTest()
+        {
+            string folder = @"d:\_Test\sunamo\Helpers\FileSystem\FS\DeleteEmptyFiles\";
+            FS.DeleteEmptyFiles(folder, System.IO.SearchOption.TopDirectoryOnly);
+            List<string> actual = FS.OnlyNames( FS.GetFiles(folder));
+            List<string> excepted = CA.ToListString("ab.txt", "DeleteEmptyFiles.zip");
+            Assert.Equal(excepted, actual);
+
         }
     }
 }
