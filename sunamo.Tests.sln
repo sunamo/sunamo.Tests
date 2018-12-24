@@ -31,7 +31,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "win", "..\sunamo\win\win.cs
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "win.Tests", "win.Tests\win.Tests.csproj", "{AA991057-5581-4173-8E8D-6DF4FCBA5336}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SunamoIni.Tests", "SunamoIni.Tests\SunamoIni.Tests.csproj", "{7724B88B-AB61-4504-9BBB-784179BD124B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SunamoIni.Tests", "SunamoIni.Tests\SunamoIni.Tests.csproj", "{7724B88B-AB61-4504-9BBB-784179BD124B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SunamoIni", "..\sunamo\SunamoIni\SunamoIni.csproj", "{B6722A85-FFDD-4BDE-9006-212BF93553BC}"
 EndProject

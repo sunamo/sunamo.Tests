@@ -19,4 +19,10 @@
     <ProjectReference Include="..\..\sunamo\sunamo\sunamo.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\..\sunamo\dll\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
