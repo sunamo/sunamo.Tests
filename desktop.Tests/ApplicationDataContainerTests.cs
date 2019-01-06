@@ -40,8 +40,9 @@ namespace sunamo.Tests.Storage
         {
             ApplicationDataContainer container = new ApplicationDataContainer(fileTest);
             
-            foreach (var item in container.Values)
+            foreach (var item in container.Values.GetItems())
             {
+
                 if (testData.ContainsKey(item.Key))
                 {
                     testData.Remove(item.Key);

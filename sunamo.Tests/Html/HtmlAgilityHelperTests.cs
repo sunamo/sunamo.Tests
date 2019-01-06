@@ -183,6 +183,14 @@ namespace sunamo.Tests.Html
             }
         }
 
+        [Fact]
+        public void ReplacePlainUriForAnchors()
+        {
+            string actual = "I tried https://www.nuget.org/p/ because <a href=\"http://jepsano.net/\">http://jepsano.net/</a> another text";
+            string excepted = "I tried <a href=\"https://www.nuget.org/p/\">https://www.nuget.org/p/</a> because <a href=\"http://jepsano.net/\">http://jepsano.net/</a> another text";
 
+            string result = HtmlAgilityHelper.ReplacePlainUriForAnchors(actual);
+            Assert.Equal(excepted, result);
+        }
     }
 }
