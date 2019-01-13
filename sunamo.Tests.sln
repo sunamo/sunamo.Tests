@@ -37,7 +37,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SunamoIni", "..\sunamo\Suna
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClipboardMonitor.Tests", "ClipboardMonitor.Tests\ClipboardMonitor.Tests.csproj", "{E75B26CE-F075-47F8-BFA2-636BE60EBDC1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClipboardMonitor", "..\..\..\..\Downloads\ClipboardMonitor\ClipboardMonitor.csproj", "{BF59F36B-2F60-439A-B3C7-9B2ACB7D6CDD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClipboardMonitor", "..\..\Downloads\ClipboardMonitor\ClipboardMonitor.csproj", "{BF59F36B-2F60-439A-B3C7-9B2ACB7D6CDD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SunamoTidy.Tests", "SunamoTidy.Tests\SunamoTidy.Tests.csproj", "{DA1398AF-6AC6-4F3A-9975-46A9C77E808C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -265,6 +267,18 @@ Global
 		{BF59F36B-2F60-439A-B3C7-9B2ACB7D6CDD}.Release|x64.Build.0 = Release|Any CPU
 		{BF59F36B-2F60-439A-B3C7-9B2ACB7D6CDD}.Release|x86.ActiveCfg = Release|Any CPU
 		{BF59F36B-2F60-439A-B3C7-9B2ACB7D6CDD}.Release|x86.Build.0 = Release|Any CPU
+		{DA1398AF-6AC6-4F3A-9975-46A9C77E808C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA1398AF-6AC6-4F3A-9975-46A9C77E808C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA1398AF-6AC6-4F3A-9975-46A9C77E808C}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{DA1398AF-6AC6-4F3A-9975-46A9C77E808C}.Debug|x64.Build.0 = Debug|Any CPU
+		{DA1398AF-6AC6-4F3A-9975-46A9C77E808C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{DA1398AF-6AC6-4F3A-9975-46A9C77E808C}.Debug|x86.Build.0 = Debug|Any CPU
+		{DA1398AF-6AC6-4F3A-9975-46A9C77E808C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA1398AF-6AC6-4F3A-9975-46A9C77E808C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA1398AF-6AC6-4F3A-9975-46A9C77E808C}.Release|x64.ActiveCfg = Release|Any CPU
+		{DA1398AF-6AC6-4F3A-9975-46A9C77E808C}.Release|x64.Build.0 = Release|Any CPU
+		{DA1398AF-6AC6-4F3A-9975-46A9C77E808C}.Release|x86.ActiveCfg = Release|Any CPU
+		{DA1398AF-6AC6-4F3A-9975-46A9C77E808C}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

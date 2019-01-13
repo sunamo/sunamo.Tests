@@ -162,10 +162,10 @@ namespace sunamo.Tests.Html
             node = HtmlAgilityHelper.NodeWithAttr(documentNode, true, HtmlTags.span, HtmlAttrs.class_, cssClassA);
             Assert.Null(node);
 
-            node = HtmlAgilityHelper.NodeWithAttr(documentNode, true, AllStrings.asterisk, HtmlAttrs.classAttr, cssClassA);
+            node = HtmlAgilityHelper.NodeWithAttr(documentNode, true, AllStrings.asterisk, HtmlAttrs.cAttr, cssClassA);
             Assert.Null(node);
 
-            node = HtmlAgilityHelper.NodeWithAttr(documentNode, true, HtmlTags.img, HtmlAttrs.classAttr, cssClassA);
+            node = HtmlAgilityHelper.NodeWithAttr(documentNode, true, HtmlTags.img, HtmlAttrs.cAttr, cssClassA);
             Assert.Null(node);
 
             // Non-recursively 

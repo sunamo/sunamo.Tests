@@ -30,10 +30,10 @@ namespace sunamo.Tests.Helpers.Html
         [Fact]
         public void GetTagOfAtributeTest()
         {
-            var node = HtmlHelper.GetTagOfAtribute(documentNode, HtmlTags.div, HtmlAttrs.classAttr, cssClassHello);
+            var node = HtmlHelper.GetTagOfAtribute(documentNode, HtmlTags.div, HtmlAttrs.cAttr, cssClassHello);
             Assert.Null(node);
 
-            var node2 = HtmlHelper.GetTagOfAtribute(bodyNode, HtmlTags.div, HtmlAttrs.classAttr, cssClassHello);
+            var node2 = HtmlHelper.GetTagOfAtribute(bodyNode, HtmlTags.div, HtmlAttrs.cAttr, cssClassHello);
             Assert.NotNull(node2);
         }
 
@@ -41,7 +41,7 @@ namespace sunamo.Tests.Helpers.Html
         [Fact]
         public void ReturnTagsWithAttrRekTest()
         {
-            var nodes = HtmlHelper.ReturnTagsWithAttrRek(documentNode, HtmlTags.span, HtmlAttrs.classAttr, cssClassC);
+            var nodes = HtmlHelper.ReturnTagsWithAttrRek(documentNode, HtmlTags.span, HtmlAttrs.cAttr, cssClassC);
             Assert.Equal(3, nodes.Count);
         }
 
@@ -50,13 +50,13 @@ namespace sunamo.Tests.Helpers.Html
         public void GetTagOfAtributeRekTest()
         {
             var divFirst = HtmlHelper.GetTagOfAtributeRek(documentNode, HtmlTags.div, HtmlAttrs.id, divFirstId);
-            var nodes = HtmlHelper.ReturnTagsWithAttrRek(divFirst, HtmlTags.span, HtmlAttrs.classAttr, cssClassC);
+            var nodes = HtmlHelper.ReturnTagsWithAttrRek(divFirst, HtmlTags.span, HtmlAttrs.cAttr, cssClassC);
             Assert.Equal(2, nodes.Count);
 
-            var node = HtmlHelper.GetTagOfAtributeRek(documentNode, HtmlTags.div, HtmlAttrs.classAttr, cssClassHello);
+            var node = HtmlHelper.GetTagOfAtributeRek(documentNode, HtmlTags.div, HtmlAttrs.cAttr, cssClassHello);
             Assert.Null(node);
 
-            var node2 = HtmlHelper.GetTagOfAtributeRek(bodyNode, HtmlTags.div, HtmlAttrs.classAttr, cssClassHello);
+            var node2 = HtmlHelper.GetTagOfAtributeRek(bodyNode, HtmlTags.div, HtmlAttrs.cAttr, cssClassHello);
             Assert.NotNull(node2);
         }
     }
