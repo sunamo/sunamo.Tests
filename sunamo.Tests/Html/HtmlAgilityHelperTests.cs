@@ -54,42 +54,42 @@ namespace sunamo.Tests.Html
             List<HtmlNode> nodes = null;
 
             // Recursively
-            nodes = HtmlAgilityHelper.NodesWithAttr(documentNode, true, HtmlTags.span, HtmlAttrs.class_, cssClassC);
+            nodes = HtmlAgilityHelper.NodesWithAttr(documentNode, true, HtmlTags.span, HtmlAttrs.c, cssClassC);
             Assert.Equal(3, nodes.Count);
             // Non-recursively 
             if (noRecursive)
             {
-                nodes = HtmlAgilityHelper.NodesWithAttr(bodyNode, false, HtmlTags.span, HtmlAttrs.class_, cssClassC);
+                nodes = HtmlAgilityHelper.NodesWithAttr(bodyNode, false, HtmlTags.span, HtmlAttrs.c, cssClassC);
                 Assert.Equal(1, nodes.Count);
             }
 
             // Recursively
-            nodes = HtmlAgilityHelper.NodesWithAttr(bodyNode, true, AllStrings.asterisk, HtmlAttrs.class_, cssClassC);
+            nodes = HtmlAgilityHelper.NodesWithAttr(bodyNode, true, AllStrings.asterisk, HtmlAttrs.c, cssClassC);
             Assert.Equal(4, nodes.Count);
                 // Non-recursively 
                 if (noRecursive)
                 {
-                    nodes = HtmlAgilityHelper.NodesWithAttr(bodyNode, false, AllStrings.asterisk, HtmlAttrs.class_, cssClassC);
+                    nodes = HtmlAgilityHelper.NodesWithAttr(bodyNode, false, AllStrings.asterisk, HtmlAttrs.c, cssClassC);
                     Assert.Equal(2, nodes.Count);
                 }
 
             // Recursively
-            nodes = HtmlAgilityHelper.NodesWithAttr(bodyNode, true, AllStrings.asterisk, HtmlAttrs.class_, cssClassA, true);
+            nodes = HtmlAgilityHelper.NodesWithAttr(bodyNode, true, AllStrings.asterisk, HtmlAttrs.c, cssClassA, true);
             Assert.Equal(3, nodes.Count);
                     // Non-recursively 
                     if (noRecursive)
                     {
-                        nodes = HtmlAgilityHelper.NodesWithAttr(bodyNode, false, AllStrings.asterisk, HtmlAttrs.class_, cssClassC, true);
+                        nodes = HtmlAgilityHelper.NodesWithAttr(bodyNode, false, AllStrings.asterisk, HtmlAttrs.c, cssClassC, true);
                         Assert.Equal(2, nodes.Count);
                     }
 
             // Recursively
-            nodes = HtmlAgilityHelper.NodesWithAttr(bodyNode, true, AllStrings.asterisk, HtmlAttrs.class_, AllStrings.asterisk, true);
+            nodes = HtmlAgilityHelper.NodesWithAttr(bodyNode, true, AllStrings.asterisk, HtmlAttrs.c, AllStrings.asterisk, true);
             Assert.Equal(10, nodes.Count);
                         // Non-recursively 
                         if (noRecursive)
                         {
-                            nodes = HtmlAgilityHelper.NodesWithAttr(bodyNode, false, AllStrings.asterisk, HtmlAttrs.class_, AllStrings.asterisk, true);
+                            nodes = HtmlAgilityHelper.NodesWithAttr(bodyNode, false, AllStrings.asterisk, HtmlAttrs.c, AllStrings.asterisk, true);
                             Assert.Equal(7, nodes.Count);
                         }
         }
@@ -100,22 +100,22 @@ namespace sunamo.Tests.Html
             List<HtmlNode> nodes = null;
 
             // Recursively
-            nodes = HtmlAgilityHelper.NodesWhichContainsInAttr(documentNode, true, HtmlTags.span, HtmlAttrs.class_, cssClassA);
+            nodes = HtmlAgilityHelper.NodesWhichContainsInAttr(documentNode, true, HtmlTags.span, HtmlAttrs.c, cssClassA);
             Assert.Equal(2, nodes.Count);
             // Non-recursively 
             if (noRecursive)
             {
-                nodes = HtmlAgilityHelper.NodesWhichContainsInAttr(bodyNode, false, HtmlTags.span, HtmlAttrs.class_, cssClassA);
+                nodes = HtmlAgilityHelper.NodesWhichContainsInAttr(bodyNode, false, HtmlTags.span, HtmlAttrs.c, cssClassA);
                 Assert.Equal(1, nodes.Count);
             }
 
             // Recursively
-            nodes = HtmlAgilityHelper.NodesWhichContainsInAttr(documentNode, true, AllStrings.asterisk, HtmlAttrs.class_, cssClassA);
+            nodes = HtmlAgilityHelper.NodesWhichContainsInAttr(documentNode, true, AllStrings.asterisk, HtmlAttrs.c, cssClassA);
             Assert.Equal(3, nodes.Count);
                 // Non-recursively 
                 if (noRecursive)
                 {
-                    nodes = HtmlAgilityHelper.NodesWhichContainsInAttr(bodyNode, false, AllStrings.asterisk, HtmlAttrs.class_, cssClassA);
+                    nodes = HtmlAgilityHelper.NodesWhichContainsInAttr(bodyNode, false, AllStrings.asterisk, HtmlAttrs.c, cssClassA);
                     Assert.Equal(2, nodes.Count);
                 }
         }
@@ -155,11 +155,11 @@ namespace sunamo.Tests.Html
             HtmlNode node = null;
 
             // Recursively
-            node = HtmlAgilityHelper.NodeWithAttr(documentNode, true, HtmlTags.span, HtmlAttrs.class_, cssClassC);
+            node = HtmlAgilityHelper.NodeWithAttr(documentNode, true, HtmlTags.span, HtmlAttrs.c, cssClassC);
             Assert.NotNull(node);
 
             // exists but "a b"
-            node = HtmlAgilityHelper.NodeWithAttr(documentNode, true, HtmlTags.span, HtmlAttrs.class_, cssClassA);
+            node = HtmlAgilityHelper.NodeWithAttr(documentNode, true, HtmlTags.span, HtmlAttrs.c, cssClassA);
             Assert.Null(node);
 
             node = HtmlAgilityHelper.NodeWithAttr(documentNode, true, AllStrings.asterisk, HtmlAttrs.cAttr, cssClassA);
@@ -171,14 +171,14 @@ namespace sunamo.Tests.Html
             // Non-recursively 
             if (noRecursive)
             {
-                node = HtmlAgilityHelper.NodeWithAttr(bodyNode, false, HtmlTags.span, HtmlAttrs.class_, cssClassC);
+                node = HtmlAgilityHelper.NodeWithAttr(bodyNode, false, HtmlTags.span, HtmlAttrs.c, cssClassC);
                 Assert.NotNull(node);
 
                 // exists but "a b"
-                node = HtmlAgilityHelper.NodeWithAttr(bodyNode, false, HtmlTags.span, HtmlAttrs.class_, cssClassA);
+                node = HtmlAgilityHelper.NodeWithAttr(bodyNode, false, HtmlTags.span, HtmlAttrs.c, cssClassA);
                 Assert.Null(node);
 
-                node = HtmlAgilityHelper.NodeWithAttr(bodyNode, false, AllStrings.asterisk, HtmlAttrs.class_, cssClassC);
+                node = HtmlAgilityHelper.NodeWithAttr(bodyNode, false, AllStrings.asterisk, HtmlAttrs.c, cssClassC);
                 Assert.NotNull(node);
             }
         }
