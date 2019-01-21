@@ -25,8 +25,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SunamoYaml", "..\sunamo\Sun
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SunamoYaml.Tests", "SunamoYaml.Tests\SunamoYaml.Tests.csproj", "{4C66C385-380C-447A-A666-65D0F47A0FF4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfState.Tests", "WpfState.Tests\WpfState.Tests.csproj", "{8B96634B-04AD-4C2E-B79B-787DCDC7795D}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "win", "..\sunamo\win\win.csproj", "{BEE17656-B10C-42B2-B3A4-70208323E3D7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "win.Tests", "win.Tests\win.Tests.csproj", "{AA991057-5581-4173-8E8D-6DF4FCBA5336}"
@@ -34,10 +32,6 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SunamoIni.Tests", "SunamoIni.Tests\SunamoIni.Tests.csproj", "{7724B88B-AB61-4504-9BBB-784179BD124B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SunamoIni", "..\sunamo\SunamoIni\SunamoIni.csproj", "{B6722A85-FFDD-4BDE-9006-212BF93553BC}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClipboardMonitor.Tests", "ClipboardMonitor.Tests\ClipboardMonitor.Tests.csproj", "{E75B26CE-F075-47F8-BFA2-636BE60EBDC1}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClipboardMonitor", "..\..\Downloads\ClipboardMonitor\ClipboardMonitor.csproj", "{BF59F36B-2F60-439A-B3C7-9B2ACB7D6CDD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SunamoTidy.Tests", "SunamoTidy.Tests\SunamoTidy.Tests.csproj", "{DA1398AF-6AC6-4F3A-9975-46A9C77E808C}"
 EndProject
