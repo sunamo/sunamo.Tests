@@ -1,0 +1,32 @@
+﻿using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+using System.Collections.Generic;
+using System;using Xunit;
+using Microsoft.CodeAnalysis.CSharp;
+using System.Linq;
+
+public partial class RoslynLearn
+{
+    [Fact]
+public void _SyntaxAnnotation()
+    {
+        AdhocWorkspace workspace = new AdhocWorkspace();
+        Project project = workspace.AddProject("SampleProject", LanguageNames.CSharp);
+        
+        //Attach a syntax annotation to the class declaration
+        var syntaxAnnotation = new SyntaxAnnotation();
+        var classDeclaration = SyntaxFactory.ClassDeclaration("MyClass")
+        	.WithAdditionalAnnotations(syntaxAnnotation);
+        
+        var compilationUnit = SyntaxFactory.CompilationUnit().AddMembers(classDeclaration);
+        
+        Document document = project.AddDocument("SampleDocument.cs", compilationUnit);
+        SemanticModel semanticModel = document.GetSemanticModelAsync().Result;
+        
+        //Use the annotation on our original node to find the new class declaration
+        var changedClass = document.GetSyntaxRootAsync().Result.DescendantNodes().OfType<ClassDeclarationSyntax>()
+        	.Where(n => n.HasAnnotation(syntaxAnnotation)).Single();
+        var symbol = semanticModel.GetDeclaredSymbol(changedClass);
+
+    }
+}
