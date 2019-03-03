@@ -6,6 +6,8 @@ using Microsoft.CodeAnalysis.CSharp;
 using System.IO;
 using System.Reflection;
 
+// Compilation direct to memory and run
+
 public partial class RoslynLearn
 {
     [Fact]

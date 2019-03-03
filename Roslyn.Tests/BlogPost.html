@@ -68,5 +68,11 @@ This API can be used to inspect how variables are read and writtern within a giv
 
 Data flow analysis can be used to find the statements and rewriter to log them. In <a href="https://joshvarty.com/2015/02/05/learn-roslyn-now-part-8-data-flow-analysis/">Learn Roslyn Now</a> is used for analyze for written/readed within inner and outer of for statements. Method AnalyzeDataFlow is located in abstract SemanticModel class.
 
+Then exists also Control flow analysis. Is used to understand various entry and exit points within block of code. In method is interesting return points, in for-loop break or continue etc.
+
+1 - Trying create analyzer from default template.
+2 - Code fix provider.
+
+
 
 

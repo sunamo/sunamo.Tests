@@ -4,6 +4,22 @@ using System.Collections.Generic;
 using System;using Xunit;
 using Microsoft.CodeAnalysis.CSharp;
 
+/*
+ * How do I get a list of all of the types available to a compilation 
+ * => SymbolVisitor
+ * 
+ * CSharpSyntaxWalker - to visit all code elements
+ * CSharpSyntaxRewriter - used for remove empty semicolon
+ * 
+ * CSharpSyntaxWalker -> CSharpSyntaxVisitor
+ * 
+ * Unfortunately unlike the SyntaxWalker and CSharpSyntaxRewriter, when using the SymbolVisitor we must construct the scaffolding code to visit all the nodes.
+ * 
+ * 
+ */
+
+// To simply list all the types available to a compilation we can use the following.
+
 public partial class RoslynLearn
 {
     public class NamedTypeVisitor : SymbolVisitor

@@ -4,6 +4,11 @@ using System.Collections.Generic;
 using System;using Xunit;
 using Microsoft.CodeAnalysis.CSharp.Scripting;
 
+// EvaluateAsync - always return one result
+// RunAsync - more complex
+// ContinueAsync - for adding more code to runned RunAsync
+// ScriptReferences - add assembly to new possibilities
+
 public partial class RoslynLearn
 {
     static async void _EvaluateAsync()

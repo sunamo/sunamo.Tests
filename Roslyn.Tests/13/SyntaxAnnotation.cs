@@ -5,6 +5,8 @@ using System;using Xunit;
 using Microsoft.CodeAnalysis.CSharp;
 using System.Linq;
 
+// SyntaxAnnotations is solution for immutable SyntaxTree. When is made change on SyntaxTree, is lost connection with previous node. Therefore is for us SyntaxAnnotations.
+
 public partial class RoslynLearn
 {
     [Fact]

@@ -7,6 +7,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="11\FirstHalfCodeFix.csx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="11\FirstHalfCodeFix.csx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Build" Version="15.9.20" />
+    <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="2.6.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="2.10.0" />
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Scripting" Version="2.10.0" />
     <PackageReference Include="Microsoft.CodeAnalysis.Workspaces.Common" Version="2.10.0" />
@@ -20,13 +33,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\sunamo\Roslyn\Roslyn\Roslyn.csproj" />
     <ProjectReference Include="..\..\sunamo\sunamo\sunamo.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="Microsoft.Build">
-      <HintPath>C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Microsoft.Build.dll</HintPath>
-    </Reference>
   </ItemGroup>
 
 </Project>

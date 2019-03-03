@@ -2,6 +2,8 @@
 
 using Microsoft.CodeAnalysis;
 
+// visit all the methods available to a given compilation
+
 public class MethodSymbolVisitor : SymbolVisitor
 {
     //NOTE: We have to visit the namespace's children even though
@@ -24,6 +26,10 @@ public class MethodSymbolVisitor : SymbolVisitor
         }
     }
 
+    /// <summary>
+    /// This method is new
+    /// </summary>
+    /// <param name="symbol"></param>
     public override void VisitMethod(IMethodSymbol symbol)
     {
         DebugLogger.Instance.WriteLine(symbol);

@@ -5,6 +5,8 @@ using System;using Xunit;
 using Microsoft.CodeAnalysis.CSharp;
 using System.Linq;
 
+
+
 public partial class RoslynLearn
 {
     static async void _SyntaxAnnotationWithKind()
@@ -13,6 +15,7 @@ public partial class RoslynLearn
         Project project = workspace.AddProject("Test", LanguageNames.CSharp);
         
         string annotationKind = "SampleKind";
+        // Pass name of annotation
         var syntaxAnnotation = new SyntaxAnnotation(annotationKind);
         var classDeclaration = SyntaxFactory.ClassDeclaration("MyClass")
         	.WithAdditionalAnnotations(syntaxAnnotation);

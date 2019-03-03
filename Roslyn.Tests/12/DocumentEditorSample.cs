@@ -9,6 +9,9 @@ using System.Linq;
 
 public partial class RoslynLearn
 {
+    // We’ll use the DocumentEditor to simultaneously insert an invocation before the first Console.WriteLine() and to insert another after the second.
+    // Debugging DocumentEditor can be very painful
+
     static async void _DocumentEditorSample()
     {
         var mscorlib = MetadataReference.CreateFromFile(typeof(object).Assembly.Location);

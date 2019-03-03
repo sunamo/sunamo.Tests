@@ -10,13 +10,13 @@ public partial class RoslynLearn
 public void _TestCompilation2()
     {
         var tree = CSharpSyntaxTree.ParseText(@"
-        using System;using Xunit;
+        using System;
         public class C
         {
             public static void Main()
             {
-                DebugLogger.Instance.WriteLine(""Hello World!"");
-                DebugLogger.Instance.ReadLine();
+                Console.WriteLine(""Hello World!"");
+                Console.ReadLine();
             }   
         }");
         
