@@ -18,6 +18,14 @@ namespace CoreFx.Tests.SystemTests
     public class EnumTests
     {
         [Fact]
+        public void CombinedEnum()
+        {
+            EnumA enumA = EnumA.a | EnumA.b;
+            Assert.Equal(true,  enumA.HasFlag(EnumA.a));
+            Assert.Equal(false, enumA.HasFlag(EnumA.c));
+        }
+
+        [Fact]
         public void PassMoreEnumValueTest()
         {
             EnumA enumA = EnumA.a | EnumA.b;
