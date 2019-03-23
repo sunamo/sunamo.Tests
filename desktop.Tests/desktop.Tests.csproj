@@ -1,17 +1,15 @@
-<Project Sdk="Microsoft.NET.Sdk">
-
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
-
     <IsPackable>false</IsPackable>
+    <CodeAnalysisRuleSet>../../sunamo/sunamo.ruleset</CodeAnalysisRuleSet>
+     
   </PropertyGroup>
-
   <ItemGroup>
     <Compile Remove="Helpers\Powershell\**" />
     <EmbeddedResource Remove="Helpers\Powershell\**" />
     <None Remove="Helpers\Powershell\**" />
   </ItemGroup>
-
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.5.0" />
     <PackageReference Include="System.Management.Automation" Version="6.0.4" />
@@ -19,11 +17,9 @@
     <PackageReference Include="xunit.runner.visualstudio" Version="2.3.1" />
     <DotNetCliToolReference Include="dotnet-xunit" Version="2.3.1" />
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\..\sunamo\desktop\desktop.csproj" />
     <ProjectReference Include="..\..\sunamo\shared\shared.csproj" />
     <ProjectReference Include="..\..\sunamo\sunamo\sunamo.csproj" />
   </ItemGroup>
-
 </Project>
