@@ -24,7 +24,7 @@ namespace sunamo.Tests.Html
 
         void GetHtmlDocumentTestFile()
         {
-            HtmlDocument hd = new HtmlDocument();
+            HtmlDocument hd = HtmlAgilityHelper.CreateHtmlDocument();
             hd.Load(testFile);
             this.documentNode = hd.DocumentNode;
             this.bodyNode = HtmlHelper.ReturnTagRek(documentNode, HtmlTags.body);

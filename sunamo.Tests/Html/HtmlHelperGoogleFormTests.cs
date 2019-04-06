@@ -28,7 +28,7 @@ namespace sunamo.Tests.Helpers.Html
 
         void GetHtmlDocumentTestFile()
         {
-            HtmlDocument hd = new HtmlDocument();
+            HtmlDocument hd = HtmlAgilityHelper.CreateHtmlDocument();
             hd.Load(testFile);
             this.hd = hd.DocumentNode;
         }
