@@ -1,16 +1,17 @@
-﻿using System;
-using Xunit;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+
 
 namespace desktop.Tests
 {
     public class SpecialFoldersHelperTests
     {
-        [Fact]
+        [TestMethod]
         public void ApplicationData()
         {
             string expected = @"C:\Users\n\AppData\";
             string real = SpecialFoldersHelper.ApplicationData();
-            Assert.Equal(expected, real);
+            Assert.AreEqual(expected, real);
         }
     }
 }

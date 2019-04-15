@@ -5,11 +5,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{45683530-6FB0-48B3-8ED4-E1F767334747}</ProjectGuid>
+    <ProjectGuid>{08630B37-A665-4BCA-BB71-A2B6A5AF1747}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>desktop.Tests</RootNamespace>
-    <AssemblyName>desktop.Tests</AssemblyName>
+    <RootNamespace>UnitTestProject1</RootNamespace>
+    <AssemblyName>UnitTestProject1</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -49,26 +49,11 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApplicationDataContainerTests.cs" />
-    <Compile Include="Helpers\SpecialFoldersHelperTests.cs" />
+    <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\sunamo\desktop\desktop.csproj">
-      <Project>{772cacc2-80f3-4948-a443-3043195836e2}</Project>
-      <Name>desktop</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\sunamo\shared\shared.csproj">
-      <Project>{77719c0d-7c8b-4b9e-a644-aee7ceb35134}</Project>
-      <Name>shared</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\sunamo\sunamo\sunamo.csproj">
-      <Project>{5cd45672-5864-42bc-adfc-994b68821eab}</Project>
-      <Name>sunamo</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,9 +1,10 @@
-﻿using sunamo.Values;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using sunamo.Values;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Xunit;
+
 
 namespace sunamo.Tests.Storage
 {
@@ -22,7 +23,7 @@ namespace sunamo.Tests.Storage
             testData.Add(key2, AB.Get(Consts.tInt, value2));
         }
 
-        [Fact]
+        [TestMethod]
         public void Save()
         {
             ApplicationDataContainer container = new ApplicationDataContainer(fileTest);
@@ -32,10 +33,10 @@ namespace sunamo.Tests.Storage
                 container.Values[item.Key] = item.Value.B;
             }
 
-            //Assert.Equal(2, container.Values.Count());
+            //Assert.AreEqual(2, container.Values.Count());
         }
 
-        [Fact]
+        [TestMethod]
         public void Load()
         {
             ApplicationDataContainer container = new ApplicationDataContainer(fileTest);
@@ -49,11 +50,16 @@ namespace sunamo.Tests.Storage
                 }
                 else
                 {
-                    Assert.DoesNotContain<KeyValuePair<string, AB>>(testData, ContainsCollection);
+                    DoesNotContain(testData, ContainsCollection);
                 }
             }
 
-            Assert.Equal(0, testData.Count());
+            Assert.AreEqual(0, testData.Count());
+        }
+
+        private void DoesNotContain(Dictionary<string, AB> testData, Func<KeyValuePair<string, AB>, bool> containsCollection)
+        {
+            
         }
 
         bool ContainsCollection(KeyValuePair<string, AB> pair)
@@ -61,7 +67,7 @@ namespace sunamo.Tests.Storage
             return testData.ContainsKey(pair.Key);
         }
 
-        [Fact]
+        [TestMethod]
         public void Clear()
         {
             Save();
@@ -69,10 +75,10 @@ namespace sunamo.Tests.Storage
             container.Values.Nuke();
 
             container = new ApplicationDataContainer(fileTest);
-            Assert.Equal(0, container.Values.Count());
+            Assert.AreEqual(0, container.Values.Count());
         }
 
-        [Fact]
+        [TestMethod]
         public void DeleteEntry()
         {
             Save();
@@ -84,8 +90,8 @@ namespace sunamo.Tests.Storage
 
             // Is really object, not AB
             var o = container.Values[key2];
-            Assert.Equal(value2, o);
-            Assert.Equal(1, container.Values.Count());
+            Assert.AreEqual(value2, o);
+            Assert.AreEqual(1, container.Values.Count());
         }
     }
 }
