@@ -39,6 +39,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsyncExceptions", "AsyncExc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "desktop.Tests", "desktop.Tests\desktop.Tests.csproj", "{45683530-6FB0-48B3-8ED4-E1F767334747}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sunamo.Tests.Data", "sunamo.Tests.Data\sunamo.Tests.Data.csproj", "{BFA788FF-6178-45F0-877B-8F9A8AA95767}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -265,6 +267,18 @@ Global
 		{45683530-6FB0-48B3-8ED4-E1F767334747}.Release|x64.Build.0 = Release|Any CPU
 		{45683530-6FB0-48B3-8ED4-E1F767334747}.Release|x86.ActiveCfg = Release|Any CPU
 		{45683530-6FB0-48B3-8ED4-E1F767334747}.Release|x86.Build.0 = Release|Any CPU
+		{BFA788FF-6178-45F0-877B-8F9A8AA95767}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFA788FF-6178-45F0-877B-8F9A8AA95767}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFA788FF-6178-45F0-877B-8F9A8AA95767}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{BFA788FF-6178-45F0-877B-8F9A8AA95767}.Debug|x64.Build.0 = Debug|Any CPU
+		{BFA788FF-6178-45F0-877B-8F9A8AA95767}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{BFA788FF-6178-45F0-877B-8F9A8AA95767}.Debug|x86.Build.0 = Debug|Any CPU
+		{BFA788FF-6178-45F0-877B-8F9A8AA95767}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFA788FF-6178-45F0-877B-8F9A8AA95767}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFA788FF-6178-45F0-877B-8F9A8AA95767}.Release|x64.ActiveCfg = Release|Any CPU
+		{BFA788FF-6178-45F0-877B-8F9A8AA95767}.Release|x64.Build.0 = Release|Any CPU
+		{BFA788FF-6178-45F0-877B-8F9A8AA95767}.Release|x86.ActiveCfg = Release|Any CPU
+		{BFA788FF-6178-45F0-877B-8F9A8AA95767}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

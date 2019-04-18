@@ -7,6 +7,22 @@ namespace sunamo.Tests.Helpers.Text
 {
     public class SHTests
     {
+        [Fact]
+        public void ReplaceManyFromStringTest()
+        {
+            string testString = @"Assert.Equal -> Assert.AreEqual
+Assert.AreEqual<*> -> CollectionAssert.AreEqual
+[Fact] -> [TestMethod]
+using Xunit; -> using Microsoft.VisualStudio.TestTools.UnitTesting;";
+            testString = "Assert.AreEqual<*> -> CollectionAssert.AreEqual";
+
+            string file = @"D:\Documents\Visual Studio 2017\Projects\sunamo.Tests\sunamo.Tests.Data\ReplaceManyFromString\In_ReplaceManyFromString.cs";
+            var s = TF.ReadFile(file);
+
+            s = SH.ReplaceManyFromString(s, testString, "->");
+
+            TF.SaveFile(s, file);
+        }
 
         [Fact]
         public void HasTextRightFormatTest()
@@ -31,6 +47,7 @@ namespace sunamo.Tests.Helpers.Text
             Assert.True(SH.HasTextRightFormat(actual6, textFormat));
         }
 
+        [Fact]
         public void RemoveAfterFirst()
         {
             string actual = "1 - 2";
