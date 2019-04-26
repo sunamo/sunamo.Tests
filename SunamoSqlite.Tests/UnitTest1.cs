@@ -15,9 +15,6 @@ namespace SunamoSqlite.Tests
             DatabaseLayer.LoadNewConnection();
             SQLiteConnection conn = DatabaseLayer.conn;
 
-            MSColumnsDB ms;
-            //ms.GetSqlCreateTable()
-
             string tableName = "table";
 
             ColumnsDB c = new ColumnsDB(SloupecDB.CI(TypeAffinity.Int64, "ID"), SloupecDB.CI(TypeAffinity.Int64, "value"));
