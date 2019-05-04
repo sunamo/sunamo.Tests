@@ -14,7 +14,7 @@ namespace sunamo.Tests.Storage
             string testFile = @"D:\_Test\ConsoleApp1\ConsoleApp1\ApplicationDataText.txt";
 
             var headers = CA.ToListString("Copy", "Dont copy to");
-            CA.AddSuffix(headers, ":");
+            CA.AddSuffix(headers, AllStrings.colon);
 
             var value1 = CA.ToListString("Shared");
 

@@ -26,7 +26,7 @@ public partial class RoslynLearn
             public override void VisitMethodDeclaration(MethodDeclarationSyntax node)
             {
                 string methodName = node.Identifier.ToString();
-                DebugLogger.Instance.WriteLine(className + '.' + methodName);
+                DebugLogger.Instance.WriteLine(className + AllChars.dot + methodName);
                 base.VisitMethodDeclaration(node);
             }
         }

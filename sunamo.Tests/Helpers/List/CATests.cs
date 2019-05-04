@@ -12,7 +12,7 @@ namespace sunamo.Tests.Helpers.List
         {
             List<string> input = TestData.listAB2;
             List<string> expected = new List<string>(global::CA.ToEnumerable("'a' ", "'b' "));
-            var result = global::CA.WrapWithAndJoin(input, "'", " ");
+            var result = global::CA.WrapWithAndJoin(input, "'", AllStrings.space);
 
             Assert.Equal<string>(expected, result);
         }
