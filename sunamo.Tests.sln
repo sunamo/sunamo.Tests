@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2020
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "sunamo.Tests", "sunamo.Tests\sunamo.Tests.csproj", "{19B38AA1-4E10-4FDC-94D5-303613C1B872}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "sunamo", "..\sunamo\sunamo\sunamo.csproj", "{5CD45672-5864-42BC-ADFC-994B68821EAB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "shared", "..\sunamo\shared\shared.csproj", "{77719C0D-7C8B-4B9E-A644-AEE7CEB35134}"
@@ -41,9 +39,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "desktop.Tests", "desktop.Te
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sunamo.Tests.Data", "sunamo.Tests.Data\sunamo.Tests.Data.csproj", "{BFA788FF-6178-45F0-877B-8F9A8AA95767}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SunamoSqlite.Tests", "SunamoSqlite.Tests\SunamoSqlite.Tests.csproj", "{F5BF660D-5CBB-4468-80F5-F36A2D43E11E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SunamoSqlite.Tests", "SunamoSqlite.Tests\SunamoSqlite.Tests.csproj", "{F5BF660D-5CBB-4468-80F5-F36A2D43E11E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SunamoSqlite", "..\sunamo\SunamoSqlite\SunamoSqlite.csproj", "{EAF6B67E-002A-45DB-9536-BA500B504F50}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "sunamo.Tests", "sunamo.Tests\sunamo.Tests.csproj", "{1F47538C-CE34-41D0-A545-A7C5F89E8F12}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,18 +55,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{19B38AA1-4E10-4FDC-94D5-303613C1B872}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{19B38AA1-4E10-4FDC-94D5-303613C1B872}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{19B38AA1-4E10-4FDC-94D5-303613C1B872}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{19B38AA1-4E10-4FDC-94D5-303613C1B872}.Debug|x64.Build.0 = Debug|Any CPU
-		{19B38AA1-4E10-4FDC-94D5-303613C1B872}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{19B38AA1-4E10-4FDC-94D5-303613C1B872}.Debug|x86.Build.0 = Debug|Any CPU
-		{19B38AA1-4E10-4FDC-94D5-303613C1B872}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{19B38AA1-4E10-4FDC-94D5-303613C1B872}.Release|Any CPU.Build.0 = Release|Any CPU
-		{19B38AA1-4E10-4FDC-94D5-303613C1B872}.Release|x64.ActiveCfg = Release|Any CPU
-		{19B38AA1-4E10-4FDC-94D5-303613C1B872}.Release|x64.Build.0 = Release|Any CPU
-		{19B38AA1-4E10-4FDC-94D5-303613C1B872}.Release|x86.ActiveCfg = Release|Any CPU
-		{19B38AA1-4E10-4FDC-94D5-303613C1B872}.Release|x86.Build.0 = Release|Any CPU
 		{5CD45672-5864-42BC-ADFC-994B68821EAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5CD45672-5864-42BC-ADFC-994B68821EAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5CD45672-5864-42BC-ADFC-994B68821EAB}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -307,6 +295,18 @@ Global
 		{EAF6B67E-002A-45DB-9536-BA500B504F50}.Release|x64.Build.0 = Release|Any CPU
 		{EAF6B67E-002A-45DB-9536-BA500B504F50}.Release|x86.ActiveCfg = Release|Any CPU
 		{EAF6B67E-002A-45DB-9536-BA500B504F50}.Release|x86.Build.0 = Release|Any CPU
+		{1F47538C-CE34-41D0-A545-A7C5F89E8F12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F47538C-CE34-41D0-A545-A7C5F89E8F12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F47538C-CE34-41D0-A545-A7C5F89E8F12}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{1F47538C-CE34-41D0-A545-A7C5F89E8F12}.Debug|x64.Build.0 = Debug|Any CPU
+		{1F47538C-CE34-41D0-A545-A7C5F89E8F12}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1F47538C-CE34-41D0-A545-A7C5F89E8F12}.Debug|x86.Build.0 = Debug|Any CPU
+		{1F47538C-CE34-41D0-A545-A7C5F89E8F12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F47538C-CE34-41D0-A545-A7C5F89E8F12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F47538C-CE34-41D0-A545-A7C5F89E8F12}.Release|x64.ActiveCfg = Release|Any CPU
+		{1F47538C-CE34-41D0-A545-A7C5F89E8F12}.Release|x64.Build.0 = Release|Any CPU
+		{1F47538C-CE34-41D0-A545-A7C5F89E8F12}.Release|x86.ActiveCfg = Release|Any CPU
+		{1F47538C-CE34-41D0-A545-A7C5F89E8F12}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

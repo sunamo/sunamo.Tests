@@ -15,6 +15,5 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\sunamo\shared\shared.csproj" />
-    <ProjectReference Include="..\..\sunamo\sunamo\sunamo.csproj" />
   </ItemGroup>
 </Project>

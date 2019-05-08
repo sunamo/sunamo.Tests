@@ -197,7 +197,7 @@ namespace sunamo.Tests.Helpers.FileSystem
         [Fact]
         public void DeleteAllEmptyDirectoriesTest()
         {
-            string folder = @"d:\_Test\sunamo\Helpers\FileSystem\FS\DeleteAllEmptyDirectories\";
+            string folder = @"d:\_Test\sunamo\sunamo\Helpers\FileSystem\FS\DeleteAllEmptyDirectories\";
             
                 FS.DeleteAllEmptyDirectories(folder);
             
