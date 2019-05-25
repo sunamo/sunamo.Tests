@@ -48,12 +48,22 @@ using Xunit; -> using Microsoft.VisualStudio.TestTools.UnitTesting;";
         }
 
         [Fact]
-        public void RemoveAfterFirst()
+        public void RemoveAfterFirstTest()
         {
             string actual = "1 - 2";
             string excepted = "1";
             actual = SH.RemoveAfterFirst(actual, excepted);
             Assert.Equal(excepted, actual);
+        }
+
+        [Fact]
+        public void TextWithoutDiacriticTest()
+        {
+            var actual = "Příliš žluťoučký kůň úpěl ďábelské ódy";
+            var expected = "Prilis zlutoucky kun upel dabelske ody";
+
+            actual = SH.TextWithoutDiacritic(actual);
+            Assert.Equal(expected, actual);
         }
     }
 }
