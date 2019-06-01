@@ -53,9 +53,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SunamoNTextCat", "..\sunamo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreFx.Tests", "CoreFx.Tests\CoreFx.Tests.csproj", "{03F44938-B559-4A2B-B30D-D5B4C2611FCC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SunamoTranslate.Tests", "SunamoTranslate.Tests\SunamoTranslate.Tests.csproj", "{A8594484-B221-4566-B629-57653116B191}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SunamoTranslate.Tests", "SunamoTranslate.Tests\SunamoTranslate.Tests.csproj", "{A8594484-B221-4566-B629-57653116B191}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SunamoTranslate", "..\sunamo\SunamoTranslate\SunamoTranslate.csproj", "{E014B8E5-E5EB-40F3-83FB-65DCB9CC2726}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GDataTranslate", "..\Credentials\GDataTranslate\GDataTranslate.csproj", "{B92BC8AA-AAF8-43B1-9ADD-8B00DE3F8E1F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -391,6 +393,18 @@ Global
 		{E014B8E5-E5EB-40F3-83FB-65DCB9CC2726}.Release|x64.Build.0 = Release|Any CPU
 		{E014B8E5-E5EB-40F3-83FB-65DCB9CC2726}.Release|x86.ActiveCfg = Release|Any CPU
 		{E014B8E5-E5EB-40F3-83FB-65DCB9CC2726}.Release|x86.Build.0 = Release|Any CPU
+		{B92BC8AA-AAF8-43B1-9ADD-8B00DE3F8E1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B92BC8AA-AAF8-43B1-9ADD-8B00DE3F8E1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B92BC8AA-AAF8-43B1-9ADD-8B00DE3F8E1F}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{B92BC8AA-AAF8-43B1-9ADD-8B00DE3F8E1F}.Debug|x64.Build.0 = Debug|Any CPU
+		{B92BC8AA-AAF8-43B1-9ADD-8B00DE3F8E1F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B92BC8AA-AAF8-43B1-9ADD-8B00DE3F8E1F}.Debug|x86.Build.0 = Debug|Any CPU
+		{B92BC8AA-AAF8-43B1-9ADD-8B00DE3F8E1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B92BC8AA-AAF8-43B1-9ADD-8B00DE3F8E1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B92BC8AA-AAF8-43B1-9ADD-8B00DE3F8E1F}.Release|x64.ActiveCfg = Release|Any CPU
+		{B92BC8AA-AAF8-43B1-9ADD-8B00DE3F8E1F}.Release|x64.Build.0 = Release|Any CPU
+		{B92BC8AA-AAF8-43B1-9ADD-8B00DE3F8E1F}.Release|x86.ActiveCfg = Release|Any CPU
+		{B92BC8AA-AAF8-43B1-9ADD-8B00DE3F8E1F}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
