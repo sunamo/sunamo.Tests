@@ -28,6 +28,16 @@ namespace sunamo.Tests.Helpers.Html
         }
 
         [Fact]
+        public void HighlightingWordsTest()
+        {
+            string words = "Hello world Hello hello";
+
+            //string veta = SH.XCharsBeforeAndAfterWholeWords(SH.ReplaceAll(celyObsah, AllStrings.space, CA.ToListString(AllChars.whiteSpacesChars).ToArray()), stred, naKazdeStrane);
+            var s = HtmlHelper.HighlightingWords(words, 100, 4, CA.ToListString( "Hello"));
+            int i = 0;
+        }
+
+        [Fact]
         public void GetTagOfAtributeTest()
         {
             var node = HtmlHelper.GetTagOfAtribute(documentNode, HtmlTags.div, HtmlAttrs.cAttr, cssClassHello);

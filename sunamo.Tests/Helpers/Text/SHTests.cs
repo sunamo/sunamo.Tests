@@ -25,6 +25,56 @@ using Xunit; -> using Microsoft.VisualStudio.TestTools.UnitTesting;";
         }
 
         [Fact]
+        public void XCharsBeforeAndAfterWholeWordsTest()
+        {
+            var s = "12\"45" + Environment.NewLine + "12\"45";
+
+            var occ = SH.ReturnOccurencesOfString(s, "\"");
+
+            StringBuilder sb = new StringBuilder();
+            foreach (var item in occ)
+            {
+                var r = SH.XCharsBeforeAndAfterWholeWords(s, item, 2);
+                sb.AppendLine( r);
+            }
+
+            ClipboardHelper.SetText(sb);
+        }
+
+        [Fact]
+        public void CharsBeforeAndAfterTest()
+        {
+            var s = "12\"45" + Environment.NewLine + "12\"45";
+
+            
+            
+            var sb = SH.CharsBeforeAndAfter(s, '\"', 2, 2);
+
+            ClipboardHelper.SetLines(sb);
+        }
+
+        //
+
+        [Fact]
+        public void GetLineIndexFromCharIndexTest()
+        {
+            var excepted = 2;
+            // length is 10
+            var input = @"ab
+cd
+ef";
+            var l = input.Length;
+
+            var lineF = SH.GetLineIndexFromCharIndex(input, 9);
+            var lineE = SH.GetLineIndexFromCharIndex(input, 8);
+            var lineD = SH.GetLineIndexFromCharIndex(input, 5);
+
+            Assert.Equal(2, lineF);
+            Assert.Equal(2, lineE);
+            Assert.Equal(1, lineD);
+        }
+
+        [Fact]
         public void HasTextRightFormatTest()
         {
             FromTo requiredLength = new FromTo(1,2);

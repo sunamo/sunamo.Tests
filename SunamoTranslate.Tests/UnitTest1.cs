@@ -8,8 +8,10 @@ namespace SunamoTranslate.Tests
         [Fact]
         public void TranslateTest()
         {
+            TranslateHelper translateHelper = TranslateHelper.Instance;
+
             var excepted = "Ahoj světe";
-            var actual = TranslateHelper.Translate("Hello World.", "cs");
+            var actual = translateHelper.Translate("Hello World.", "cs");
 
             Assert.Equal(excepted, actual);
         }
