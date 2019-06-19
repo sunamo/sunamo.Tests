@@ -48,9 +48,9 @@ using Xunit; -> using Microsoft.VisualStudio.TestTools.UnitTesting;";
 
             
             
-            var sb = SH.CharsBeforeAndAfter(s, '\"', 2, 2);
+            //var sb = SH.CharsBeforeAndAfter(s, '\"', 2, 2);
 
-            ClipboardHelper.SetLines(sb);
+            //ClipboardHelper.SetLines(sb);
         }
 
         //
