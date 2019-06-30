@@ -12,10 +12,16 @@ public class PowershellHelperTests
     [TestMethod]
     public void DetectLanguageForFileGithubLinguistTest()
     {
-        const string file = @"d:\_Test\sunamo\win\Helpers\Powershell\PowershellHelper\Program.cs";
+         string file = @"d:\_Test\sunamo\win\Helpers\Powershell\PowershellHelper\cs";
         var expected = "C#";
 
         var actual = PowershellHelper.DetectLanguageForFileGithubLinguist(file);
+        Assert.AreEqual(expected, actual);
+
+         file = @"d:\_Test\sunamo\win\Helpers\Powershell\PowershellHelper\plain";
+         expected = "C#";
+
+         actual = PowershellHelper.DetectLanguageForFileGithubLinguist(file);
         Assert.AreEqual(expected, actual);
 
     }
