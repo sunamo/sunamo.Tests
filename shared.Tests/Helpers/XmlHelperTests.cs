@@ -13,6 +13,7 @@ public class XmlHelperTests
         var c = TF.ReadFile(file);
         XmlNamespacesHolder h = new XmlNamespacesHolder();
 
+        
         XmlDocument x = null;
 
         x = h.ParseAndRemoveNamespaces(c, x.NameTable);
