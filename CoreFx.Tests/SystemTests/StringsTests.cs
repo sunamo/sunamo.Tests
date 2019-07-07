@@ -18,5 +18,34 @@ public class StringsTests
 
         int i = 0;
     }
+
+    /// <summary>
+    /// \"
+    /// </summary>
+    const string from = "\\\"";
+    /// <summary>
+    /// 3x bs, qm
+    /// </summary>
+    const string to = "\\\\\\\"";
+
+    [Fact]
+    public void ReplaceTest()
+    {
+        const string betweeen = "abc";
+        var actual = from + betweeen + from;
+        var excepted = to + betweeen + to;
+
+        Assert.Equal(excepted, actual.Replace(from, to));
+    }
+
+    [Fact]
+    public void ReplaceInverseTest()
+    {
+        const string betweeen = "abc";
+        var actual = to + betweeen + to;
+        var excepted = from + betweeen + from;
+
+        Assert.Equal(excepted, actual.Replace(to, from));
+    }
 }
 
