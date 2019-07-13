@@ -25,6 +25,16 @@ using Xunit; -> using Microsoft.VisualStudio.TestTools.UnitTesting;";
         }
 
         [Fact]
+        public void GetTextBetweenTwoCharsTest()
+        {
+            var input = "a {b} c";
+            var expected = "b";
+
+            var actual = SH.GetTextBetweenTwoChars(input, input.IndexOf('{'), input.IndexOf('}'));
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
         public void XCharsBeforeAndAfterWholeWordsTest()
         {
             var s = "12\"45" + Environment.NewLine + "12\"45";
