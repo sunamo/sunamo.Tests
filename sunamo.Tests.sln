@@ -61,8 +61,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "win", "..\sunamo\win\win.cs
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SunamoYouTube", "..\sunamo\SunamoYouTube\SunamoYouTube.csproj", "{7C7D5CE5-21C9-409F-B757-30CAF6A30A3A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SunamoYouTube.Tests", "SunamoYouTube.Tests\SunamoYouTube.Tests.csproj", "{7485F2F2-A9CE-4406-85E7-497409CBF18B}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GDataYoutube", "..\Credentials\GDataYoutube\GDataYoutube.csproj", "{E6421542-06D5-4C9B-89C0-A3614641D666}"
 EndProject
 Global
@@ -423,18 +421,6 @@ Global
 		{7C7D5CE5-21C9-409F-B757-30CAF6A30A3A}.Release|x64.Build.0 = Release|Any CPU
 		{7C7D5CE5-21C9-409F-B757-30CAF6A30A3A}.Release|x86.ActiveCfg = Release|Any CPU
 		{7C7D5CE5-21C9-409F-B757-30CAF6A30A3A}.Release|x86.Build.0 = Release|Any CPU
-		{7485F2F2-A9CE-4406-85E7-497409CBF18B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7485F2F2-A9CE-4406-85E7-497409CBF18B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7485F2F2-A9CE-4406-85E7-497409CBF18B}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{7485F2F2-A9CE-4406-85E7-497409CBF18B}.Debug|x64.Build.0 = Debug|Any CPU
-		{7485F2F2-A9CE-4406-85E7-497409CBF18B}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{7485F2F2-A9CE-4406-85E7-497409CBF18B}.Debug|x86.Build.0 = Debug|Any CPU
-		{7485F2F2-A9CE-4406-85E7-497409CBF18B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7485F2F2-A9CE-4406-85E7-497409CBF18B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7485F2F2-A9CE-4406-85E7-497409CBF18B}.Release|x64.ActiveCfg = Release|Any CPU
-		{7485F2F2-A9CE-4406-85E7-497409CBF18B}.Release|x64.Build.0 = Release|Any CPU
-		{7485F2F2-A9CE-4406-85E7-497409CBF18B}.Release|x86.ActiveCfg = Release|Any CPU
-		{7485F2F2-A9CE-4406-85E7-497409CBF18B}.Release|x86.Build.0 = Release|Any CPU
 		{E6421542-06D5-4C9B-89C0-A3614641D666}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E6421542-06D5-4C9B-89C0-A3614641D666}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E6421542-06D5-4C9B-89C0-A3614641D666}.Debug|x64.ActiveCfg = Debug|Any CPU

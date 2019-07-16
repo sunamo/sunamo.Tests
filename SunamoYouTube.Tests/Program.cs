@@ -10,7 +10,8 @@ namespace GDataYoutube.Tests
         {
             try
             {
-                YouTubeHelper.CreateNewPlaylist("_Test", SH.Split("80wu2glhFDU,N5-Ti1qkWNM", ",")).Wait();
+                // YouTubeHelper is in ConsoleApp1
+                //YouTubeHelper.CreateNewPlaylist("_Test", SH.Split("80wu2glhFDU,N5-Ti1qkWNM", ",")).Wait();
             }
             catch (AggregateException ex)
             {
