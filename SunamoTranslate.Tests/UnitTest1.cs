@@ -15,5 +15,13 @@ namespace SunamoTranslate.Tests
 
             Assert.Equal(excepted, actual);
         }
+
+        [Fact]
+        public void TranslateTest2()
+        {
+            TranslateHelper translateHelper = TranslateHelper.Instance;
+
+            //translateHelper.Translate("")
+        }
     }
 }
