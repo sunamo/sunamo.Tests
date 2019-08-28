@@ -25,7 +25,7 @@ namespace AsyncExceptions.MSDN
             {
                 ThrowExceptionAsync();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 // The exception is never caught here!
                 throw;

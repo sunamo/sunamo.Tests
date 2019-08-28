@@ -22,7 +22,7 @@ namespace AsyncExceptions.MSDN
             {
                 await ThrowExceptionAsync();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 // The exception is never caught here!
                 throw;
