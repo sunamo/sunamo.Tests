@@ -1,12 +1,12 @@
-﻿using System;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Xml;
-using Xunit;
 
 public class XmlHelperTests
 {
-    [Fact]
+    [TestMethod]
     public void ParseAndRemoveNamespacesTest()
     {
         var file = @"d:\_Test\sunamo\shared\ParseAndRemoveNamespacesTest\a.xlf";
