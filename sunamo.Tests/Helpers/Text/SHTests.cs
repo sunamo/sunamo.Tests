@@ -7,6 +7,16 @@ namespace sunamo.Tests.Helpers.Text
 {
     public class SHTests
     {
+        const string splitAndKeepInput = "Shared settings <%--RL:SharedSettings--%> aplikace <%--RL:aplikace--%>";
+        readonly List<string> expected = CA.ToListString("Shared settings", "RL:SharedSettings", "aplikace");
+
+        [Fact]
+        public void SplitAndKeepTest()
+        {
+            var actual = SH.SplitAndKeep(splitAndKeepInput, AspxConsts.all.ToArray());
+            Assert.Equal<string>(expected, actual);
+        }
+
         [Fact]
         public void ReplaceManyFromStringTest()
         {
