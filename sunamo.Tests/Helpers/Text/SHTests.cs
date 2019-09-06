@@ -7,13 +7,33 @@ namespace sunamo.Tests.Helpers.Text
 {
     public class SHTests
     {
-        const string splitAndKeepInput = "Shared settings <%--RL:SharedSettings--%> aplikace <%--RL:aplikace--%>";
-        readonly List<string> expected = CA.ToListString("Shared settings", "RL:SharedSettings", "aplikace");
+        const string splitAndKeepInput = "Shared settings <%--RL:SharedSettings--%> <span> aplikace</span>";
+        readonly List<string> expected = CA.ToListString("Shared settings", "aplikace");
 
         [Fact]
         public void SplitAndKeepTest()
         {
             var actual = SH.SplitAndKeep(splitAndKeepInput, AspxConsts.all.ToArray());
+            Assert.Equal<string>(expected, actual);
+        }
+
+        [Fact]
+        public void SplitAndKeepDelimiters()
+        {
+            var input = HtmlHelper.StripAllTags(splitAndKeepInput);
+            var actual = SH.SplitAndKeepDelimiters(splitAndKeepInput, CA.ToListString(AllStrings.gt, AllStrings.lt));
+
+            CA.ChangeContent(actual, d =>
+            {
+                if (d.EndsWith(AllChars.gt))
+                {
+                    d = string.Empty;
+                }
+                return d.TrimEnd(AllChars.lt).Trim();
+            }
+                );
+            CA.RemoveStringsEmpty(actual);
+
             Assert.Equal<string>(expected, actual);
         }
 
