@@ -47,7 +47,9 @@ namespace sunamo.Tests.Collections
             generator.List(noOne, "No one", true, true);
             generator.List(atLeastOne, "At least one", true, true);
 
+#if DEBUG
             DebugLogger.Instance.WriteLine(generator.ToString());
+#endif
         }
     }
 }
