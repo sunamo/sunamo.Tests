@@ -16,7 +16,7 @@ namespace AsyncExceptions
             }
             catch (Exception ex)
             {
-                // Show lines where occured: Async exception at AsyncExceptions.SO5383310.DoSomethingAsync() in D:\vs\sunamo.Tests\AsyncExceptions\SO5383310.cs:line 52
+                // Show lines where occured: Async exception at AsyncExceptions.SO5383310.DoSomethingAsync() in d:\vs\sunamo.Tests\AsyncExceptions\SO5383310.cs:line 52
                 Debugger.Break();
                 // The exception will be caught because you've awaited
                 // the call in an async method.

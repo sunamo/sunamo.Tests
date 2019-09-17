@@ -38,7 +38,7 @@ namespace win.Tests.Helpers.Powershell
         }
 
         string usedCommand = "";
-        const string exceptedPath = "D:\\Documents\\Visual Studio 2017\\Projects\\sunamo.Tests\\win.Tests";
+        const string exceptedPath = "d:\\Documents\\Visual Studio 2017\\Projects\\sunamo.Tests\\win.Tests";
         const string cd = "cd \""+exceptedPath+AllStrings.qm;
         const string appendToFile = "Out-File -Append -Literal-Path ";
         const string getActualFolder = "(Get-Item -Path \".\\\").FullName";

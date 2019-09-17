@@ -10,7 +10,7 @@ namespace sunamo.Tests.Html
     {
         protected HtmlNode documentNode;
         protected HtmlNode bodyNode;
-        public const string testFile = @"D:\Documents\Visual Studio 2017\Projects\sunamo.Tests\sunamo.Tests\HtmlHelperTestPage.html";
+        public const string testFile = @"d:\Documents\Visual Studio 2017\Projects\sunamo.Tests\sunamo.Tests\HtmlHelperTestPage.html";
 
         public readonly string cssClassC = "c";
         public readonly string cssClassA = "a";

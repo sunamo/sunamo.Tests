@@ -96,9 +96,9 @@ namespace sunamo.Tests.Helpers.FileSystem
         {
             bool hasSerie;
             int serie;
-            string input = @"D:\a\b\abc-1.txt.txt";
+            string input = @"d:\a\b\abc-1.txt.txt";
             string result = "";
-            string expected = @"D:\a\b\abc.txt.txt";
+            string expected = @"d:\a\b\abc.txt.txt";
             result = FS.GetNameWithoutSeries(input, true, out hasSerie, Enums.SerieStyle.Dash, out serie);
             Assert.Equal(expected, result);
             Assert.True(hasSerie);
@@ -110,7 +110,7 @@ namespace sunamo.Tests.Helpers.FileSystem
         {
             bool hasSerie;
             int serie;
-            string input = @"D:\a\b\abc-1.txt.txt";
+            string input = @"d:\a\b\abc-1.txt.txt";
             string result = "";
             string expected = @"abc.txt.txt";
             result = FS.GetNameWithoutSeries(input, false, out hasSerie, Enums.SerieStyle.Dash, out serie);
@@ -124,7 +124,7 @@ namespace sunamo.Tests.Helpers.FileSystem
         {
             bool hasSerie;
             int serie;
-            string input = @"D:\a\b\abc_001_01.txt.txt";
+            string input = @"d:\a\b\abc_001_01.txt.txt";
             string result = "";
             string expected = @"abc.txt.txt";
             result = FS.GetNameWithoutSeries(input, false, out hasSerie, Enums.SerieStyle.Underscore, out serie);
@@ -139,7 +139,7 @@ namespace sunamo.Tests.Helpers.FileSystem
         {
             bool hasSerie;
             int serie;
-            string input = @"D:\a\b\MainPage.xaml_008.cs";
+            string input = @"d:\a\b\MainPage.xaml_008.cs";
             string result = "";
             string expected = @"MainPage.xaml.cs";
             result = FS.GetNameWithoutSeries(input, false, out hasSerie, Enums.SerieStyle.Underscore, out serie);
@@ -161,7 +161,7 @@ namespace sunamo.Tests.Helpers.FileSystem
         [Fact]
         public void DeleteSerieDirectoryOrCreateNewTest()
         {
-            string folder = @"D:\_Test\sunamo\Helpers\FileSystem\DeleteSerieDirectoryOrCreateNew\";
+            string folder = @"d:\_Test\sunamo\Helpers\FileSystem\DeleteSerieDirectoryOrCreateNew\";
             FS.DeleteSerieDirectoryOrCreateNew(folder);
 
         }

@@ -16,8 +16,8 @@ namespace sunamo.Tests.Indexing.FileSystem
 
         public FileIndexTests()
         {
-            folder1 = @"D:\_Test\sunamo\Indexers\FileSystem\FileIndex\a\";
-            folder2 = @"D:\_Test\sunamo\Indexers\FileSystem\FileIndex\b\";
+            folder1 = @"d:\_Test\sunamo\Indexers\FileSystem\FileIndex\a\";
+            folder2 = @"d:\_Test\sunamo\Indexers\FileSystem\FileIndex\b\";
 
             string folder1_1 = folder1 + "b\\";
 

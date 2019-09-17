@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using Xunit;
 
 namespace SunamoIni.Tests
@@ -8,7 +8,7 @@ namespace SunamoIni.Tests
         [Fact]
         public void WriteIni()
         {
-            IniFile ini = new IniFile(@"D:\Documents\Visual Studio 2017\Projects\sunamo.Tests\SunamoIni.Tests\test.ini");
+            IniFile ini = new IniFile(@"d:\Documents\Visual Studio 2017\Projects\sunamo.Tests\SunamoIni.Tests\test.ini");
             ini.IniWriteValue("Section", "Key", "Value");
             
         }

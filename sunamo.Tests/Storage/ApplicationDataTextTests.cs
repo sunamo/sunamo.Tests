@@ -11,7 +11,7 @@ namespace sunamo.Tests.Storage
         [Fact]
         public void ParseTest()
         {
-            string testFile = @"D:\_Test\ConsoleApp1\ConsoleApp1\ApplicationDataText.txt";
+            string testFile = @"d:\_Test\ConsoleApp1\ConsoleApp1\ApplicationDataText.txt";
 
             var headers = CA.ToListString("Copy", "Dont copy to");
             CA.AddSuffix(headers, AllStrings.colon);

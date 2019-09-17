@@ -10,7 +10,7 @@ public partial class RoslynLearn
 {
 
         /*
-        csc /r:"D:\Documents\Visual Studio 2017\Projects\sunamo\dll\netstandard.dll" /r:"D:\Documents\Visual Studio 2017\Projects\sunamo\dll\System.Runtime.dll" /r:"D:\Documents\Visual Studio 2017\Projects\sunamo\dll\Microsoft.CodeAnalysis.dll" /r:"D:\Documents\Visual Studio 2017\Projects\sunamo\dll\Microsoft.CodeAnalysis.CSharp.dll" /out:roslyn.dll 1CreateRoslynSyntaxTree.cs
+        csc /r:"d:\Documents\Visual Studio 2017\Projects\sunamo\dll\netstandard.dll" /r:"d:\Documents\Visual Studio 2017\Projects\sunamo\dll\System.Runtime.dll" /r:"d:\Documents\Visual Studio 2017\Projects\sunamo\dll\Microsoft.CodeAnalysis.dll" /r:"d:\Documents\Visual Studio 2017\Projects\sunamo\dll\Microsoft.CodeAnalysis.CSharp.dll" /out:roslyn.dll 1CreateRoslynSyntaxTree.cs
         */
 
         

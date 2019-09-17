@@ -1,4 +1,4 @@
-using sunamo.Essential;
+﻿using sunamo.Essential;
 using System;
 using System.IO;
 using Xunit;
@@ -9,7 +9,7 @@ namespace SunamoYaml.Tests
 {
     public class UnitTest1
     {
-        const string path = @"C:\Users\jancirad\Documents\Visual Studio 2017\Projects\sunamo.Tests\SunamoYaml.Tests\test.yaml";
+        const string path = @"c:\Users\jancirad\Documents\Visual Studio 2017\Projects\sunamo.Tests\SunamoYaml.Tests\test.yaml";
         const string s = "s";
         const string ixTest = "text";
 
