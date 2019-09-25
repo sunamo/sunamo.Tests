@@ -18,6 +18,16 @@ namespace sunamo.Tests.Helpers.Text
         }
 
         [Fact]
+        public void SubstringTest()
+        {
+            var input = "12345";
+            var expected = "123";
+
+            var actual = SH.Substring(input, 0, 3, true);
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
         public void SplitAndKeepDelimiters()
         {
             var input = HtmlHelper.StripAllTags(splitAndKeepInput);
