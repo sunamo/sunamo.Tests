@@ -9,14 +9,14 @@ public class XmlHelperTests
     [TestMethod]
     public void ParseAndRemoveNamespacesTest()
     {
-        var file = @"d:\_Test\sunamo\shared\ParseAndRemoveNamespacesTest\a.xlf";
+        var file = @"D:\_Test\sunamo\SunamoCode\ParseAndRemoveNamespacesTest\a.xlf";
         var c = TF.ReadFile(file);
         XmlNamespacesHolder h = new XmlNamespacesHolder();
 
         
         XmlDocument x = null;
 
-        x = h.ParseAndRemoveNamespaces(c, x.NameTable);
+        x = h.ParseAndRemoveNamespacesXmlDocument(c, x.NameTable);
     }
 }
 
