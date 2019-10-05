@@ -26,25 +26,6 @@ public class RoslynHelperTests
         Debug.WriteLine(s);
     }
 
-    [Fact]
-    public void MultiWhitespaceLineToSingleTest()
-    {
-        List<string> input = SH.GetLines(@"a
-
- 
-b
-
-c");
-
-        var excepted = SH.GetLines(@"a
-
-b
-
-c");
-
-        SH.MultiWhitespaceLineToSingle(input);
-
-        Assert.Equal(excepted, input);
-    }
+    
 }
 

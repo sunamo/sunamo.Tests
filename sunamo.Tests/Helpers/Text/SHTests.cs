@@ -18,6 +18,79 @@ namespace sunamo.Tests.Helpers.Text
         }
 
         [Fact]
+    public void MultiWhitespaceLineToSingleTest()
+    {
+        List<string> input = SH.GetLines(@"a
+
+ 
+b
+
+c");
+
+        var excepted = SH.GetLines(@"a
+
+b
+
+c");
+
+        input = SH.GetLines( SH.MultiWhitespaceLineToSingle(input));
+
+        Assert.Equal(excepted, input);
+
+            //            input = SH.GetLines(@":/ Pak je pobyli, Judskeho krale si vzal primo ten Bab., mesto lehlo popelem, vetsinu odvlekly do Bab., Bab. pobyly vsechny pronarody v okoli, ale nakonec buh ukazal kdo jsou jeho vyvoleni a Izrael se zase vysvobodil, vsechno krveproliti se obratilo proti Babylonanum.
+
+
+
+
+
+            //A VDV - akt.budu cist kapitolu 14, moc se ji nevenuji, viz.status.Porad jsem u toho, jak byly kazatele evangelia prohlaseni za kacire a upaleni, jak se rozsirovala potajnu bible, jak kazdy odpor byl zbytecny, protoze to byla setba..");
+
+            input = TF.GetLines(@"D:\_Test\sunamo\sunamo\Helpers\Text\SH\MultiWhitespaceLineToSingle\a.txt");
+
+            excepted = SH.GetLines( @":/ Pak je pobyli, Judskeho krale si vzal primo ten Bab., mesto lehlo popelem, vetsinu odvlekly do Bab., Bab. pobyly vsechny pronarody v okoli, ale nakonec buh ukazal kdo jsou jeho vyvoleni a Izrael se zase vysvobodil, vsechno krveproliti se obratilo proti Babylonanum.
+
+A VDV - akt.budu cist kapitolu 14, moc se ji nevenuji, viz.status.Porad jsem u toho, jak byly kazatele evangelia prohlaseni za kacire a upaleni, jak se rozsirovala potajnu bible, jak kazdy odpor byl zbytecny, protoze to byla setba..");
+
+
+            input = SH.GetLines(SH.MultiWhitespaceLineToSingle(input));
+
+            Assert.Equal(excepted, input);
+
+
+        }
+
+        [Fact]
+        public void SplitParagraphToMaxCharsTest()
+        {
+            ClipboardHelper.Instance = ClipboardHelperCore.Instance;
+
+            string input2 = @"";
+
+            var input3 = @"";
+
+            var input = @"Tento paragraph nemá žádnou tečku a je delší než 250 znaků Tento paragraph nemá žádnou tečku a je delší než 250 znaků Tento paragraph nemá žádnou tečku a je delší než 250 znaků Tento paragraph nemá žádnou tečku a je delší než 250 znaků Tento paragraph nemá žádnou tečku a je delší než 250 znaků Tečka je v další větě. tečka je v další větě. Tečka je v další větě. Tečka je v další větě.
+
+Tento paragraph nemá žádnou tečku a je delší než 250 znaků Tento paragraph nemá žádnou tečku a je delší než 250 znaků Tento paragraph nemá žádnou tečku a je delší než 250 znaků Tento paragraph nemá žádnou tečku a je delší než 250 znaků Tento paragraph nemá žádnou tečku a je delší než 250 znaků Tečka je v další větě. Tečka je v další větě. Tečka je v další větě. Tečka je v další větě.
+
+Tento paragraph nemá žádnou tečku a je delší než 250 znaků Tento paragraph nemá žádnou tečku a je delší než 250 znaků Tento paragraph nemá žádnou tečku a je delší než 250 znaků Tento paragraph nemá žádnou tečku a je delší než 250 znaků Tento paragraph nemá žádnou tečku a je delší než 250 znaků
+
+Tento paragraph má méně než 250 znaků. Tento paragraph má méně než 250 znaků. Tento paragraph má méně než 250 znaků. Tento paragraph má méně než 250 znaků. Tento paragraph má méně než 250 znaků. 
+
+";
+
+            input = "Tento paragraph má více než 250 znaků. Tento paragraph má více než 250 znaků. Tento paragraph má více než 250 znaků. Tento paragraph má více než 250 znaků. Tento paragraph má více než 250 znaků. Tento paragraph má více než 250 znaků 273. Tento paragraph má více než 250 znaků. ";
+
+//            input = "Na nekolik jsem i dostal odpoved, ale nektere vstupni pozadavky me docela zdrtili. Jeden mi nechtel verit ze umim 2 jazyky. Druhy mi poslal 3 strankovy dokument, ani nevim co s nim, 3 mel 20 otazek prichystanych. Na FB jsem poslal jen jeden song, 23.7.2009. Jinak jsem tu za cely den neudelal vubec nic. Co se tyce programovani, zacinal jsem chapat, ze zadny poradny web neudelam v \"poloautomatickem\" editoru, jaky jsem udelal ja a uz jsem se zase soustredoval na toto. Dnes jsem zacal konecne poradne twitterovat. Vzhledem k tomu webu, zacal jsem si shanet clanky na webu. Zacal jsem se znova zajimat o svoje programy, i kdyz ne v intenzite, ktera prijde pozdeji. Uz jsem mel tak malo mista na disku, takze jsem se snazil vypalovat. Vzal jsem ty cedla od Andreho, ale s nimi jsem nepochodil ani trochu, nejen ze se nacitali nevim jak dlouho ale kdyz jsem dal napalovani, chytlo to vzdycky takove obratky a docela logicky se to nikdy nepohlo ani o jedno procentu. Nuze, zkusim ty svoje stare divka. Projizdel jsem vsechny od 200 do 250, ale nektere se mi nepodarilo nacist, na tom zbytku nebylo misto. Ksakru, co ted? Nakonec jsem se odhodlal k zoufalemu kroku.." + @"
+
+            //" + "to co jsem celou dobu strezil, me WV, i se vsemi programy jsem musel smazat, nikde jinde misto nebylo. V polovine jsem to asi zastavil, ale i tak je to nenavratne poskozeno. Tak zas nekdy priste :/.Jak uz jsem byl ujisten, je to jeste horsi nez pred utesnovanim tita.Kacena travila vetsinu casu dole a lezlo mi to poradne na nervy..Vecer, po tom celodennim sbirani tutorialu na GIMP jsem jeste nasel neco na Paint.NET, nebo spise ono si to naslo me.Dosud jsem se mu uspesne schvalne vyhybal.";
+
+            //input = @"Tento odstavec má vice než 500 znaků. Tento odstavec má vice než 500 znaků. Tento odstavec má vice než 500 znaků. Tento odstavec má vice než 500 znaků. Tento odstavec má vice než 500 znaků. Tento odstavec má vice než 500 znaků. Tento odstavec má vice než 500 znaků. Tento odstavec má vice než 500 znaků. Tento odstavec má vice než 500 znaků. Tento odstavec má vice než 500 znaků. Tento odstavec má vice než 500 znaků. Tento odstavec má vice než 500 znaků. Tento odstavec má vice než 500 znaků. Tento odstavec má vice než 500 znaků. Tento odstavec má vice než 500 znaků. Tento odstavec má vice než 500 znaků. Tento odstavec má vice než 500 znaků.";
+
+            string actual = SH.SplitParagraphToMaxChars(input, 250);
+            int i = 0;
+        }
+
+        [Fact]
         public void SubstringTest()
         {
             var input = "12345";
