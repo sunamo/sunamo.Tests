@@ -54,6 +54,7 @@
     <Compile Include="Helpers\Powershell\PowershellHelperTests.cs" />
     <Compile Include="Helpers\Powershell\PowershellRunnerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TidyExeHelperTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
