@@ -18,6 +18,19 @@ namespace sunamo.Tests.Helpers.Text
         }
 
         [Fact]
+        public void ReplaceAllExceptPrefixed()
+        {
+            var input = @"System.Drawing.Image
+Image";
+
+            var excepted =  @"System.Drawing.Image
+HtmlImage";
+
+            var actual = SH.ReplaceAllExceptPrefixed(input,  "HtmlImage", "Image", "System.Drawing.");
+            Assert.Equal(excepted, actual);
+        }
+
+        [Fact]
     public void MultiWhitespaceLineToSingleTest()
     {
         List<string> input = SH.GetLines(@"a
