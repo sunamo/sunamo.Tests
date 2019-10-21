@@ -19,8 +19,8 @@ namespace sunamo.Tests.Storage
 
         public ApplicationDataContainerTests()
         {
-            testData.Add(key1, AB.Get(Consts.tString, value1));
-            testData.Add(key2, AB.Get(Consts.tInt, value2));
+            testData.Add(key1, AB.Get(Types.tString, value1));
+            testData.Add(key2, AB.Get(Types.tInt, value2));
         }
 
         [TestMethod]
