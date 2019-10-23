@@ -31,6 +31,16 @@ HtmlImage";
         }
 
         [Fact]
+        public void ListToStringTest()
+        {
+            var input = TestData.list12;
+            var excepted = "1,2";
+
+            var actual = SH.ListToString(input, AllStrings.comma);
+            Assert.Equal(excepted, actual);
+        }
+
+        [Fact]
     public void MultiWhitespaceLineToSingleTest()
     {
         List<string> input = SH.GetLines(@"a
