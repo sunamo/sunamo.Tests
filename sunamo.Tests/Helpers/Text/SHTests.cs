@@ -85,7 +85,8 @@ A VDV - akt.budu cist kapitolu 14, moc se ji nevenuji, viz.status.Porad jsem u t
         [Fact]
         public void SplitParagraphToMaxCharsTest()
         {
-            ClipboardHelper.Instance = ClipboardHelperCore.Instance;
+            // Cant import core into project due to mix up standard and sunamo
+            //ClipboardHelper.Instance = ClipboardHelperCore.Instance;
 
             string input2 = @"";
 

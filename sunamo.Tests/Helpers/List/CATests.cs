@@ -18,6 +18,24 @@ namespace sunamo.Tests.Helpers.List
         }
 
         [Fact]
+        public void ToJaggedTTest()
+        {
+            var input = new int[2, 2] { { 0, 1 }, { 2, 3 } };
+
+            var actual = CA.ToJagged<int>(input);
+
+        }
+
+        [Fact]
+        public void ToJaggedTest()
+        {
+            var input = new bool[2, 2] { { true, false }, { false, true} };
+
+            var actual = CA.ToJagged(input);
+
+        }
+
+        [Fact]
         public void RemoveWildcard()
         {
 

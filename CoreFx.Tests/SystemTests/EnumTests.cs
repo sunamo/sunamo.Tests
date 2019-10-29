@@ -64,7 +64,7 @@ namespace CoreFx.Tests.SystemTests
                 if (intVal == 1)
                 {
                     // Return already without none
-                    var enumValues = EnumHelper.GetValues<T>(enumA.GetType(), true);
+                    var enumValues = EnumHelper.GetValues<T>(true, true);
                     for (int i = 1; i < enumValues.Count; i++)
                     {
                         actual.Add(enumValues[i].ToString());
