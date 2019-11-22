@@ -11,6 +11,118 @@ namespace sunamo.Tests.Helpers.Text
         readonly List<string> expected = CA.ToListString("Shared settings", "aplikace");
 
         [Fact]
+        public void RemoveEndingPairCharsWhenDontHaveStarting()
+        {
+            var input = @"Nechť funkce  f(x)} je spojitá na kompaktním (tj. omezeném a uzavřeném) intervalu  \langle a,b\rangle } a nech f(a).f(b) < 0.Pak existuje alespoň jeden bod  c\in (a, b)} takový, že f(c)=0}";
+
+            var excepted = @"Nechť funkce  f(x) je spojitá na kompaktním (tj. omezeném a uzavřeném) intervalu  \langle a,b\rangle  a nech f(a).f(b) < 0.Pak existuje alespoň jeden bod  c\in (a, b) takový, že f(c)=0";
+            var actual = SH.RemoveEndingPairCharsWhenDontHaveStarting(input, AllStrings.cbl, AllStrings.cbr);
+
+            input = @"c\in {(a, b)}} takový, že f(c)=0";
+            excepted = @"c\in {(a, b)} takový, že f(c)=0";
+
+            actual = SH.RemoveEndingPairCharsWhenDontHaveStarting(input, AllStrings.cbl, AllStrings.cbr);
+
+            Assert.Equal(actual, excepted);
+        }
+
+        /// <summary>
+        /// more left
+        /// </summary>
+        [Fact]
+        public void GetPairsStartAndEnd()
+        {
+            var input = "{ } } {";
+            string cbl = AllStrings.cbl;
+            string cbr = AllStrings.cbr;
+
+            var expected = new List<Tuple<int, int>>();
+            expected.Add(new Tuple<int, int>(0, 2));
+
+            List<int> onlyLeftExcepted = CA.ToList<int>(6);
+            List<int> onlyRightExcepted = CA.ToList<int>(4);
+
+
+            var occL = SH.ReturnOccurencesOfString(input, cbl);
+            var occR = SH.ReturnOccurencesOfString(input, cbr);
+
+            List<int> onlyLeft = null;
+            List<int> onlyRight = null;
+            var actual = SH.GetPairsStartAndEnd(occL, occR, ref onlyLeft, ref onlyRight);
+
+            AssertExtensions.EqualTuple<int, int>(expected, actual);
+            Assert.Equal<int>(onlyLeftExcepted, onlyLeft);
+            Assert.Equal<int>(onlyRightExcepted, onlyRight);
+        }
+
+        /// <summary>
+        /// more left
+        /// </summary>
+        [Fact]
+        public void GetPairsStartAndEnd_2()
+        {
+            var input = "{ { } { } }";
+            string cbl = AllStrings.cbl;
+            string cbr = AllStrings.cbr;
+
+            var expected = new List<Tuple<int, int>>();
+            expected.Add(new Tuple<int, int>(2, 4));
+            expected.Add(new Tuple<int, int>(6, 8));
+
+            List<int> onlyLeftExcepted = CA.ToList<int>(0);
+            List<int> onlyRightExcepted = CA.ToList<int>(10);
+
+
+            var occL = SH.ReturnOccurencesOfString(input, cbl);
+            var occR = SH.ReturnOccurencesOfString(input, cbr);
+
+            List<int> onlyLeft = null;
+            List<int> onlyRight = null;
+            var actual = SH.GetPairsStartAndEnd(occL, occR, ref onlyLeft, ref onlyRight);
+
+            AssertExtensions.EqualTuple<int, int>(expected, actual);
+
+            onlyLeft.Sort();
+
+            Assert.Equal<int>(onlyLeftExcepted, onlyLeft);
+            Assert.Equal<int>(onlyRightExcepted, onlyRight);
+        }
+
+        /// <summary>
+        /// more right
+        /// </summary>
+        [Fact]
+        public void GetPairsStartAndEnd_3()
+        {
+            var input = "{ { } } } {";
+            string cbl = AllStrings.cbl;
+            string cbr = AllStrings.cbr;
+
+            var expected = new List<Tuple<int, int>>();
+            expected.Add(new Tuple<int, int>(0, 6));
+            expected.Add(new Tuple<int, int>(2, 4));
+            
+
+            List<int> onlyLeftExcepted = CA.ToList<int>(10);
+            List<int> onlyRightExcepted = CA.ToList<int>(8);
+
+            var occL = SH.ReturnOccurencesOfString(input, cbl);
+            var occR = SH.ReturnOccurencesOfString(input, cbr);
+
+            List<int> onlyLeft = null;
+            List<int> onlyRight = null;
+            var actual = SH.GetPairsStartAndEnd(occL, occR, ref onlyLeft, ref onlyRight);
+
+            AssertExtensions.EqualTuple<int, int>(expected, actual);
+
+            onlyLeft.Sort();
+
+            Assert.Equal<int>(onlyLeftExcepted, onlyLeft);
+            Assert.Equal<int>(onlyRightExcepted, onlyRight);
+        }
+
+
+        [Fact]
         public void SplitAndKeepTest()
         {
             var actual = SH.SplitAndKeep(splitAndKeepInput, AspxConsts.all.ToArray());
