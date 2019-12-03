@@ -1,5 +1,6 @@
 ﻿using sunamo.Essential;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using Xunit;
 using YamlDotNet.RepresentationModel;
@@ -7,15 +8,17 @@ using YamlDotNet.Serialization;
 
 namespace SunamoYaml.Tests
 {
-    public class UnitTest1
+    public class YamlHelperTests
     {
-        const string path = @"c:\Users\jancirad\Documents\Visual Studio 2017\Projects\sunamo.Tests\SunamoYaml.Tests\test.yaml";
+        string path = null;
         const string s = "s";
         const string ixTest = "text";
-
+        
         [Fact]
-        public void Load()
+        public void LoadYaml()
         {
+            LoadDefaultPath();
+
             // Setup the input
             var input = new StringReader(File.ReadAllText(path));
 
@@ -28,12 +31,21 @@ namespace SunamoYaml.Tests
 
             var text = mapping[ixTest];
             Assert.Equal(s, text.ToString());
-            
+        }
+
+        private void LoadDefaultPath()
+        {
+            ThisApp.Name = "sunamo.Tests";
+            ThisApp.Project = "SunamoYaml.Tests";
+
+            path = TestHelper.GetFileInProjectsFolder("test.yaml");
         }
 
         [Fact]
-        public void Save()
+        public void SaveYaml()
         {
+            LoadDefaultPath();
+
             // Four node types: Alias, Mapping, Scalar, Sequence
 
             var o = new
@@ -60,9 +72,12 @@ namespace SunamoYaml.Tests
                 }
             };
 
+            var list = new List<object>();
+            list.Add(o);
+
             var serializer = new Serializer();
             StringWriter sw = new StringWriter();
-            serializer.Serialize(sw, o);
+            serializer.Serialize(sw, list);
             File.WriteAllText(path, sw.ToString());
         }
     }
