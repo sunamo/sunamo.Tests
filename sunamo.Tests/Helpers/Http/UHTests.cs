@@ -15,5 +15,15 @@ public class UHTests
         var actual = UH.IsValidUriAndDomainIs(input, "*", out surelyDomain);
         Assert.Equal(expected, actual);
     }
+
+    [Fact]
+    public void GetUriSafeStringTest()
+    {
+        var input = "AttributeValueOfHtmlUC";
+        var expected = "attribute-value-of-html-uc";
+
+        var actual = UH.GetUriSafeString(input);
+        Assert.Equal(expected, actual);
+    }
 }
 

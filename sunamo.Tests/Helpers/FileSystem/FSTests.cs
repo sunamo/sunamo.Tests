@@ -171,10 +171,10 @@ namespace sunamo.Tests.Helpers.FileSystem
         {
             string folder = @"d:\_Test\sunamo\Helpers\FileSystem\FS\DeleteFilesWithSameContent\";
 
-            var files = FS.GetFiles(folder, "*.txt", System.IO.SearchOption.AllDirectories, false);
+            var files = FS.GetFiles(folder, "*.txt", System.IO.SearchOption.AllDirectories, new GetFilesArgs { _trimA1 = true });
             FS.DeleteFilesWithSameContent(files);
 
-            files = FS.GetFiles(folder, "*.txt", System.IO.SearchOption.AllDirectories, true);
+            files = FS.GetFiles(folder, "*.txt", System.IO.SearchOption.AllDirectories, new GetFilesArgs { _trimA1 = true });
 
             var filesExcepted = CA.ToListString(TestDataTxt.a, TestDataTxt.ab);
             Assert.Equal<string>(filesExcepted, files);
@@ -185,10 +185,10 @@ namespace sunamo.Tests.Helpers.FileSystem
         {
             string folder = @"d:\_Test\sunamo\Helpers\FileSystem\FS\DeleteFilesWithSameContentBytes\";
 
-            var files = FS.GetFiles(folder, "*.txt", System.IO.SearchOption.AllDirectories, false);
+            var files = FS.GetFiles(folder, "*.txt", System.IO.SearchOption.AllDirectories, new GetFilesArgs { _trimA1 = false });
             FS.DeleteFilesWithSameContentBytes(files);
 
-            files = FS.GetFiles(folder, "*.txt", System.IO.SearchOption.AllDirectories, true);
+            files = FS.GetFiles(folder, "*.txt", System.IO.SearchOption.AllDirectories, new GetFilesArgs { _trimA1 = true });
 
             var filesExcepted = CA.ToListString(TestDataTxt.a, TestDataTxt.ab);
             Assert.Equal<string>(filesExcepted, files);
