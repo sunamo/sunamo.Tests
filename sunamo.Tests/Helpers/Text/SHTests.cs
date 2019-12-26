@@ -11,6 +11,16 @@ namespace sunamo.Tests.Helpers.Text
         readonly List<string> expected = CA.ToListString("Shared settings", "aplikace");
 
         [Fact]
+        public void RemoveAfterLastTests()
+        {
+            var input = "10 - cc - 24 Hours";
+            var expected = "10 - cc";
+
+            var actual = SH.RemoveAfterLast(" - ", input);
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
         public void RemoveEndingPairCharsWhenDontHaveStarting()
         {
             var input = @"Nechť funkce  f(x)} je spojitá na kompaktním (tj. omezeném a uzavřeném) intervalu  \langle a,b\rangle } a nech f(a).f(b) < 0.Pak existuje alespoň jeden bod  c\in (a, b)} takový, že f(c)=0}";
