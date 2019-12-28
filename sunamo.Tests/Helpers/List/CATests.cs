@@ -18,6 +18,17 @@ namespace sunamo.Tests.Helpers.List
         }
 
         [Fact]
+        public void JoinIEnumerableTest()
+        {
+            var input = "ab";
+            var input2 = "cd";
+            var expected = "abcd";
+
+            var actual = CA.JoinIEnumerable<char>(input, input2);
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
         public void ToJaggedTTest()
         {
             var input = new int[2, 2] { { 0, 1 }, { 2, 3 } };
