@@ -38,7 +38,6 @@ namespace sunamo.Tests.Helpers.Numbers
                 DebugLogger.Instance.WriteLine(median);
             }
         }
-
         public class Double
         {
             //3.4

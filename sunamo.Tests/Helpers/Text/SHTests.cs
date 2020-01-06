@@ -36,6 +36,27 @@ namespace sunamo.Tests.Helpers.Text
             Assert.Equal(actual, excepted);
         }
 
+        [Fact]
+        public void SplitToPartsFromEndTest()
+        {
+            var expected1 = @"D:\Documents\Visual Studio 2017\Haskell_Projects\LearnHaskell";
+            var expected2 = @"3Types.hs";
+
+            var input = expected1 + "\\" + expected2;
+            var p = SH.SplitToPartsFromEnd(input, 2, AllChars.bs);
+
+            Assert.Equal(expected1, p[0]);
+            Assert.Equal(expected2, p[1]);
+
+            input = expected2;
+            expected1 = string.Empty;
+            // expected2 keep as is
+
+            p = SH.SplitToPartsFromEnd(input, 2, AllChars.bs);
+            Assert.Equal(expected1, p[0]);
+            Assert.Equal(expected2, p[1]);
+        }
+
         /// <summary>
         /// more left
         /// </summary>
