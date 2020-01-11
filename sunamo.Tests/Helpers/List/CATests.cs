@@ -18,6 +18,25 @@ namespace sunamo.Tests.Helpers.List
         }
 
         [Fact]
+        public void ReturnWhichContainsTest()
+        {
+            var input = @"a b d
+a b c";
+            var inputLines = SH.GetLines(input);
+
+            // first line
+            var c = CA.ReturnWhichContains(inputLines, "a d", ContainsCompareMethod.SplitToWords);
+            // first line
+            var c2 = CA.ReturnWhichContains(inputLines, "a !c", ContainsCompareMethod.Negations);
+            // nothing
+            var c3 = CA.ReturnWhichContains(inputLines, "a d", ContainsCompareMethod.WholeInput);
+            // second line
+            var c4 = CA.ReturnWhichContains(inputLines, "a c", ContainsCompareMethod.SplitToWords);
+
+            int i = 0;
+        }
+
+        [Fact]
         public void JoinIEnumerableTest()
         {
             var input = "ab";
