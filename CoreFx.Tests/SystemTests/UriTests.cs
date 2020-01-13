@@ -7,7 +7,7 @@ namespace CoreFx.Tests.SystemTests
 {
     public class UriTests
     {
-        AB[] data = new AB[6];
+        ABC data = new AB[6];
 
         public UriTests()
         {

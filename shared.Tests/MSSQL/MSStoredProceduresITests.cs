@@ -30,9 +30,9 @@ public class MSStoredProceduresITests
 
     }
 
-    AB[] ABArray()
+    ABC ABArray()
     {
-        return CA.ToArrayT<AB>(AB.Get(key, 1), AB.Get(key, 4));
+        return new ABC(AB.Get(key, 1), AB.Get(key, 4));
     }
 
     ABC ABC()
