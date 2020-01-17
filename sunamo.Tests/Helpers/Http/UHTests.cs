@@ -25,5 +25,16 @@ public class UHTests
         var actual = UH.GetUriSafeString(input);
         Assert.Equal(expected, actual);
     }
+
+    [Fact]
+    public void GetFileNameTest()
+    {
+        var input = @"https://lyrics.sunamo.cz/Me/Login.aspx?ReturnUrl=https://lyrics.sunamo.cz/Artist/walk-the-moon";
+        var actual = UH.GetFileName(input);
+
+        var excepted = "Login.aspx";
+
+        Assert.Equal(excepted, actual);
+    }
 }
 
