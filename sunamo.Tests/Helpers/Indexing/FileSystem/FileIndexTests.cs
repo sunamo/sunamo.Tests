@@ -51,7 +51,7 @@ namespace sunamo.Tests.Indexing.FileSystem
 
         public void AggregateFilesFromAllFolders()
         {
-            List<string> files = CA.ToList<string>(f1_1, f1_3);
+            List<string> files = CA.ToListString(f1_1, f1_3);
             
             Dictionary<string, int> relativeFilePathForEveryColumn = null;
             FileIndex.AggregateFilesFromAllFolders(folder1, fi,  relativeFilePathForEveryColumn, files);
