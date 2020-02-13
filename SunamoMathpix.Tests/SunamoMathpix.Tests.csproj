@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\SunamoMathpix\SunamoMathpix\SunamoMathpix.csproj" />
     <ProjectReference Include="..\..\sunamo\SunamoMathpix\SunamoMathpix.csproj" />
     <ProjectReference Include="..\..\sunamo\sunamo\sunamo.csproj" />
   </ItemGroup>

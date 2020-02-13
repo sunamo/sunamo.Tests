@@ -37,6 +37,63 @@ namespace sunamo.Tests.Helpers.Text
         }
 
         [Fact]
+        public void ReplaceAll3Test()
+        {
+            var input = @"a
+
+private void SetMode(Mode mode)
+ {
+
+b";
+
+            var replaceWhat = CA.ToListString(@"void SetMode(Mode mode)
+  {");
+
+            var replaceFor = CA.ToListString(@"public void SetMode(object mode2)
+{
+   var mode = EnumHelper.Parse<Mode>(mode2.ToString(), Mode.Empty);");
+
+            var excepted = @"public void SetMode(object mode2)
+{
+ var mode = EnumHelper.Parse<Mode>(mode2.ToString(), Mode.Empty);";
+
+            var actual = SH.ReplaceAll3(replaceWhat, replaceFor, true, input);
+        }
+
+        [Fact]
+        public void ReplaceAllTest()
+        {
+            var input = @"a
+
+private void SetMode(Mode mode)
+ {
+
+b";
+            string replaceWhat = @"void SetMode(Mode mode)
+  {";
+
+            var replaceFor = @"public void SetMode(object mode2)
+{
+   var mode = EnumHelper.Parse<Mode>(mode2.ToString(), Mode.Empty);";
+
+            var excepted = @"public void SetMode(object mode2)
+{
+ var mode = EnumHelper.Parse<Mode>(mode2.ToString(), Mode.Empty);";
+
+            //input = SH.ReplaceAllDoubleSpaceToSingle2(input);
+            //replaceFor = SH.ReplaceAllDoubleSpaceToSingle2(replaceFor);
+            //excepted = SH.ReplaceAllDoubleSpaceToSingle2(excepted);
+            //replaceWhat = SH.ReplaceAllDoubleSpaceToSingle2(replaceWhat);
+
+            var result = SH.ReplaceAll( input, replaceFor, replaceWhat);
+            result = result.Replace("private public", "public");
+
+            result = SH.ReplaceAllDoubleSpaceToSingle2(result);
+            
+            Assert.Equal(excepted, result);
+        }
+
+        [Fact]
         public void SplitToPartsFromEndTest()
         {
             var expected1 = @"D:\Documents\Visual Studio 2017\Haskell_Projects\LearnHaskell";
@@ -152,7 +209,6 @@ namespace sunamo.Tests.Helpers.Text
             Assert.Equal<int>(onlyRightExcepted, onlyRight);
         }
 
-
         [Fact]
         public void SplitAndKeepTest()
         {
@@ -184,7 +240,7 @@ HtmlImage";
         }
 
         [Fact]
-    public void MultiWhitespaceLineToSingleTest()
+        public void MultiWhitespaceLineToSingleTest()
     {
         List<string> input = SH.GetLines(@"a
 
@@ -317,6 +373,8 @@ using Xunit; -> using Microsoft.VisualStudio.TestTools.UnitTesting;";
         [Fact]
         public void XCharsBeforeAndAfterWholeWordsTest()
         {
+            //ClipboardHelper.Instance = ClipboardHelperWin.
+
             var s = "12\"45" + Environment.NewLine + "12\"45";
 
             var occ = SH.ReturnOccurencesOfString(s, "\"");
@@ -328,7 +386,8 @@ using Xunit; -> using Microsoft.VisualStudio.TestTools.UnitTesting;";
                 sb.AppendLine( r);
             }
 
-            ClipboardHelper.SetText(sb);
+            // Cant use Clipboard, its sunamo and cant reference win
+            //ClipboardHelper.SetText(sb);
         }
 
         [Fact]
@@ -342,8 +401,6 @@ using Xunit; -> using Microsoft.VisualStudio.TestTools.UnitTesting;";
 
             //ClipboardHelper.SetLines(sb);
         }
-
-        //
 
         [Fact]
         public void GetLineIndexFromCharIndexTest()

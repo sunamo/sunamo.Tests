@@ -163,8 +163,10 @@ namespace sunamo.Tests.Helpers.FileSystem
         {
             string folder = @"d:\_Test\sunamo\Helpers\FileSystem\DeleteSerieDirectoryOrCreateNew\";
             FS.DeleteSerieDirectoryOrCreateNew(folder);
-
         }
+
+        
+
 
         [Fact]
         public void DeleteFilesWithSameContent()

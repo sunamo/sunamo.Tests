@@ -10,7 +10,7 @@ public class XmlLocalisationInterchangeFileFormatTests
     public void AppendTest()
     {
         var file = @"d:\_Test\sunamo\SunamoCode\ParseAndRemoveNamespacesTest\a.xlf";
-        XmlLocalisationInterchangeFileFormat.Append(Langs.cs, "Hello", "Ahoj", "HelloID", file);
+        XmlLocalisationInterchangeFileFormat.Append( "Hello", "Ahoj", "HelloID", file);
     }
 }
 
