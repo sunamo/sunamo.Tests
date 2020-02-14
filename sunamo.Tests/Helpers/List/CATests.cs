@@ -30,6 +30,20 @@ namespace sunamo.Tests.Helpers.List
         }
 
         [Fact]
+        public void IndexesWithValueTest()
+        {
+            var c = TestData.c;
+
+            var d = TestData.listABC;
+            d.Add(c);
+
+            var actual = CA.IndexesWithValue<string>(d, c);
+            var expected = CA.ToList<int>(2, 3);
+
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
         public void ReturnWhichContainsTest()
         {
             var input = @"a b d
