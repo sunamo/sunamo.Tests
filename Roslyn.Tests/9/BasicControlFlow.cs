@@ -37,8 +37,8 @@ public void _BasicControlFlow()
         var firstFor = tree.GetRoot().DescendantNodes().OfType<ForStatementSyntax>().Single();
         ControlFlowAnalysis result = model.AnalyzeControlFlow(firstFor.Statement);
         
-        DebugLogger.Instance.WriteLine(result.Succeeded);            //True
-        DebugLogger.Instance.WriteLine(result.ExitPoints.Count());    //2 - continue, and break
+        //DebugLogger.Instance.WriteLine(result.Succeeded);            //True
+        //DebugLogger.Instance.WriteLine(result.ExitPoints.Count());    //2 - continue, and break
 
     }
 }

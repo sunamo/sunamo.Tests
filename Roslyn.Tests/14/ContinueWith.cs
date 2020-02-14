@@ -18,8 +18,8 @@ public void _ContinueWith()
         ScriptVariable x = state.GetVariable("x");
         ScriptVariable y = state.GetVariable("y");
         
-        DebugLogger.Instance.WriteLine($"{x.Name} : {x.Value} : {x.Type} "); // x : 7
-        DebugLogger.Instance.WriteLine($"{y.Name} : {y.Value} : {y.Type} "); // y : 1
+        //DebugLogger.Instance.WriteLine($"{x.Name} : {x.Value} : {x.Type} "); // x : 7
+        //DebugLogger.Instance.WriteLine($"{y.Name} : {y.Value} : {y.Type} "); // y : 1
 
     }
 }

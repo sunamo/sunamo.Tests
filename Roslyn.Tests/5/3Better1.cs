@@ -9,7 +9,7 @@ using Microsoft.CodeAnalysis.CSharp;
             {
                public void Foo()
                {
-                  DebugLogger.Instance.WriteLine();
+                  //DebugLogger.Instance.WriteLine();
 
                   #region SomeRegion
                   //Some other code
@@ -43,7 +43,7 @@ public void _3Better1Method()
             {
                public void Foo()
                {
-                  DebugLogger.Instance.WriteLine();
+                  //DebugLogger.Instance.WriteLine();
 ;
                   #region SomeRegion
                   //Some other code
@@ -54,7 +54,7 @@ public void _3Better1Method()
         
             var rewriter = new EmtpyStatementRemoval();
             var result = rewriter.Visit(tree.GetRoot());
-            DebugLogger.Instance.WriteLine(result.ToFullString());
+            //DebugLogger.Instance.WriteLine(result.ToFullString());
         }
 
     

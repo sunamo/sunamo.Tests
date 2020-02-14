@@ -73,10 +73,10 @@ public void _1AnalyzeForLoop()
         /*
         The DataFlowAnalysis object exposes a pretty rich API for uses to consume. It exposes information about unsafe addresses, local variables captured by anonymous methods and much more. 
         */
-        DebugLogger.Instance.DumpObjects("AlwaysAssigned", a, DumpProvider.Reflection, "Name");
-        DebugLogger.Instance.DumpObjects("ReadInside", b, DumpProvider.Reflection, "Name");
-        DebugLogger.Instance.DumpObjects("WrittenOutside", c, DumpProvider.Reflection, "Name");
-        DebugLogger.Instance.DumpObjects("WrittenInside", d, DumpProvider.Reflection, "Name");
-        DebugLogger.Instance.DumpObjects("VariablesDeclared", e, DumpProvider.Reflection, "Name");
+        //DebugLogger.Instance.DumpObjects("AlwaysAssigned", a, DumpProvider.Reflection, "Name");
+        //DebugLogger.Instance.DumpObjects("ReadInside", b, DumpProvider.Reflection, "Name");
+        //DebugLogger.Instance.DumpObjects("WrittenOutside", c, DumpProvider.Reflection, "Name");
+        //DebugLogger.Instance.DumpObjects("WrittenInside", d, DumpProvider.Reflection, "Name");
+        //DebugLogger.Instance.DumpObjects("VariablesDeclared", e, DumpProvider.Reflection, "Name");
     }
 }

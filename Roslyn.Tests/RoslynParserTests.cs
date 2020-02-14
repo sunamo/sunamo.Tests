@@ -84,7 +84,7 @@ private void SetVisible(bool b)";
         // Cant be use because Presentation is not on nuget and UT projets does nto have Assemblies tab
         //Clipboard.SetText(s);
 
-        DebugLogger.Instance.WriteLine(s);
+        //DebugLogger.Instance.WriteLine(s);
     }
 }
 

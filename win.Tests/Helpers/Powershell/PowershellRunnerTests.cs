@@ -80,8 +80,8 @@ namespace win.Tests.Helpers.Powershell
              * 3 - 3514
              */
             stopwatch.Stop();
-            DebugLogger.Instance.WriteLine("max", maxMs);
-            DebugLogger.Instance.WriteLine("elapsed", stopwatch.ElapsedMilliseconds);
+            //DebugLogger.Instance.WriteLine("max", maxMs);
+            //DebugLogger.Instance.WriteLine("elapsed", stopwatch.ElapsedMilliseconds);
 
             return result;
         }
@@ -108,8 +108,8 @@ namespace win.Tests.Helpers.Powershell
              * 3 - 3495
              */
             stopwatch.Stop();
-            DebugLogger.Instance.WriteLine("max", maxMs);
-            DebugLogger.Instance.WriteLine("elapsed", stopwatch.ElapsedMilliseconds);
+            //DebugLogger.Instance.WriteLine("max", maxMs);
+            //DebugLogger.Instance.WriteLine("elapsed", stopwatch.ElapsedMilliseconds);
 
             return result;
         }

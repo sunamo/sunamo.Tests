@@ -37,36 +37,11 @@ namespace sunamo.Tests.Helpers.Text
         }
 
         [Fact]
-        public void ReplaceAll3Test()
+        public void ReplaceAll3Test1()
         {
             var input = @"a
 
-private void SetMode(Mode mode)
- {
-
-b";
-
-            var replaceWhat = CA.ToListString(@"void SetMode(Mode mode)
-  {");
-
-            var replaceFor = CA.ToListString(@"public void SetMode(object mode2)
-{
-   var mode = EnumHelper.Parse<Mode>(mode2.ToString(), Mode.Empty);");
-
-            var excepted = @"public void SetMode(object mode2)
-{
- var mode = EnumHelper.Parse<Mode>(mode2.ToString(), Mode.Empty);";
-
-            var actual = SH.ReplaceAll3(replaceWhat, replaceFor, true, input);
-        }
-
-        [Fact]
-        public void ReplaceAllTest()
-        {
-            var input = @"a
-
-private void SetMode(Mode mode)
- {
+private public void SetMode(object mode2) { var mode = EnumHelper.Parse<Mode>(mode2.ToString(), Mode.Empty);
 
 b";
             string replaceWhat = @"void SetMode(Mode mode)

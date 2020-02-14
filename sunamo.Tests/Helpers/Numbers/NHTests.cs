@@ -23,7 +23,7 @@ namespace sunamo.Tests.Helpers.Numbers
                 var median3 = NH.Median<int>(input3);
                 var median4 = NH.Median<int>(input4);
                 var median5 = NH.Median<int>(input5);
-                DebugLogger.Instance.WriteLine(median);
+                //DebugLogger.Instance.WriteLine(median);
             }
 
             // 3
@@ -35,7 +35,7 @@ namespace sunamo.Tests.Helpers.Numbers
                 var median3 = NH.Median2<int>(input3);
                 var median4 = NH.Median2<int>(input4);
                 var median5 = NH.Median2<int>(input5);
-                DebugLogger.Instance.WriteLine(median);
+                //DebugLogger.Instance.WriteLine(median);
             }
         }
         public class Double
@@ -45,7 +45,7 @@ namespace sunamo.Tests.Helpers.Numbers
             public void MedianTest()
             {
                 var median = NH.Median<double>(input2);
-                DebugLogger.Instance.WriteLine(median);
+                //DebugLogger.Instance.WriteLine(median);
             }
 
             // 3.4
@@ -53,7 +53,7 @@ namespace sunamo.Tests.Helpers.Numbers
             public void Median2Test()
             {
                 var median = NH.Median2<double>(input2);
-                DebugLogger.Instance.WriteLine(median);
+                //DebugLogger.Instance.WriteLine(median);
             }
         }
 

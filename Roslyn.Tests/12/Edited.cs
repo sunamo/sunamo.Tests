@@ -14,11 +14,11 @@ public void _Edited()
         if (key == 'A')
         {
             //LogConditionWasTrue();
-            DebugLogger.Instance.WriteLine("You pressed A");
+            //DebugLogger.Instance.WriteLine("You pressed A");
         }
         else
         {
-            DebugLogger.Instance.WriteLine("You didn't press A");
+            //DebugLogger.Instance.WriteLine("You didn't press A");
 
             //LogConditionWasFalse();
         }

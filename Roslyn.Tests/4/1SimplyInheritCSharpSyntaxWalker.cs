@@ -37,7 +37,7 @@ public partial class RoslynLearn
             {
                 Tabs++;
                 var indents = new String('\t', Tabs);
-                DebugLogger.Instance.WriteLine(indents + node.Kind());
+                //DebugLogger.Instance.WriteLine(indents + node.Kind());
             // Until has node child, base.Visit will call again this method. Otherwise return control and Tabs--
                 base.Visit(node);
                 Tabs--;

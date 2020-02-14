@@ -36,8 +36,8 @@ public void _EntryAndExitPoints()
         var label3 = tree.GetRoot().DescendantNodes().OfType<LabeledStatementSyntax>().Skip(1).Take(1).Single();
         
         ControlFlowAnalysis result = model.AnalyzeControlFlow(firstIf, label3);
-        DebugLogger.Instance.WriteLine(result.EntryPoints);      //1 - L3: ; //Label 3 is a candidate entry point within these statements
-        DebugLogger.Instance.WriteLine(result.ExitPoints);       //2 - goto L1;,goto L2; //goto L1 and goto L2 and candidate exit points
+        //DebugLogger.Instance.WriteLine(result.EntryPoints);      //1 - L3: ; //Label 3 is a candidate entry point within these statements
+        //DebugLogger.Instance.WriteLine(result.ExitPoints);       //2 - goto L1;,goto L2; //goto L1 and goto L2 and candidate exit points
 
     }
 }

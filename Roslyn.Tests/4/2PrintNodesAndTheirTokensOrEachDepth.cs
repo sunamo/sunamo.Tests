@@ -35,7 +35,7 @@ public partial class RoslynLearn
         {
             Tabs++;
             var indents = new String('\t', Tabs);
-            DebugLogger.Instance.WriteLine(indents + node.Kind());
+            //DebugLogger.Instance.WriteLine(indents + node.Kind());
             base.Visit(node);
             Tabs--;
         }
@@ -43,7 +43,7 @@ public partial class RoslynLearn
         public override void VisitToken(SyntaxToken token)
         {
             var indents = new String('\t', Tabs);
-            DebugLogger.Instance.WriteLine(indents + token);
+            //DebugLogger.Instance.WriteLine(indents + token);
             base.VisitToken(token);
         }
     }

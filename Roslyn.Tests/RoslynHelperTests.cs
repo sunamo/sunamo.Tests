@@ -13,7 +13,7 @@ public class RoslynHelperTests
     [Fact]
     public void FormatTest()
     {
-        string input = @"    public partial class InsertIntoXlfAndConstantCsUC : UserControl, IUserControl, IKeysHandler<KeyEventArgs>, IUserControlWithSettingsManager, IUserControlWithMenuItemsList, IWindowOpener, IUserControlWithSizeChange
+        string input = @"    public partial class InsertIntoXlfAndConstantCsUC : UserControl, IUserControl, IKeysHandler, IUserControlWithSettingsManager, IUserControlWithMenuItemsList, IWindowOpener, IUserControlWithSizeChange
     {
         #region Class data
         static InsertIntoXlfAndConstantCsUC instance = null;

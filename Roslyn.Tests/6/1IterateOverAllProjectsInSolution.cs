@@ -22,7 +22,7 @@ public void _1IterateOverAllProjectsInSolution()
         {
         	foreach (var document in project.Documents)
         	{
-        		DebugLogger.Instance.WriteLine(project.Name + "\t\t\t" + document.Name);
+        		//DebugLogger.Instance.WriteLine(project.Name + "\t\t\t" + document.Name);
         	}
         }
 

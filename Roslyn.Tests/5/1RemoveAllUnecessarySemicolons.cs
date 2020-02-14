@@ -9,7 +9,7 @@ using Microsoft.CodeAnalysis.CSharp;
             {
                public void Foo()
                {
-                  DebugLogger.Instance.WriteLine();
+                  //DebugLogger.Instance.WriteLine();
                 }
             }
  */
@@ -37,7 +37,7 @@ public void _1RemoveAllUnecessarySemicolons()
             {
                public void Foo()
                {
-                  DebugLogger.Instance.WriteLine();
+                  //DebugLogger.Instance.WriteLine();
                   ;
                 }
             }");
@@ -45,7 +45,7 @@ public void _1RemoveAllUnecessarySemicolons()
             var rewriter = new EmtpyStatementRemoval();
         // change source code to other look - without empty statements
             var result = rewriter.Visit(tree.GetRoot());
-            DebugLogger.Instance.WriteLine(result.ToFullString());
+            //DebugLogger.Instance.WriteLine(result.ToFullString());
         }
 
     

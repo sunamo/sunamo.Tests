@@ -48,7 +48,7 @@ namespace sunamo.Tests.Collections
             generator.List(atLeastOne, "At least one", true, true);
 
 #if DEBUG
-            DebugLogger.Instance.WriteLine(generator.ToString());
+            //DebugLogger.Instance.WriteLine(generator.ToString());
 #endif
         }
     }

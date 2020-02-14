@@ -25,14 +25,14 @@ public partial class RoslynLearn
         {
             void M()
             {
-                char key = DebugLogger.Instance.ReadKey();
+                char key = //DebugLogger.Instance.ReadKey();
                 if (key == 'A')
                 {
-                    DebugLogger.Instance.WriteLine(""You pressed A"");
+                    //DebugLogger.Instance.WriteLine(""You pressed A"");
                 }
                 else
                 {
-                    DebugLogger.Instance.WriteLine(""You didn't press A"");
+                    //DebugLogger.Instance.WriteLine(""You didn't press A"");
                 }
             }
         }");
@@ -72,9 +72,9 @@ public partial class RoslynLearn
         
         //Finally/* ... */ create the document editor
         var documentEditor = await DocumentEditor.CreateAsync(document);
-        //Insert LogConditionWasTrue() before the DebugLogger.Instance.WriteLine()
+        //Insert LogConditionWasTrue() before the //DebugLogger.Instance.WriteLine()
         documentEditor.InsertBefore(ifStatement.Statement.ChildNodes().Single(), conditionWasTrueInvocation);
-        //Insert LogConditionWasFalse() after the DebugLogger.Instance.WriteLine()
+        //Insert LogConditionWasFalse() after the //DebugLogger.Instance.WriteLine()
         documentEditor.InsertAfter(ifStatement.Else.Statement.ChildNodes().Single(), conditionWasFalseInvocation);
         
         var newDocument = documentEditor.GetChangedDocument();

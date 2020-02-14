@@ -19,8 +19,8 @@ public void _TestCompilationToStreamAndRun()
         {
             public static void Main()
             {
-                DebugLogger.Instance.WriteLine(""Hello World!"");
-                DebugLogger.Instance.ReadLine();
+                //DebugLogger.Instance.WriteLine(""Hello World!"");
+                //DebugLogger.Instance.ReadLine();
             }   
         }");
         

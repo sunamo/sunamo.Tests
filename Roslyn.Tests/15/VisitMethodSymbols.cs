@@ -1,4 +1,4 @@
-
+﻿
 
 using Microsoft.CodeAnalysis;
 
@@ -32,6 +32,6 @@ public class MethodSymbolVisitor : SymbolVisitor
     /// <param name="symbol"></param>
     public override void VisitMethod(IMethodSymbol symbol)
     {
-        DebugLogger.Instance.WriteLine(symbol);
+        //DebugLogger.Instance.WriteLine(symbol);
     }
 }
