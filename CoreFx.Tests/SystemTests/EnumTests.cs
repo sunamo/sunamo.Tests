@@ -7,14 +7,6 @@ using Xunit;
 
 namespace CoreFx.Tests.SystemTests
 {
-    
-
-    //enum EnumB
-    //{
-    //    BA,
-    //    BB
-    //}
-
     public class EnumTests
     {
         [Fact]
@@ -23,6 +15,9 @@ namespace CoreFx.Tests.SystemTests
             EnumA enumA = EnumA.a | EnumA.b;
             Assert.Equal(true,  enumA.HasFlag(EnumA.a));
             Assert.Equal(false, enumA.HasFlag(EnumA.c));
+
+            // can be add also later
+            enumA |= EnumA.c;
         }
 
         [Fact]
