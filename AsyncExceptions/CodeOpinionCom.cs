@@ -6,7 +6,7 @@ namespace dcomartin.Demo.AsyncAwaitExceptions
     // https://codeopinion.com/handling-async-await-exceptions/
     class CodeOpinionCom
     {
-        static void Run(string[] args)
+        static void Run(List<string> args)
         {
             // Since main entry does not support async, lets create a async task.
             Task.Run(async () =>

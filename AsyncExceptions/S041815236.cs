@@ -14,7 +14,7 @@ namespace AsyncExceptions
         /// </summary>
         /// <param name="args"></param>
         /// <returns></returns>
-        public async static Task Run(string[] args)
+        public async static Task Run(List<string> args)
         {
             await TestTaskAsyncInLambdaAsync().ContinueWith(t =>
             {
