@@ -187,7 +187,7 @@ b";
         [Fact]
         public void SplitAndKeepTest()
         {
-            var actual = SH.SplitAndKeep(splitAndKeepInput, AspxConsts.all.ToArray());
+            var actual = SH.SplitAndKeep(splitAndKeepInput, AspxConsts.all);
             Assert.Equal<string>(expected, actual);
         }
 

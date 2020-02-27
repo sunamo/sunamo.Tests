@@ -18,6 +18,29 @@ namespace sunamo.Tests.Helpers.List
         }
 
         [Fact]
+        public void DoubleOrMoreMultiLinesToSingleTest()
+        {
+            var input = @"a
+
+
+b";
+            var excepted = @"a
+
+b";
+            CA.DoubleOrMoreMultiLinesToSingle(ref input);
+            Assert.Equal(excepted, input);
+
+            input = @"a
+
+
+
+b";
+
+            CA.DoubleOrMoreMultiLinesToSingle(ref input);
+            Assert.Equal(excepted, input);
+        }
+
+        [Fact]
         public void EqualRangesTest()
         {
             var input = CA.ToList<int>(5, 1, 2, 3, 4, 1, 2, 3, 6);
