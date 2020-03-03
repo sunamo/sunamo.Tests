@@ -166,7 +166,17 @@ namespace sunamo.Tests.Helpers.FileSystem
         }
 
         
+        [Fact]
+        public void InsertBetweenFileNameAndExtensionTest()
+        {
+            var original = "2017-08-11 T18_48_48 307 segments.gpx";
+            var input = @"With friend from seznamka.cz on Poruba's forest";
+            var whatInsert = "-abcd";
 
+            var actual = FS.InsertBetweenFileNameAndExtension(input, whatInsert);
+            var expected = "With friend from seznamka.cz on Poruba's forest" + whatInsert;
+            Assert.Equal(expected, actual);
+        }
 
         [Fact]
         public void DeleteFilesWithSameContent()
