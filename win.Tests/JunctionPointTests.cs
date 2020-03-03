@@ -105,4 +105,3 @@ public class JunctionPointTests
         JunctionPoint.MklinkD(D(), target);
     }
 }
-

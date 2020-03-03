@@ -27,4 +27,3 @@ public class VisualTreeHelpersTests
         Assert.AreEqual(inputText, tb2.Text);
     }
 }
-

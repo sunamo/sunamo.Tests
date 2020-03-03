@@ -24,4 +24,3 @@ public class AppLangHelperTests
         Assert.Equal(expected, actual);
     }
 }
-

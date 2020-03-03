@@ -32,4 +32,3 @@ cook.Expires = DateTime.Now.AddYears(1);
         Assert.Equal(excepted, input);
     }
 }
-

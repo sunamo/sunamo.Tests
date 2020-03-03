@@ -34,4 +34,3 @@ public class StringBuilderTests
         Assert.Equal(excepted, actual.Replace(to, from).ToString());
     }
 }
-

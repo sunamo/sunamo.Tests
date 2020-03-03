@@ -87,4 +87,3 @@ private void SetVisible(bool b)";
         //DebugLogger.Instance.WriteLine(s);
     }
 }
-

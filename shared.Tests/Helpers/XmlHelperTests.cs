@@ -19,4 +19,3 @@ public class XmlHelperTests
         x = h.ParseAndRemoveNamespacesXmlDocument(c, x.NameTable);
     }
 }
-

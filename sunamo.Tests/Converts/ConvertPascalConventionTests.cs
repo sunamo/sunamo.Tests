@@ -17,4 +17,3 @@ public class ConvertPascalConventionTests
         Assert.Equal(false, ConvertPascalConvention.IsPascal(input3));
     }
 }
-

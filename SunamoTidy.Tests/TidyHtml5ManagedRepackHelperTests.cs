@@ -37,4 +37,3 @@ public class TidyHtml5ManagedRepackHelperTests
         Assert.AreEqual(expected, actual);
     }
 }
-

@@ -48,4 +48,3 @@ public class StringsTests
         Assert.Equal(excepted, actual.Replace(to, from));
     }
 }
-

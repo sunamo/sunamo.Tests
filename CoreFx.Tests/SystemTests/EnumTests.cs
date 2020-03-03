@@ -43,7 +43,6 @@ namespace CoreFx.Tests.SystemTests
         /// <typeparam name="T"></typeparam>
         /// <param name="enumA"></param>
         /// <param name="haveAll"></param>
-        /// <returns></returns>
         public List<string> GetEnum<T>(T enumA, bool haveAll = true) where T : struct, System.Enum
         {
             List<string> actual = new List<string>();

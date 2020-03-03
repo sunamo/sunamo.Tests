@@ -13,4 +13,3 @@ using System.Text;
         /// </summary>
         public const string DiagnosticId = "Roslyn";
     }
-

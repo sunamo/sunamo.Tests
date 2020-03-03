@@ -13,7 +13,6 @@ namespace AsyncExceptions
         /// But is have ContinueWith() throw exceptions on place of occuring
         /// </summary>
         /// <param name="args"></param>
-        /// <returns></returns>
         public async static Task Run(List<string> args)
         {
             await TestTaskAsyncInLambdaAsync().ContinueWith(t =>
@@ -91,7 +90,6 @@ namespace AsyncExceptions
         /// <summary>
         /// 
         /// </summary>
-        /// <returns></returns>
         static Task<IEnumerable<string>> TestTask()
         {
             var task = new Task<IEnumerable<string>>(() =>

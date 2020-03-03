@@ -19,4 +19,3 @@ public class ConvertCamelConventionWithNumbersTests
         Assert.Equal(true, ConvertCamelConventionWithNumbers.IsCamelWithNumber(input4));
     }
 }
-

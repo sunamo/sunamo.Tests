@@ -19,4 +19,3 @@ public class TidyExeHelperTests
         int i = 0;
     }
 }
-

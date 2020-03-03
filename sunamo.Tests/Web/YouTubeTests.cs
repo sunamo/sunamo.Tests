@@ -14,4 +14,3 @@ public class YouTubeTests
         Assert.Equal(actual, expected);
     }
 }
-

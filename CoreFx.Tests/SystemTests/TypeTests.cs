@@ -17,4 +17,3 @@ public class TypeTests
         int i = 0;
     }
 }
-

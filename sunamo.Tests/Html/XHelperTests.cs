@@ -19,4 +19,3 @@ public class XHelperTests
         Assert.Equal(actual, excepted);
     }
 }
-

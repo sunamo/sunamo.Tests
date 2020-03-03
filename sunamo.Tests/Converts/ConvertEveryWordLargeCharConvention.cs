@@ -21,4 +21,3 @@ public class ConvertEveryWordLargeCharConventionTests
         Assert.Equal(expected, actual);
     }
 }
-

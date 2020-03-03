@@ -45,4 +45,3 @@ public class ConvertBase64Tests
         Assert.Equal(expected, s);
     }
 }
-

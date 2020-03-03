@@ -13,4 +13,3 @@ public class XmlLocalisationInterchangeFileFormatTests
         XmlLocalisationInterchangeFileFormat.Append( "Hello", "Ahoj", "HelloID", file);
     }
 }
-

@@ -17,4 +17,3 @@ public class ConvertCamelConventionTests
         Assert.Equal(false, ConvertCamelConvention.IsCamel(input3));
     }
 }
-
