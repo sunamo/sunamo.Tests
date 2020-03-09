@@ -22,10 +22,15 @@ public class JunctionPointTests
     {
         var d = SetFor(LinkType.D);
         var td = JunctionPoint.GetTarget(d);
+        var rd = JunctionPoint.GetTarget(target);
+
         var j = SetFor(LinkType.J);
         var tj = JunctionPoint.GetTarget(j);
+        var rj = JunctionPoint.GetTarget(target);
+
         var h = SetFor(LinkType.H);
-        var th = JunctionPoint.GetTarget(h); 
+        var th = JunctionPoint.GetTarget(h);
+        var rh = JunctionPoint.GetTarget(target);
     }
 
     [TestMethod]

@@ -192,6 +192,16 @@ b";
         }
 
         [Fact]
+        public void ShortToLengthByParagraphTest()
+        {
+            var input = "abcd";
+            var expected = "ab";
+
+            var actual = SH.ShortToLengthByParagraph(expected, 2);
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
         public void ReplaceAllExceptPrefixed()
         {
             var input = @"System.Drawing.Image

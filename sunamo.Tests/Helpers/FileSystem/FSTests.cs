@@ -165,7 +165,17 @@ namespace sunamo.Tests.Helpers.FileSystem
             FS.DeleteSerieDirectoryOrCreateNew(folder);
         }
 
-        
+        [Fact]
+        public void ReplaceIncorrectCharactersFileTest()
+        {
+            var input = "abcde";
+            var exclued = "bd";
+            var expected = "a c e";
+
+            var actual = FS.ReplaceIncorrectCharactersFile(input, exclued, AllStrings.space);
+            Assert.Equal(expected, actual);
+        }
+
         [Fact]
         public void InsertBetweenFileNameAndExtensionTest()
         {
