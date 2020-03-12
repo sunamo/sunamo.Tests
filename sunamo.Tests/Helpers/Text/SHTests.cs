@@ -429,6 +429,45 @@ ef";
             Assert.True(SH.HasTextRightFormat(actual6, textFormat));
         }
 
+        /// <summary>
+        /// due to { on end, can be formatted with Format3 only
+        /// </summary>
+        const string formatTemplate = @"export default class {0} extends Component {";
+        const string formatExpected = @"export default class a extends Component {";
+
+        [Fact]
+        public void FormatTest()
+        {
+            // Cant be - { on end
+            //var actual = SH.Format(formatTemplate, AllStrings.lsf, AllStrings.rsf, TestData.a);
+            //Assert.Equal(formatExpected, actual);
+        }
+
+        [Fact]
+        public void Format2Test()
+        {
+            // Cant be - { on end
+            //var actual = SH.Format2(formatTemplate, TestData.a);
+            //Assert.Equal(formatExpected, actual);
+        }
+
+        [Fact]
+        public void Format3Test()
+        {
+            var actual = SH.Format3(formatTemplate, TestData.a);
+            Assert.Equal(formatExpected, actual);
+        }
+
+        [Fact]
+        public void Format4Test()
+        {
+            // Cant be - { on end
+            //var actual = SH.Format4(formatTemplate, TestData.a);
+            //Assert.Equal(formatExpected, actual);
+        }
+
+
+
         [Fact]
         public void RemoveAfterFirstTest()
         {

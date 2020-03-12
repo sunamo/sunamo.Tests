@@ -1,8 +1,7 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace AsyncExceptions.MSDN
 {
     /// <summary>
@@ -10,11 +9,12 @@ namespace AsyncExceptions.MSDN
     /// </summary>
     class AsyncTask
     {
+static Type type = typeof(AsyncTask);
         private async Task ThrowExceptionAsync()
         {
             await Task.Delay(1);
             // Stop working whole app
-            throw new InvalidOperationException();
+            ThrowExceptions.Custom(Exc.GetStackTrace(), type, Exc.CallingMethod(),InvalidOperationException();
         }
         public async void AsyncVoidExceptions_CannotBeCaughtByCatch()
         {

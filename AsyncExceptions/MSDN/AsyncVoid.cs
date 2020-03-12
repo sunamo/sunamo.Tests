@@ -1,8 +1,6 @@
-﻿
 using System;
 using System.Collections.Generic;
 using System.Text;
-
 namespace AsyncExceptions.MSDN
 {
     /// <summary>
@@ -10,9 +8,10 @@ namespace AsyncExceptions.MSDN
     /// </summary>
     class AsyncVoid
     {
+static Type type = typeof(AsyncVoid);
         private async void ThrowExceptionAsync()
         {
-            throw new InvalidOperationException();
+            ThrowExceptions.Custom(Exc.GetStackTrace(), type, Exc.CallingMethod(),InvalidOperationException();
         }
         public void AsyncVoidExceptions_CannotBeCaughtByCatch()
         {
