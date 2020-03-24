@@ -16,4 +16,15 @@ public class HtmlHelperTextTests
 
         Assert.Equal(excepted, input);
     }
+
+    [Fact]
+    public void RemoveAllNodesTest()
+    {
+        var input = "amp<sup id=\"cite_ref - semicolon_1 - 3\" class=\"reference\"><a href=\"#cite_note-semicolon-1\">[a]</a></sup>, AMP<sup id=\"cite_ref-semicolon_1-4\" class=\"reference\"><a href=\"#cite_note-semicolon-1\">[a]</a></sup>";
+        var excepted = "amp, AMP";
+
+        var actual = HtmlHelperText.RemoveAllNodes(input);
+
+        Assert.Equal(excepted, actual);
+    }
 }

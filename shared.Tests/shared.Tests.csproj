@@ -75,6 +75,10 @@
       <Project>{f6f92307-b0b3-4d6c-bd9c-8b5ff5560dcf}</Project>
       <Name>sunamo</Name>
     </ProjectReference>
+    <ProjectReference Include="..\TestValues\TestValues.csproj">
+      <Project>{5F7EB2B6-465B-4F1C-A164-2C933B25F7C1}</Project>
+      <Name>TestValues</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

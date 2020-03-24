@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using SunamoExceptions;
+
 namespace AsyncExceptions.MSDN
 {
     /// <summary>
@@ -14,7 +16,8 @@ static Type type = typeof(AsyncTask);
         {
             await Task.Delay(1);
             // Stop working whole app
-            ThrowExceptions.Custom(Exc.GetStackTrace(), type, Exc.CallingMethod(),InvalidOperationException();
+            ThrowExceptions.Custom(Exc.GetStackTrace(), type, Exc.CallingMethod(), "");
+            
         }
         public async void AsyncVoidExceptions_CannotBeCaughtByCatch()
         {

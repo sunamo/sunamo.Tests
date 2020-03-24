@@ -15,6 +15,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\sunamo\SunamoCode\SunamoCode.csproj" />
     <ProjectReference Include="..\..\sunamo\sunamo\sunamo.csproj" />
+    <ProjectReference Include="..\TestValues\TestValues.csproj" />
   </ItemGroup>
 
 </Project>

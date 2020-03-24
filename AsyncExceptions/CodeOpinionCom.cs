@@ -1,5 +1,8 @@
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
+using SunamoExceptions;
+
 namespace dcomartin.Demo.AsyncAwaitExceptions
 {
     // https://codeopinion.com/handling-async-await-exceptions/
@@ -21,6 +24,7 @@ static Type type = typeof(CodeOpinionCom);
     }
     public class AsyncDemo
     {
+        static Type type = typeof(AsyncDemo);
         public void MethodCalledWithoutAwait()
         {
             // Although this method throws an exception, because we are not awaiting it,
@@ -37,7 +41,7 @@ static Type type = typeof(CodeOpinionCom);
             // This method would do some async call (possible IO).
             // For the example, we will throw an exception to show as an example how\
             // the exception will be swollowed by not calling await. 
-            ThrowExceptions.Custom(Exc.GetStackTrace(), type, Exc.CallingMethod(),InvalidOperationException("");
+            ThrowExceptions.Custom(Exc.GetStackTrace(), type, Exc.CallingMethod(), "");
         }
     }
 }

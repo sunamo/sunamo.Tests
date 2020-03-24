@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
 using System.Threading.Tasks;
+using SunamoExceptions;
+
 namespace AsyncExceptions
 {
     class S041815236
@@ -44,9 +46,10 @@ static Type type = typeof(S041815236);
             var task = new Task<IEnumerable<string>>( () =>
             {
                 // 
-                //return null;
+                //
                 //Task.Delay(1500).ConfigureAwait(false);
-                ThrowExceptions.Custom(Exc.GetStackTrace(), type, Exc.CallingMethod(),AggregateException("This is a test");
+                ThrowExceptions.Custom(Exc.GetStackTrace(), type, Exc.CallingMethod(), "");
+                return null;
             });
             //WPF: If will be here, task never start(Start() method is below) and whole app closes
             //ThrowExceptions.Custom(Exc.GetStackTrace(), type, Exc.CallingMethod(),AggregateException("This is a test");
@@ -79,7 +82,8 @@ static Type type = typeof(S041815236);
         {
             var task = new Task<IEnumerable<string>>(() =>
             {
-                ThrowExceptions.Custom(Exc.GetStackTrace(), type, Exc.CallingMethod(),AggregateException("This is a test");
+                ThrowExceptions.Custom(Exc.GetStackTrace(), type, Exc.CallingMethod(), "");
+                return null;
             });
             task.Start();
             Task.Delay(1000);

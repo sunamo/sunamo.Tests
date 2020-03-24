@@ -18,6 +18,16 @@ namespace sunamo.Tests.Helpers.List
         }
 
         [Fact]
+        public void RemoveDuplicitiesListTest()
+        {
+            //var d = CA.RemoveDuplicitiesList<string>(TestData.listABCCC);
+            List<string> db2;
+            var d2 = CA.RemoveDuplicitiesList<string>(TestData.listABCCC, out db2);
+            
+            int i = 0;
+        }
+
+        [Fact]
         public void DoubleOrMoreMultiLinesToSingleTest()
         {
             var input = @"a

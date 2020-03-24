@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using sunamo.Values;
 using Xunit;
 
 namespace sunamo.Tests.Helpers.Text
@@ -434,6 +435,18 @@ ef";
         /// </summary>
         const string formatTemplate = @"export default class {0} extends Component {";
         const string formatExpected = @"export default class a extends Component {";
+        const string formatExpectedWildcard = @"export default class *.cs extends Component {";
+
+        [Fact]
+        public static void PairsBracketToCompleteBlockTest()
+        {
+            var input = @"const doFetchErrorStories = () => ({";
+
+            var excepted = input + @"
+});";
+            var actual = SH.PairsBracketToCompleteBlock(input);
+            Assert.Equal(excepted, actual);
+        }
 
         [Fact]
         public void FormatTest()
@@ -456,6 +469,11 @@ ef";
         {
             var actual = SH.Format3(formatTemplate, TestData.a);
             Assert.Equal(formatExpected, actual);
+
+            actual = SH.Format3(formatTemplate, TestData.wildcard);
+            Assert.Equal(formatExpectedWildcard, actual);
+
+
         }
 
         [Fact]

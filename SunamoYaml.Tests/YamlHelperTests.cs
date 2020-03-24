@@ -38,6 +38,7 @@ namespace SunamoYaml.Tests
             ThisApp.Name = "sunamo.Tests";
             ThisApp.Project = "SunamoYaml.Tests";
 
+            
             path = TestHelper.GetFileInProjectsFolder("test.yaml");
         }
 
