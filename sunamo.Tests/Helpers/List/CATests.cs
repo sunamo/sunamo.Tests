@@ -28,6 +28,24 @@ namespace sunamo.Tests.Helpers.List
         }
 
         [Fact]
+        public void CompareListSongFromInternetTest()
+        {
+
+            List<SongFromInternet> c1 = new List<SongFromInternet>();
+            c1.Add(new SongFromInternet("a-b"));
+            c1.Add(new SongFromInternet("c-d"));
+            c1.Add(new SongFromInternet("a-b [c]"));
+            //c1.Add(new SongFromInternet("a-b"));
+
+            List<SongFromInternet> c2 = new List<SongFromInternet>();
+            c2.Add(new SongFromInternet("a-b"));
+            c2.Add(new SongFromInternet("c-d"));
+
+
+            var both = CA.CompareList(c1, c2);
+        }
+
+        [Fact]
         public void DoubleOrMoreMultiLinesToSingleTest()
         {
             var input = @"a
