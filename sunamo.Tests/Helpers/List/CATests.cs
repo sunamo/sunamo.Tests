@@ -10,6 +10,8 @@ namespace sunamo.Tests.Helpers.List
         [Fact]
         public void WrapWithAndJoin()
         {
+            CA.GetDuplicities
+
             List<string> input = TestData.listAB2;
             List<string> expected = new List<string>(global::CA.ToEnumerable("'a' ", "'b' "));
             var result = global::CA.WrapWithAndJoin(input, "'", AllStrings.space);
