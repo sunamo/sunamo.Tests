@@ -10,7 +10,7 @@ namespace sunamo.Tests.Helpers.List
         [Fact]
         public void WrapWithAndJoin()
         {
-            CA.GetDuplicities
+            
 
             List<string> input = TestData.listAB2;
             List<string> expected = new List<string>(global::CA.ToEnumerable("'a' ", "'b' "));
@@ -19,15 +19,6 @@ namespace sunamo.Tests.Helpers.List
             Assert.Equal<string>(expected, result);
         }
 
-        [Fact]
-        public void RemoveDuplicitiesListTest()
-        {
-            //var d = CA.RemoveDuplicitiesList<string>(TestData.listABCCC);
-            List<string> db2;
-            var d2 = CA.RemoveDuplicitiesList<string>(TestData.listABCCC, out db2);
-            
-            int i = 0;
-        }
 
         [Fact]
         public void CompareListSongFromInternetTest()
@@ -48,10 +39,30 @@ namespace sunamo.Tests.Helpers.List
         }
 
         [Fact]
+        public void RemoveDuplicitiesListTest()
+        {
+            //cc
+            List<string> foundedDuplicites;
+            //c,b,a
+            var list = CA.RemoveDuplicitiesList(TestData.listABCCC, out foundedDuplicites);
+            int i = 0;
+        }
+
+        [Fact]
+        public void GetDuplicitiesTest()
+        {
+            
+            // a,b,c
+            List<string> alreadyProcessed;
+            // list = c
+            var list = CA.GetDuplicities(TestData.listABCCC, out alreadyProcessed);
+            int i = 0;
+        }
+
+        [Fact]
         public void DoubleOrMoreMultiLinesToSingleTest()
         {
             var input = @"a
-
 
 b";
             var excepted = @"a
