@@ -108,6 +108,13 @@ b";
         }
 
         [Fact]
+        public void FindOutLongestItemTest()
+        {
+            var actual = CA.FindOutLongestItem(TestData.notSortedBySize);
+            Assert.Equal(TestData.abc, actual);
+        }
+
+        [Fact]
         public void ReturnWhichContainsTest()
         {
             var input = @"a b d

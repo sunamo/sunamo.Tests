@@ -7,10 +7,13 @@ public class TestData
 {
     public const string a = "a";
     public const string ab = "ab";
+    public const string abc = "abc";
     public const string b = "b";
     public const string c = "c";
     public const string a2 = "a2";
     public const string wildcard = "*.cs";
+
+    public static readonly List<string> notSortedBySize = CA.ToList<string>(ab, abc, a);
 
     public static readonly List<string> listAB1;
     public static readonly List<string> listAB2;

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using sunamo.Values;
@@ -27,12 +27,12 @@ namespace sunamo.Tests.Helpers.Text
             var input = @"Nechť funkce  f(x)} je spojitá na kompaktním (tj. omezeném a uzavřeném) intervalu  \langle a,b\rangle } a nech f(a).f(b) < 0.Pak existuje alespoň jeden bod  c\in (a, b)} takový, že f(c)=0}";
 
             var excepted = @"Nechť funkce  f(x) je spojitá na kompaktním (tj. omezeném a uzavřeném) intervalu  \langle a,b\rangle  a nech f(a).f(b) < 0.Pak existuje alespoň jeden bod  c\in (a, b) takový, že f(c)=0";
-            var actual = SH.RemoveEndingPairCharsWhenDontHaveStarting(input, AllStrings.cbl, AllStrings.cbr);
+            var actual = SH.RemoveEndingPairCharsWhenDontHaveStarting(input, AllStrings.lcub, AllStrings.rcub);
 
             input = @"c\in {(a, b)}} takový, že f(c)=0";
             excepted = @"c\in {(a, b)} takový, že f(c)=0";
 
-            actual = SH.RemoveEndingPairCharsWhenDontHaveStarting(input, AllStrings.cbl, AllStrings.cbr);
+            actual = SH.RemoveEndingPairCharsWhenDontHaveStarting(input, AllStrings.lcub, AllStrings.rcub);
 
             Assert.Equal(actual, excepted);
         }
@@ -97,8 +97,8 @@ b";
         public void GetPairsStartAndEnd()
         {
             var input = "{ } } {";
-            string cbl = AllStrings.cbl;
-            string cbr = AllStrings.cbr;
+            string cbl = AllStrings.lcub;
+            string cbr = AllStrings.rcub;
 
             var expected = new List<Tuple<int, int>>();
             expected.Add(new Tuple<int, int>(0, 2));
@@ -126,8 +126,8 @@ b";
         public void GetPairsStartAndEnd_2()
         {
             var input = "{ { } { } }";
-            string cbl = AllStrings.cbl;
-            string cbr = AllStrings.cbr;
+            string cbl = AllStrings.lcub;
+            string cbr = AllStrings.rcub;
 
             var expected = new List<Tuple<int, int>>();
             expected.Add(new Tuple<int, int>(2, 4));
@@ -159,8 +159,8 @@ b";
         public void GetPairsStartAndEnd_3()
         {
             var input = "{ { } } } {";
-            string cbl = AllStrings.cbl;
-            string cbr = AllStrings.cbr;
+            string cbl = AllStrings.lcub;
+            string cbr = AllStrings.rcub;
 
             var expected = new List<Tuple<int, int>>();
             expected.Add(new Tuple<int, int>(0, 6));
@@ -452,7 +452,7 @@ ef";
         public void FormatTest()
         {
             // Cant be - { on end
-            //var actual = SH.Format(formatTemplate, AllStrings.lsf, AllStrings.rsf, TestData.a);
+            //var actual = SH.Format(formatTemplate, AllStrings.rsqb, AllStrings.lsqb, TestData.a);
             //Assert.Equal(formatExpected, actual);
         }
 
