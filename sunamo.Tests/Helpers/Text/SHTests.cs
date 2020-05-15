@@ -452,7 +452,7 @@ ef";
         public void FormatTest()
         {
             // Cant be - { on end
-            //var actual = SH.Format(formatTemplate, AllStrings.rsqb, AllStrings.lsqb, TestData.a);
+            //var actual = SH.Format(formatTemplate, AllStrings.lsqb, AllStrings.rsqb, TestData.a);
             //Assert.Equal(formatExpected, actual);
         }
 

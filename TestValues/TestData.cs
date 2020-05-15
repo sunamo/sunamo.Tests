@@ -25,6 +25,8 @@ public class TestData
     public static readonly List<string> listC;
     public static readonly List<int> list04;
     public static readonly List<int> list59;
+    public static readonly string flatJson = "{\"IdUser\":1,\"Sc\":\"au1skm2qhjbwhmu4z0qwcpiv\"}";
+    public static readonly string flatJsonSc = "au1skm2qhjbwhmu4z0qwcpiv";
 
     static TestData()
     {
