@@ -14,6 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\sunamoWithoutDep\SunamoHttp\SunamoHttp.csproj" />
     <ProjectReference Include="..\..\sunamo\SunamoHttp\SunamoHttp.csproj" />
   </ItemGroup>
 
