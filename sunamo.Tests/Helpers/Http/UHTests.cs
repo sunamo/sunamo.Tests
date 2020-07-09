@@ -39,6 +39,20 @@ public class UHTests
 
     }
 
+    [Fact]
+    public void UrlEncodeTest()
+    {
+        /*
+Pokud správně užívám UrlEncode/Decode ani plus ve vstupním řetězci nemůže způsobit žádné škody
+
+         */
+
+        var input = @"a%+ b";
+        var encoded = UH.UrlEncode(input);
+        var decoded = UH.UrlDecode(encoded);
+        Assert.Equal(input, decoded);
+    }
+
     /// <summary>
     /// https://lyrics.sunamo.cz/Me/Login.aspx?ReturnUrl=https://lyrics.sunamo.cz/Artist/walk-the-moon =>  https://lyrics.sunamo.cz/Me/
     /// </summary>

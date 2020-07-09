@@ -133,6 +133,18 @@ namespace sunamo.Tests.Helpers.FileSystem
             Assert.Equal(1, serie);
         }
 
+        [Fact]
+        public void MascFromExtensionTest()
+        {
+            Func<string, string> m = FS.MascFromExtension;
+            var a = m.Invoke("cs");
+            var a1 = m(".cs");
+
+            var expected = "*.cs";
+            Assert.Equal(expected, a);
+            Assert.Equal(expected, a1);
+        }
+
         //
         [Fact]
         public void GetNameWithoutSeries7()
@@ -148,6 +160,18 @@ namespace sunamo.Tests.Helpers.FileSystem
             Assert.Equal(8, serie);
         }
         #endregion
+
+        [Fact]
+        public void PathSpecialAndLevelTest()
+        {
+            var input = @"d:\pa\_toolsSystem\cmder\vendor\clink-completions\modules\";
+            var basePath = @"d:\pa\";
+            var d = FS.PathSpecialAndLevel(basePath, input, 1);
+            var expected = @"d:\pa\_toolsSystem\cmder";
+            Assert.Equal(expected, d);
+
+            
+        }
 
         [Fact]
         public void AllExtensionsInFolders()

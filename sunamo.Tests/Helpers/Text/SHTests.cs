@@ -21,6 +21,8 @@ namespace sunamo.Tests.Helpers.Text
             Assert.Equal(expected, actual);
         }
 
+
+
         [Fact]
         public void RemoveEndingPairCharsWhenDontHaveStarting()
         {
@@ -310,12 +312,22 @@ Tento paragraph má méně než 250 znaků. Tento paragraph má méně než 250 
         }
 
         [Fact]
+        public void TrimStartAndEndTest()
+        {
+            var input = ".He!*";
+            var expected = "He";
+
+            var actual = SH.TrimStartAndEnd(input, char.IsLetterOrDigit, char.IsLetterOrDigit);
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
         public void SplitAndKeepDelimiters()
         {
             var input = HtmlHelper.StripAllTags(splitAndKeepInput);
             var actual = SH.SplitAndKeepDelimiters(splitAndKeepInput, CA.ToListString(AllStrings.gt, AllStrings.lt));
 
-            CA.ChangeContent(actual, d =>
+            CA.ChangeContent(null,actual, d =>
             {
                 if (d.EndsWith(AllChars.gt))
                 {
