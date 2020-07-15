@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Text;
 using Xunit;
+using static CsFileFilter;
 
 public class CsFileFilterTests
 {
@@ -10,7 +11,10 @@ public class CsFileFilterTests
 
     List<FieldInfo> GetConsts()
     {
-        return RH.GetConsts(typeof(CsFileFilter), new GetMemberArgs { onlyPublic = false });
+        List<FieldInfo> fi = new List<FieldInfo>();
+        fi.AddRange( RH.GetConsts(typeof(FiltersNotTranslateAble), new GetMemberArgs { onlyPublic = false }));
+        fi.AddRange(RH.GetConsts(typeof(Contains), new GetMemberArgs { onlyPublic = false }));
+        return fi;
     }
 
     [Fact]
@@ -21,7 +25,7 @@ public class CsFileFilterTests
         {
             if (item.Name.EndsWith("Pp"))
             {
-                var path = FS.Combine(p, "+" + item.GetValue(null));
+                var path = FS.Combine(p, "auto", "+" + item.GetValue(null));
                 if (!FS.ExistsFile(path, false))
                 {
                     TF.WriteAllText(path, "a");
@@ -31,18 +35,20 @@ public class CsFileFilterTests
     }
 
     [Fact]
-    public void GetFIlesFiltered()
+    public void GetFilesFiltered()
     {
+        GenerateFilesCsFileFilterTests();
+
         CsFileFilter cs = new CsFileFilter();
         var fi = GetConsts();
         var fic = fi.Count;
 
-        cs.Set(false, false, false, false, false, false, false, false, false, false);
+        cs.Set(new CsFileFilter.EndArgs( false, false, false, false, false, false, false, false, false, false), new CsFileFilter.ContainsArgs(false, false, false));
 
         var f = cs.GetFilesFiltered(p, "*.cs", System.IO.SearchOption.TopDirectoryOnly);
         Assert.Empty(f);
 
-        cs.Set(true, true, true, true, true, true, true, true, true, true);
+        cs.Set(new CsFileFilter.EndArgs( true, true, true, true, true, true, true, true, true, true), new CsFileFilter.ContainsArgs(true, true, true));
 
         var f2 = cs.GetFilesFiltered(p, "*.cs", System.IO.SearchOption.TopDirectoryOnly);
         Assert.Equal(f2.Count, f2.Count);

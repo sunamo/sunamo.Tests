@@ -10,6 +10,7 @@ public class TestData
     public const string abc = "abc";
     public const string b = "b";
     public const string c = "c";
+    public const string d = "d";
     public const string a2 = "a2";
     public const string wildcard = "*.cs";
 
@@ -18,6 +19,7 @@ public class TestData
     public static readonly List<string> listAB1;
     public static readonly List<string> listAB2;
     public static readonly List<string> listABC;
+    public static readonly List<string> listABCD;
     public static readonly List<string> listABCCC;
     public static readonly List<string> listAC;
     public static readonly List<string> listA;
@@ -33,6 +35,7 @@ public class TestData
         listAB1 = new List<string>(CA.ToEnumerable(a, b));
         listAB2 = new List<string>(CA.ToEnumerable(a, b));
         listABC = new List<string>(CA.ToEnumerable(a, b, c));
+        listABCD = new List<string>(CA.ToEnumerable(a, b, c, d));
         listABCCC = new List<string>(CA.ToEnumerable(a, b, c,c,c));
         listAC = new List<string>(CA.ToEnumerable(a, c));
         listA = new List<string>(CA.ToEnumerable(a));
