@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 using sunamo.Values;
 using Xunit;
@@ -225,6 +226,28 @@ HtmlImage";
 
             var actual = SH.ListToString(input, AllStrings.comma);
             Assert.Equal(excepted, actual);
+        }
+
+        [Fact]
+        public void TabOrSpaceNextToTest()
+        {
+            var b = "b nopCommerce";
+            var c = "SimplCommerce";
+            var d = "SmartStoreNET";
+            var e = "grandnode";
+
+            var a = CA.ToList<string>(b, c, d, e);
+
+            for (int i = 0; i < a.Count; i++)
+            {
+                Debug.WriteLine(a[i].Length);
+            }
+
+            var input = SH.Join("\t", a);
+            //input = "a\tb\tc";
+            var r = SH.TabOrSpaceNextTo(input);
+            var vr = SH.SplitByIndexes(input, r);
+            int i2 = 0;
         }
 
         [Fact]
