@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="ApplicationDataContainerTests.cs" />
     <Compile Include="Helpers\Content\BitmapHelperTests.cs" />
+    <Compile Include="Helpers\Content\Resource\BitmapImageHelperTests.cs" />
     <Compile Include="Helpers\Controls\TextBoxHelpersTests.cs" />
     <Compile Include="Helpers\SpecialFoldersHelperTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
