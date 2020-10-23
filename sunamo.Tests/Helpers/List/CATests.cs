@@ -86,7 +86,7 @@ b";
         {
             var input = CA.ToList<int>(5, 1, 2, 3, 4, 1, 2, 3, 6);
             var toFind = CA.ToList<int>(1, 2, 3);
-            var excepted = CA.ToList<FromTo>(new FromTo(1, 3, false), new FromTo(5,7, false));
+            var excepted = CA.ToList<FromTo>(new FromTo(1, 3, FromToUse.None), new FromTo(5,7, FromToUse.None));
 
             var actual = CA.EqualRanges<int>(input, toFind);
             Assert.Equal<FromTo>(excepted, actual);
