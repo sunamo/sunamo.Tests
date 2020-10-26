@@ -16,6 +16,9 @@ public class TestData
 
     public static readonly List<string> notSortedBySize = CA.ToList<string>(ab, abc, a);
 
+    /// <summary>
+    /// a,b
+    /// </summary>
     public static readonly List<string> listAB1;
     public static readonly List<string> listAB2;
     public static readonly List<string> listABC;

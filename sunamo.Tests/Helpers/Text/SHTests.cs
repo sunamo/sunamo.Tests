@@ -445,7 +445,7 @@ ef";
         [Fact]
         public void HasTextRightFormatTest()
         {
-            FromTo requiredLength = new FromTo(1,2);
+            FromTo requiredLength = new FromTo(1,1);
             var dash = CharFormatData.Get(null, new FromTo(1,1), AllChars.dash);
             var onlyNumbers = CharFormatData.GetOnlyNumbers(requiredLength);
             TextFormatData textFormat = new TextFormatData(false, -1, onlyNumbers, dash, onlyNumbers, dash, onlyNumbers, dash, onlyNumbers);
@@ -462,7 +462,7 @@ ef";
             Assert.False(SH.HasTextRightFormat(actual3, textFormat));
             Assert.False(SH.HasTextRightFormat(actual4, textFormat));
             Assert.False(SH.HasTextRightFormat(actual5, textFormat));
-            Assert.True(SH.HasTextRightFormat(actual6, textFormat));
+            Assert.False(SH.HasTextRightFormat(actual6, textFormat));
         }
 
         /// <summary>
