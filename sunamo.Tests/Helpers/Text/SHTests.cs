@@ -13,6 +13,28 @@ namespace sunamo.Tests.Helpers.Text
         readonly List<string> expected = CA.ToListString("Shared settings", "aplikace");
 
         [Fact]
+        public void ReplaceAllDoubleSpaceToSingleTest()
+        {
+            var input = "a   b  c d";
+            var expected = "a b c d";
+
+            var actual = SH.ReplaceAllDoubleSpaceToSingle(input);
+
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void ReplaceAllDoubleSpaceToSingle2Test()
+        {
+            var input = "a   b  c d";
+            var expected = "a b c d";
+
+            var actual = SH.ReplaceAllDoubleSpaceToSingle2(input);
+
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
         public void RemoveAfterLastTests()
         {
             var input = "10 - cc - 24 Hours";
@@ -388,6 +410,16 @@ using Xunit; -> using Microsoft.VisualStudio.TestTools.UnitTesting;";
             var expected = "b";
 
             var actual = SH.GetTextBetweenTwoChars(input, input.IndexOf('{'), input.IndexOf('}'));
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void GetTextBetweenTest()
+        {
+            var input = "n.cojetipotom\", \"name\": \"Jan Cojetipotom\" } },";
+            var expected = "Jan Cojetipotom";
+
+            var actual = SH.GetTextBetween(input, "\"name\": \"", "\"");
             Assert.Equal(expected, actual);
         }
 

@@ -18,7 +18,7 @@ public class BitmapImageHelperTests
     [TestMethod]
     public void Bitmap2BitmapImageTest()
     {
-        var bitmap = new Bitmap(GetFile("17"));
+        var bitmap =  Image.FromFile(GetFile("17"));
         bitmap = BitmapHelper.ChangeColor2(bitmap, System.Drawing.Color.Black, ColorH.RandomColor(false).ToSystemDrawing());
 
         BitmapImage biVsLogo = BitmapImageHelper.Bitmap2BitmapImage(bitmap);
