@@ -1,4 +1,5 @@
-﻿using sunamo.Helpers;
+﻿using sunamo.Enums;
+using sunamo.Helpers;
 using sunamo.Values;
 using System;
 using System.Collections.Generic;
@@ -170,7 +171,26 @@ namespace sunamo.Tests.Helpers.FileSystem
             var expected = @"d:\pa\_toolsSystem\cmder";
             Assert.Equal(expected, d);
 
-            
+
+        }
+
+        [Fact]
+        public void GetSizeInAutoStringTest()
+        {
+            long o = 1024;
+
+            long kb = o;
+            long mb = kb * o;
+            long gb = mb * o;
+
+            var b = ComputerSizeUnits.B;
+
+            var kbs = FS.GetSizeInAutoString(kb, b);
+            var mbs = FS.GetSizeInAutoString(mb, b);
+            var gbs = FS.GetSizeInAutoString(gb, b);
+            var gbsMinusOne = FS.GetSizeInAutoString(gb-1, b);
+
+            int i = 0;
         }
 
         [Fact]
