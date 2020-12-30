@@ -170,8 +170,6 @@ namespace sunamo.Tests.Helpers.FileSystem
             var d = FS.PathSpecialAndLevel(basePath, input, 1);
             var expected = @"d:\pa\_toolsSystem\cmder";
             Assert.Equal(expected, d);
-
-
         }
 
         [Fact]
