@@ -8,12 +8,15 @@ public class FormatOfStringTests
     const string albumsListTemplate = "https://www.facebook.com/|/photos_albums";
     const string albumTemplate = "https://www.facebook.com/media/set/?set=a.|&type=3";
 
+    
+
     [Fact]
     public void GetParsedParts2Test()
     {
         var p = FormatOfString.GetParsedParts("a_backup-b", "|_backup-|");
         Assert.Equal<string>(TestData.listAB1, p);
     }
+
     //
     [Fact]
     public void GetParsedPartsTest()

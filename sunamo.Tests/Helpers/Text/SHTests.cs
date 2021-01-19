@@ -13,6 +13,12 @@ namespace sunamo.Tests.Helpers.Text
         readonly List<string> expected = CA.ToListString("Shared settings", "aplikace");
 
         [Fact]
+        public void AllHaveRightFormatTest()
+        {
+            //SH.AllHaveRightFormat(true, )
+        }
+
+        [Fact]
         public void ReplaceAllDoubleSpaceToSingleTest()
         {
             var input = "a   b  c d";
@@ -447,9 +453,6 @@ using Xunit; -> using Microsoft.VisualStudio.TestTools.UnitTesting;";
         public void CharsBeforeAndAfterTest()
         {
             var s = "12\"45" + Environment.NewLine + "12\"45";
-
-            
-            
             //var sb = SH.CharsBeforeAndAfter(s, '\"', 2, 2);
 
             //ClipboardHelper.SetLines(sb);
