@@ -1,4 +1,5 @@
-﻿using System;
+﻿using sunamo.Helpers.Number;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,38 +9,53 @@ namespace cmd.Tests
 {
     class Program
     {
+        static PercentCalculator pc = null;
+        static List<int> allSongs = null;
+
         static void Main(string[] args)
         {
             CLTests cl = new CLTests();
 
-            var els = "Extra really long string";
+            ProgressBar.OverallSongs += ProgressBar_OverallSongs;
+            ProgressBar.AnotherSong += ProgressBar_AnotherSong;
 
-            var l1 = CA.ToList<string>("A", els, "", "");
-            var l2 = CA.ToList<string>("B", "", els, "");
+            Action action = GetAllSongsThread;
 
-            List<List<string>> ls = new List<List<string>>();
-            ls.Add(l1);
-            ls.Add(l2);
+            #region #1
+            //Thread thread = new Thread(new ThreadStart(GetAllSongsThread));
 
-            var headers = TestData.listABCD;
+            //thread.Start();
+            //thread.Join(); 
+            #endregion
 
-            var list = new List<string>();
-            list.AddRange(l1);
-            list.AddRange(l2);
+            #region #2
+            IAsyncResult ar = action.BeginInvoke(null, null);
+            //while (!ar.IsCompleted)
+            //{
+            //    Thread.Sleep(200);
+            //}
+            ar.AsyncWaitHandle.WaitOne();
+            #endregion
 
-            var td = CA.OneDimensionArrayToTwoDirection(list.ToArray(), 4);
-
-            //string[,] t = new string[]
-
-            //cl.CmdTableTest();
-            //CmdTableTests.CmdTable2Tests();
-
-            var s = TableParser.ToStringTable(td);
-            Console.WriteLine(s);
-
+            Console.WriteLine("Finished");
             Console.ReadLine();
         }
 
+        static void GetAllSongsThread()
+        {
+            allSongs = ProgressBar.GetAllSongFromInternet();
+        }
 
+        private static void ProgressBar_AnotherSong()
+        {
+            pc.AddOne();
+            CL.WriteProgressBar((int)pc.last, new WriteProgressBarArgs( true, pc.last, pc._overallSum));
+        }
+
+        private static void ProgressBar_OverallSongs(int obj)
+        {
+            pc = new PercentCalculator(obj);
+            CL.WriteProgressBar(0);
+        }
     }
 }

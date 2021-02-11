@@ -554,7 +554,14 @@ ef";
             //Assert.Equal(formatExpected, actual);
         }
 
+        [Fact]
+        public void IsWildcardTest()
+        {
+            var input = "sunamo.web";
+            var actual = SH.MatchWildcard(input, "*.web");
 
+            Assert.True(actual);
+        }
 
         [Fact]
         public void RemoveAfterFirstTest()

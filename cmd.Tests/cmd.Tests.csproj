@@ -49,10 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HelperClasses\ProgressBar.cs" />
     <Compile Include="Helpers\CLTests.cs" />
     <Compile Include="Helpers\CmdTableTests.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tables\TablesParserTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
