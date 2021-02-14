@@ -4,18 +4,21 @@ using System.Collections.Generic;
 using System.Text;
 using System.Xml;
 
-public class XmlHelperTests
+namespace shared.Tests
 {
-    [TestMethod]
-    public void ParseAndRemoveNamespacesTest()
+    public class XmlHelperTests
     {
-        var file = @"D:\_Test\sunamo\SunamoCode\ParseAndRemoveNamespacesTest\a.xlf";
-        var c = TF.ReadFile(file);
-        XmlNamespacesHolder h = new XmlNamespacesHolder();
+        [TestMethod]
+        public void ParseAndRemoveNamespacesTest()
+        {
+            var file = @"D:\_Test\sunamo\SunamoCode\ParseAndRemoveNamespacesTest\a.xlf";
+            var c = TF.ReadFile(file);
+            XmlNamespacesHolder h = new XmlNamespacesHolder();
 
-        
-        XmlDocument x = null;
 
-        x = h.ParseAndRemoveNamespacesXmlDocument(c, x.NameTable);
+            XmlDocument x = null;
+
+            x = h.ParseAndRemoveNamespacesXmlDocument(c, x.NameTable);
+        }
     }
 }
