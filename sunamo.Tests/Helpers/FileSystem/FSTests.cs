@@ -245,6 +245,17 @@ namespace sunamo.Tests.Helpers.FileSystem
         }
 
         [Fact]
+        public void GetFilesEveryFolder()
+        {
+            var path = @"d:\_Test\EveryLine\EveryLine\SearchCodeElementsUC\";
+
+            var mask = "*.csproj,*.cs";
+
+            var d = FS.GetFilesEveryFolder(path, mask, SearchOption.AllDirectories);
+            int i = 0;
+        }
+
+        [Fact]
         public void DeleteSerieDirectoryOrCreateNewTest()
         {
             string folder = @"d:\_Test\sunamo\Helpers\FileSystem\DeleteSerieDirectoryOrCreateNew\";

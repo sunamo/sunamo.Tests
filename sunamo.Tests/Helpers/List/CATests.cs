@@ -8,10 +8,16 @@ namespace sunamo.Tests.Helpers.List
     public class CATests
     {
         [Fact]
+        public void OneElementCollectionToMultiTest()
+        {
+            var arr = CA.ToArrayT<object>("|");
+            var d = CA.OneElementCollectionToMulti(arr);
+            int i = 0;
+        }
+
+        [Fact]
         public void WrapWithAndJoin()
         {
-            
-
             List<string> input = TestData.listAB2;
             List<string> expected = new List<string>(global::CA.ToEnumerable("'a' ", "'b' "));
             var result = global::CA.WrapWithAndJoin(input, "'", AllStrings.space);

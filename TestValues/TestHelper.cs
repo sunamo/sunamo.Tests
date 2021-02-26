@@ -52,7 +52,7 @@ public class TestHelper
             folder += modeOfFeature;
         }
 
-        FS.GetFiles(folder, deleteRecursively).ToList().ForEach(d => FS.DeleteFileIfExists(d));
+        FS.GetFiles(folder, deleteRecursively).ToList().ForEach(d => FS.TryDeleteFile(d));
         if (deleteRecursively)
         {
             FS.CopyAllFilesRecursively(folderFrom, folder, FileMoveCollisionOption.Overwrite);
