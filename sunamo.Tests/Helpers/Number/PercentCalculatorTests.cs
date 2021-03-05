@@ -17,4 +17,26 @@ public class PercentCalculatorTests
 
 
     }
+
+    [Fact]
+    public void PercentForTest()
+    {
+        PercentCalculator pc = new PercentCalculator(100);
+
+        var i = pc.PercentFor(10, false);
+        var i2 = pc.PercentFor(10, true);
+
+        var abc = 0;
+    }
+
+    [Fact]
+    public void PercentFor2Test()
+    {
+        PercentCalculator pc = new PercentCalculator(1000);
+
+        var i = pc.PercentFor(10, false);
+        var i2 = pc.PercentFor(10, true);
+
+        var abc = 0;
+    }
 }

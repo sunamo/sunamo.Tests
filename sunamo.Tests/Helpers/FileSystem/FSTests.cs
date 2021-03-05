@@ -247,12 +247,32 @@ namespace sunamo.Tests.Helpers.FileSystem
         [Fact]
         public void GetFilesEveryFolder()
         {
+            TestHelper.Init();
+
             var path = @"d:\_Test\EveryLine\EveryLine\SearchCodeElementsUC\";
 
             var mask = "*.csproj,*.cs";
 
             var d = FS.GetFilesEveryFolder(path, mask, SearchOption.AllDirectories);
             int i = 0;
+        }
+
+        [Fact]
+        public void GetFilesTest()
+        {
+            TestHelper.Init();
+
+            var files = FS.GetFiles(@"d:\_Test\sunamo\sunamo\Helpers\FileSystem\FS\GetFiles\", "*", true);
+            var f = 0;
+        }
+
+        [Fact]
+        public async void GetFilesAsyncTest()
+        {
+            TestHelper.Init();
+
+            var files = await FS.GetFilesAsync(@"d:\_Test\sunamo\sunamo\Helpers\FileSystem\FS\GetFiles\", "*", SearchOption.AllDirectories);
+            var f = 0;
         }
 
         [Fact]

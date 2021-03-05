@@ -14,6 +14,15 @@ using sunamo.Essential;
 /// </summary>
 public class TestHelper
 {
+    public static void Init()
+    {
+        ThisApp.Name = "sunamo";
+        ThisApp.Project = "sunamo";
+
+        //AppData.ci.GetFolderWithAppsFiles();
+        AppData.ci.GetRootFolder();
+    }
+
     public static string DefaultFolderPath()
     {
         string appName = ThisApp.Name;

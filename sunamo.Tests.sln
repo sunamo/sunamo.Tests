@@ -112,6 +112,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "apps.interop.Tests", "apps.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Enigma", "..\Credentials\Enigma\Enigma.csproj", "{5764811C-9A01-4665-95A1-95D6DEDFAE83}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cmd.Args.Tests", "cmd.Args.Tests\cmd.Args.Tests.csproj", "{48EB1AFC-64C3-4CA4-A947-5206EC4A7C8D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -782,6 +784,18 @@ Global
 		{5764811C-9A01-4665-95A1-95D6DEDFAE83}.Release|x64.Build.0 = Release|Any CPU
 		{5764811C-9A01-4665-95A1-95D6DEDFAE83}.Release|x86.ActiveCfg = Release|Any CPU
 		{5764811C-9A01-4665-95A1-95D6DEDFAE83}.Release|x86.Build.0 = Release|Any CPU
+		{48EB1AFC-64C3-4CA4-A947-5206EC4A7C8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48EB1AFC-64C3-4CA4-A947-5206EC4A7C8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48EB1AFC-64C3-4CA4-A947-5206EC4A7C8D}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{48EB1AFC-64C3-4CA4-A947-5206EC4A7C8D}.Debug|x64.Build.0 = Debug|Any CPU
+		{48EB1AFC-64C3-4CA4-A947-5206EC4A7C8D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{48EB1AFC-64C3-4CA4-A947-5206EC4A7C8D}.Debug|x86.Build.0 = Debug|Any CPU
+		{48EB1AFC-64C3-4CA4-A947-5206EC4A7C8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48EB1AFC-64C3-4CA4-A947-5206EC4A7C8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48EB1AFC-64C3-4CA4-A947-5206EC4A7C8D}.Release|x64.ActiveCfg = Release|Any CPU
+		{48EB1AFC-64C3-4CA4-A947-5206EC4A7C8D}.Release|x64.Build.0 = Release|Any CPU
+		{48EB1AFC-64C3-4CA4-A947-5206EC4A7C8D}.Release|x86.ActiveCfg = Release|Any CPU
+		{48EB1AFC-64C3-4CA4-A947-5206EC4A7C8D}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
