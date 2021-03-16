@@ -7,12 +7,12 @@ using Xunit;
 public class PercentCalculatorTests
 {
     [Fact]
-    public void a()
+    public void AddOneTest()
     {
         PercentCalculator pc = new PercentCalculator(100);
         for (int i = 0; i < 100; i++)
         {
-            pc.AddOne();
+            //pc.AddOne();
         }
 
 

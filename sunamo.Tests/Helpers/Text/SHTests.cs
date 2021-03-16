@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
@@ -401,7 +401,7 @@ Assert.AreEqual<*> -> CollectionAssert.AreEqual
 using Xunit; -> using Microsoft.VisualStudio.TestTools.UnitTesting;";
             testString = "Assert.AreEqual<*> -> CollectionAssert.AreEqual";
 
-            string file = @"d:\Documents\Visual Studio 2017\Projects\sunamo.Tests\sunamo.Tests.Data\ReplaceManyFromString\In_ReplaceManyFromString.cs";
+            string file = @"e:\Documents\Visual Studio 2017\Projects\sunamo.Tests\sunamo.Tests.Data\ReplaceManyFromString\In_ReplaceManyFromString.cs";
             var s = TF.ReadFile(file);
 
             s = SH.ReplaceManyFromString(s, testString, "->");

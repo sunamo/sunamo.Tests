@@ -11,6 +11,18 @@ namespace sunamo.Tests.Helpers.FileSystem
 {
     public class FSTests
     {
+        [Fact]
+        public void RenameNumberedSerieFilesTest()
+        {
+            //FS.RenameNumberedSerieFiles;
+        }
+
+        [Fact]
+        public void OrderByNaturalNumberSerieTest()
+        {
+
+        }
+
         #region ctor
         public FSTests()
         {
@@ -120,6 +132,21 @@ namespace sunamo.Tests.Helpers.FileSystem
             Assert.Equal(1, serie);
         }
 
+        //
+        [Fact]
+        public void GetNameWithoutSeries7()
+        {
+            bool hasSerie;
+            int serie;
+            string input = @"d:\a\b\MainPage.xaml_008.cs";
+            string result = "";
+            string expected = @"MainPage.xaml.cs";
+            result = FS.GetNameWithoutSeries(input, false, out hasSerie, Enums.SerieStyle.Underscore, out serie);
+            Assert.Equal(expected, result);
+            Assert.True(hasSerie);
+            Assert.Equal(8, serie);
+        }
+
         [Fact]
         public void GetNameWithoutSeries6()
         {
@@ -127,7 +154,8 @@ namespace sunamo.Tests.Helpers.FileSystem
             int serie;
             string input = @"d:\a\b\abc_001_01.txt.txt";
             string result = "";
-            string expected = @"abc.txt.txt";
+            // just one extension
+            string expected = @"abc.txt";
             result = FS.GetNameWithoutSeries(input, false, out hasSerie, Enums.SerieStyle.Underscore, out serie);
             Assert.Equal(expected, result);
             Assert.True(hasSerie);
@@ -146,28 +174,14 @@ namespace sunamo.Tests.Helpers.FileSystem
             Assert.Equal(expected, a1);
         }
 
-        //
-        [Fact]
-        public void GetNameWithoutSeries7()
-        {
-            bool hasSerie;
-            int serie;
-            string input = @"d:\a\b\MainPage.xaml_008.cs";
-            string result = "";
-            string expected = @"MainPage.xaml.cs";
-            result = FS.GetNameWithoutSeries(input, false, out hasSerie, Enums.SerieStyle.Underscore, out serie);
-            Assert.Equal(expected, result);
-            Assert.True(hasSerie);
-            Assert.Equal(8, serie);
-        }
-        #endregion
 
-        #region Unit tests - FS.GetRelativePath must working exaxtly the same as Path.GetRelativePath
+        #endregion
+  #region Unit tests - FS.GetRelativePath must working exaxtly the same as Path.GetRelativePath
         [Fact]
         public void GetRelativePathTest()
         {
-            var a1 = @"d:\Documents\Visual Studio 2017\Projects\EverythingClient\";
-            var a2 = @"d:\Documents\Visual Studio 2017\Projects\sunamo\sunamo\sunamo.csproj";
+            var a1 = @"e:\Documents\Visual Studio 2017\Projects\EverythingClient\";
+            var a2 = @"e:\Documents\Visual Studio 2017\Projects\sunamo\sunamo\sunamo.csproj";
 
             var expected = @"..\sunamo\sunamo\sunamo.csproj";
 
@@ -187,8 +201,8 @@ namespace sunamo.Tests.Helpers.FileSystem
         [Fact]
         public void GetRelativePathTest2()
         {
-            var a1 = @"d:\Documents\Visual Studio 2017\Projects\EverythingClient";
-            var a2 = @"d:\Documents\Visual Studio 2017\Projects\sunamo\sunamo\sunamo.csproj";
+            var a1 = @"e:\Documents\Visual Studio 2017\Projects\EverythingClient";
+            var a2 = @"e:\Documents\Visual Studio 2017\Projects\sunamo\sunamo\sunamo.csproj";
 
             var expected = @"..\sunamo\sunamo\sunamo.csproj";
 

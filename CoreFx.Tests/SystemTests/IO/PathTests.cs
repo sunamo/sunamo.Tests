@@ -10,8 +10,8 @@ public class PathTests
     [Fact]
     public void GetRelativePathTest()
     {
-        var a1 = @"d:\Documents\Visual Studio 2017\Projects\EverythingClient\";
-        var a2 = @"d:\Documents\Visual Studio 2017\Projects\sunamo\sunamo\sunamo.csproj";
+        var a1 = @"e:\Documents\Visual Studio 2017\Projects\EverythingClient\";
+        var a2 = @"e:\Documents\Visual Studio 2017\Projects\sunamo\sunamo\sunamo.csproj";
 
         var expected = @"..\sunamo\sunamo\sunamo.csproj";
 
@@ -30,8 +30,8 @@ public class PathTests
     [Fact]
     public void GetRelativePathTest2()
     {
-        var a1 = @"d:\Documents\Visual Studio 2017\Projects\EverythingClient";
-        var a2 = @"d:\Documents\Visual Studio 2017\Projects\sunamo\sunamo\sunamo.csproj";
+        var a1 = @"e:\Documents\Visual Studio 2017\Projects\EverythingClient";
+        var a2 = @"e:\Documents\Visual Studio 2017\Projects\sunamo\sunamo\sunamo.csproj";
 
         var expected = @"..\sunamo\sunamo\sunamo.csproj";
 

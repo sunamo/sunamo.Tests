@@ -13,7 +13,7 @@ namespace sunamo.Tests.Helpers.Html
     /// </summary>
     public class HtmlHelperGoogleFormTests 
     {
-        const string testFile = @"d:\Documents\Visual Studio 2017\Projects\sunamo.Tests\sunamo.Tests\HtmlHelperGoogleFormTestPage.html";
+        const string testFile = @"e:\Documents\Visual Studio 2017\Projects\sunamo.Tests\sunamo.Tests\HtmlHelperGoogleFormTestPage.html";
         HtmlNode hd;
         const string mainQuestionTitle = "ss-q-title";
         const string additionalQuestionTitle = "ss-q-help ss-secondary-text";

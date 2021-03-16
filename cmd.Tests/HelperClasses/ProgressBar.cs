@@ -9,7 +9,8 @@ public class ProgressBar
 {
     public static event Action AnotherSong;
     public static event Action<int> OverallSongs;
-    static int overallSongs = 1000;
+    public static event Action WriteProgressBarEnd;
+    static int overallSongs = 10;
 
 
 
@@ -30,6 +31,8 @@ public class ProgressBar
             AnotherSong();
             Thread.Sleep(100);
         }
+
+        WriteProgressBarEnd();
 
         return TestData.list04;
     }

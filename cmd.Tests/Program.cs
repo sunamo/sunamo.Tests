@@ -18,6 +18,7 @@ namespace cmd.Tests
 
             ProgressBar.OverallSongs += ProgressBar_OverallSongs;
             ProgressBar.AnotherSong += ProgressBar_AnotherSong;
+            ProgressBar.WriteProgressBarEnd += ProgressBar_WriteProgressBarEnd;
 
             Action action = GetAllSongsThread;
 
@@ -41,6 +42,11 @@ namespace cmd.Tests
             Console.ReadLine();
         }
 
+        private static void ProgressBar_WriteProgressBarEnd()
+        {
+            CL.WriteProgressBarEnd();
+        }
+
         static void GetAllSongsThread()
         {
             allSongs = ProgressBar.GetAllSongFromInternet();
@@ -48,8 +54,20 @@ namespace cmd.Tests
 
         private static void ProgressBar_AnotherSong()
         {
-            pc.AddOne();
-            CL.WriteProgressBar((int)pc.last, new WriteProgressBarArgs( true, pc.last, pc._overallSum));
+            bool writeProgressItem = true;
+            WriteProgressBarArgs e = null;
+            if (writeProgressItem)
+            {
+                e = new WriteProgressBarArgs(true, pc.last, pc._overallSum);
+            }
+            else
+            {
+                e = new WriteProgressBarArgs(true);
+            }
+
+            // Must be AddOnePercent, not AddOne
+            pc.AddOnePercent();
+            CL.WriteProgressBar((int)pc.last, e);
         }
 
         private static void ProgressBar_OverallSongs(int obj)

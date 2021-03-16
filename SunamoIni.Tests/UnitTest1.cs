@@ -8,7 +8,7 @@ namespace SunamoIni.Tests
         [Fact]
         public void WriteIni()
         {
-            IniFile ini = new IniFile(@"d:\Documents\Visual Studio 2017\Projects\sunamo.Tests\SunamoIni.Tests\test.ini");
+            IniFile ini = new IniFile(@"e:\Documents\Visual Studio 2017\Projects\sunamo.Tests\SunamoIni.Tests\test.ini");
             ini.IniWriteValue("Section", "Key", "Value");
             
         }
