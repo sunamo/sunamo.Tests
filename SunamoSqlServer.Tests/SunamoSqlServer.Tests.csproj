@@ -50,6 +50,7 @@
     <Reference Include="System.Data" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MSStoredProceduresIBaseSharedWithoutSqlData2Tests.cs" />
     <Compile Include="SqlServerHelperTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -57,6 +58,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Credentials\Sql\Sql.csproj">
+      <Project>{94aaae7d-4549-4d69-9b29-39e155591a1e}</Project>
+      <Name>Sql</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\sunamo\shared\shared.csproj">
       <Project>{77719c0d-7c8b-4b9e-a644-aee7ceb35134}</Project>
       <Name>shared</Name>
@@ -72,6 +77,14 @@
     <ProjectReference Include="..\..\sunamo\Xlf\Xlf.csproj">
       <Project>{00b76d22-b82f-43fd-ac48-4b1f56e6910f}</Project>
       <Name>Xlf</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TestValues.Sql\TestValues.Sql.csproj">
+      <Project>{6484de5b-47f0-40c4-b214-2ecfe975174d}</Project>
+      <Name>TestValues.Sql</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TestValues\TestValues.csproj">
+      <Project>{5f7eb2b6-465b-4f1c-a164-2c933b25f7c1}</Project>
+      <Name>TestValues</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

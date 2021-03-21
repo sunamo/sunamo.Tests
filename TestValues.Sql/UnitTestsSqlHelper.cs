@@ -3,21 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Xunit;
+
 
 //[TestClass]
 public class UnitTestsSqlHelper
 {
-    [Fact]
-    public void Init(UnitTestInit i)
+    //[Fact]
+    public static void Init(UnitTestInit i)
     {
-        if (i.databases.HasValue)
-        {
-            DatabasesConnections.SetConnToMSDatabaseLayer(i.databases.Value);
-        }
+        // First must ApplyCryptData
         if (i.cryptData)
         {
             CryptHelper.ApplyCryptData(CryptHelper.RijndaelBytes.Instance, CryptDataWrapper.rijn);
+        }
+
+        // Then I can connect
+        if (i.databases.HasValue)
+        {
+            DatabasesConnections.SetConnToMSDatabaseLayer(i.databases.Value);
         }
     }
 }

@@ -12,7 +12,6 @@ public class NormalizeDateTests
 
         for (int i = 0; i < 12; i++)
         {
-            
             var d = NormalizeDate.To(dt);
             var s = NormalizeDate.From(d);
 
