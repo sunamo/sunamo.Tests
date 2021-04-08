@@ -51,6 +51,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\MimeHelperTests.cs" />
     <Compile Include="Helpers\Powershell\PowershellHelperTests.cs" />
     <Compile Include="Helpers\Powershell\PowershellRunnerTests.cs" />
     <Compile Include="JunctionPointTests.cs" />
