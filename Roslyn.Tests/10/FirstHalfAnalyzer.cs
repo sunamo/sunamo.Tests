@@ -1,23 +1,34 @@
-using Microsoft.CodeAnalysis;
+﻿using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
-using System.Collections.Generic;
-using System;using Xunit;
 using Microsoft.CodeAnalysis.Diagnostics;
+using System;
+using System.Collections.Generic;
 using System.Collections.Immutable;
+using Xunit;
+
 partial class FirstHalfAnalyzer
 {
-static Type type = typeof(FirstHalfAnalyzer);
-        //[DiagnosticAnalyzer(LanguageNames.CSharp)]
-        public class Analyzer1Analyzer : DiagnosticAnalyzer, IEquatable<Analyzer1Analyzer>
+    static Type type = typeof(FirstHalfAnalyzer);
+    //[DiagnosticAnalyzer(LanguageNames.CSharp)]
+    public class Analyzer1Analyzer : DiagnosticAnalyzer, IEquatable<Analyzer1Analyzer>
+    {
+        public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics
         {
-        public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics => ThrowExceptions.Custom(Exc.GetStackTrace(), type, Exc.CallingMethod(),NotImplementedException();
-        public bool Equals(Analyzer1Analyzer other)
+            get
+            {
+                ThrowExceptions.NotImplementedMethod(Exc.GetStackTrace(), type, Exc.CallingMethod());
+                return new ImmutableArray<DiagnosticDescriptor>();
+            }
+        }
+
+public bool Equals(Analyzer1Analyzer other)
         {
-            ThrowExceptions.Custom(Exc.GetStackTrace(), type, Exc.CallingMethod(),NotImplementedException();
+            ThrowExceptions.NotImplementedMethod(Exc.GetStackTrace(), type, Exc.CallingMethod());
+            return false;
         }
         public override void Initialize(AnalysisContext context)
         {
-            ThrowExceptions.Custom(Exc.GetStackTrace(), type, Exc.CallingMethod(),NotImplementedException();
+            ThrowExceptions.NotImplementedMethod(Exc.GetStackTrace(), type, Exc.CallingMethod());
         }
         //public const string DiagnosticId = "Analyzer1";
         //// You can change these strings in the Resources.resx file. If you do not want your analyzer to be localize-able, you can use regular strings for Title and MessageFormat.
@@ -29,5 +40,5 @@ static Type type = typeof(FirstHalfAnalyzer);
         //public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics { get { return ImmutableArray.Create(Rule); } }
         /* ... */
     }
-    
+
 }

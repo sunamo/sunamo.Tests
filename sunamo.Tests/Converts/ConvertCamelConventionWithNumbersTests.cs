@@ -18,4 +18,15 @@ public class ConvertCamelConventionWithNumbersTests
         Assert.Equal(false, ConvertCamelConventionWithNumbers.IsCamelWithNumber(input3));
         Assert.Equal(true, ConvertCamelConventionWithNumbers.IsCamelWithNumber(input4));
     }
+
+    [Fact]
+    public void FromToCamelWithNumbers()
+    {
+        // w must be lower
+        var input = "hello world";
+        var to = ConvertCamelConventionWithNumbers.ToConvention(input);
+        var from = ConvertCamelConventionWithNumbers.FromConvention(to);
+
+        Assert.Equal(input, from);
+    }
 }

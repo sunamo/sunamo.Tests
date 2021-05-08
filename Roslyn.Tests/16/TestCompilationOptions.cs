@@ -1,13 +1,14 @@
 ﻿using Microsoft.CodeAnalysis;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
-using System.Collections.Generic;
-using System;using Xunit;
 using Microsoft.CodeAnalysis.CSharp;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+using System;
+using System.Collections.Generic;
+using Xunit;
 
 public partial class RoslynLearn
 {
     [Fact]
-public void _TestCompilationOptions()
+    public void _TestCompilationOptions()
     {
         var tree = CSharpSyntaxTree.ParseText(@"
         using System;using Xunit;
@@ -19,13 +20,13 @@ public void _TestCompilationOptions()
                 //DebugLogger.Instance.ReadLine();
             }   
         }");
-        
+
         //We first have to choose what kind of output we're creating: DLL, .exe etc.
         var options = new CSharpCompilationOptions(OutputKind.ConsoleApplication);
         options = options.WithAllowUnsafe(true);                                //Allow unsafe code;
         options = options.WithOptimizationLevel(OptimizationLevel.Release);     //Set optimization level
         options = options.WithPlatform(Platform.X64);                           //Set platform
-        
+
         var mscorlib = MetadataReference.CreateFromFile(typeof(object).Assembly.Location);
         var compilation = CSharpCompilation.Create("MyCompilation",
             syntaxTrees: new[] { tree },

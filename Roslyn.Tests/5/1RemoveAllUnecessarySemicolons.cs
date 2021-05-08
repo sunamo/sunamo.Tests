@@ -1,8 +1,9 @@
 ﻿using Microsoft.CodeAnalysis;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
-using System.Collections.Generic;
-using System;using Xunit;
 using Microsoft.CodeAnalysis.CSharp;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+using System;
+using System.Collections.Generic;
+using Xunit;
 
 /*
  *             public class Sample
@@ -20,19 +21,19 @@ public partial class RoslynLearn
     /// Roslyn throw all of redundant semicolon as part of EmptyStatementSyntax
     /// </summary>
     public class EmtpyStatementRemoval : CSharpSyntaxRewriter
+    {
+        public override SyntaxNode VisitEmptyStatement(EmptyStatementSyntax node)
         {
-            public override SyntaxNode VisitEmptyStatement(EmptyStatementSyntax node)
-            {
-                //Simply remove all Empty Statements
-                return null;
-            }
+            //Simply remove all Empty Statements
+            return null;
         }
-        
-        [Fact]
-public void _1RemoveAllUnecessarySemicolons()
-        {
-            //A syntax tree with an unnecessary semicolon on its own line
-            var tree = CSharpSyntaxTree.ParseText(@"
+    }
+
+    [Fact]
+    public void _1RemoveAllUnecessarySemicolons()
+    {
+        //A syntax tree with an unnecessary semicolon on its own line
+        var tree = CSharpSyntaxTree.ParseText(@"
             public class Sample
             {
                public void Foo()
@@ -41,12 +42,12 @@ public void _1RemoveAllUnecessarySemicolons()
                   ;
                 }
             }");
-        
-            var rewriter = new EmtpyStatementRemoval();
-        // change source code to other look - without empty statements
-            var result = rewriter.Visit(tree.GetRoot());
-            //DebugLogger.Instance.WriteLine(result.ToFullString());
-        }
 
-    
+        var rewriter = new EmtpyStatementRemoval();
+        // change source code to other look - without empty statements
+        var result = rewriter.Visit(tree.GetRoot());
+        //DebugLogger.Instance.WriteLine(result.ToFullString());
+    }
+
+
 }

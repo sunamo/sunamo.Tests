@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using sunamo.Constants;
 using sunamo.Essential;
 using sunamo.Helpers;
 using System;
@@ -57,6 +58,14 @@ namespace win.Tests.Helpers.Powershell
             usedCommand = echoCommand;
         }
 
+        [TestMethod]
+        public void TryMagickTest()
+        {
+            //exceptedPath = DefaultPaths.Downloads;
+            var listCmd = CA.ToListString("cd " + DefaultPaths.Downloads, "magick Ostman.webp Ostman.jpg");
+            PowershellRunner.Invoke(listCmd);
+        }
+
         private List<List<string>> Invoke()
         {
             List<List<string>> result = new List<List<string>>();
@@ -66,8 +75,6 @@ namespace win.Tests.Helpers.Powershell
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
             var listCmd = CA.ToListString(cd, getActualFolder);
-
-
                 var list = PowershellRunner.Invoke(listCmd);
 
                 foreach (var item in list)

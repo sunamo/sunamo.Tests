@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TablesLTS.cs" />
     <Compile Include="UnitTestInit.cs" />
     <Compile Include="UnitTestsSqlHelper.cs" />
   </ItemGroup>

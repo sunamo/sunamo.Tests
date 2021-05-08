@@ -1,8 +1,10 @@
 ﻿using Microsoft.CodeAnalysis;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
-using System.Collections.Generic;
-using System;using Xunit;
 using Microsoft.CodeAnalysis.CSharp;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+using System;
+using System.Collections.Generic;
+using Xunit;
+
 /*
 	CompilationUnit
 		ClassDeclaration
@@ -64,5 +66,5 @@ public partial class RoslynLearn
 
         var walker = new DeeperWalker();
         walker.Visit(tree.GetRoot());
-    }  
+    }
 }

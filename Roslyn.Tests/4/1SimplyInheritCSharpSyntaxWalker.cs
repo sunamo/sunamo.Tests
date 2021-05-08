@@ -1,8 +1,9 @@
 ﻿using Microsoft.CodeAnalysis;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
-using System.Collections.Generic;
-using System;using Xunit;
 using Microsoft.CodeAnalysis.CSharp;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+using System;
+using System.Collections.Generic;
+using Xunit;
 
 /*
 	CompilationUnit
@@ -26,28 +27,28 @@ public partial class RoslynLearn
     /// Vypíše hierchicky strukturu 
     /// 
     /// </summary>
-        public class CustomWalker : CSharpSyntaxWalker
-        {
-            static int Tabs = 0;
-            /// <summary>
+    public class CustomWalker : CSharpSyntaxWalker
+    {
+        static int Tabs = 0;
+        /// <summary>
         /// Not VisitClassDeclaration, so method visit all nodes
         /// </summary>
         /// <param name="node"></param>
-            public override void Visit(SyntaxNode node)
-            {
-                Tabs++;
-                var indents = new String('\t', Tabs);
-                //DebugLogger.Instance.WriteLine(indents + node.Kind());
-            // Until has node child, base.Visit will call again this method. Otherwise return control and Tabs--
-                base.Visit(node);
-                Tabs--;
-            }
-        }
-        
-        [Fact]
-public void _1SimplyInheritCSharpSyntaxWalker()
+        public override void Visit(SyntaxNode node)
         {
-            var tree = CSharpSyntaxTree.ParseText(@"
+            Tabs++;
+            var indents = new String('\t', Tabs);
+            //DebugLogger.Instance.WriteLine(indents + node.Kind());
+            // Until has node child, base.Visit will call again this method. Otherwise return control and Tabs--
+            base.Visit(node);
+            Tabs--;
+        }
+    }
+
+    [Fact]
+    public void _1SimplyInheritCSharpSyntaxWalker()
+    {
+        var tree = CSharpSyntaxTree.ParseText(@"
                 public class MyClass
                 {
                     public void MyMethod()
@@ -57,10 +58,10 @@ public void _1SimplyInheritCSharpSyntaxWalker()
                     {
                     }
                ");
-            
-            var walker = new CustomWalker();
-            walker.Visit(tree.GetRoot());
-        }
 
-    
+        var walker = new CustomWalker();
+        walker.Visit(tree.GetRoot());
+    }
+
+
 }

@@ -1,17 +1,18 @@
 ﻿using Microsoft.CodeAnalysis;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
-using System.Collections.Generic;
-using System;using Xunit;
-using Microsoft.CodeAnalysis.Scripting;
 using Microsoft.CodeAnalysis.CSharp.Scripting;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Microsoft.CodeAnalysis.Scripting;
+using System;
 using System.Collections;
+using System.Collections.Generic;
+using Xunit;
 
 public partial class RoslynLearn
 {
     static async void _ScriptReferences()
     {
         ScriptOptions scriptOptions = ScriptOptions.Default;
-        
+
         //Add reference to mscorlib
         var mscorlib = typeof(System.Object).Assembly;
         var systemCore = typeof(System.Linq.Enumerable).Assembly;
@@ -20,15 +21,15 @@ public partial class RoslynLearn
         //scriptOptions = scriptOptions.AddNamespaces("System");
         //scriptOptions = scriptOptions.AddNamespaces("System.Linq");
         //scriptOptions = scriptOptions.AddNamespaces("System.Collections.Generic");
-        
+
         var state = await CSharpScript.RunAsync(@"var x = new List(){1,2,3,4,5};", scriptOptions);
         state = await state.ContinueWithAsync("var y = x.Take(3).ToList();");
-        
-        var y = state.GetVariable( "y");
+
+        var y = state.GetVariable("y");
         var yList = (IList)y.Value;
-        foreach(var val in yList)
+        foreach (var val in yList)
         {
-          //DebugLogger.Instance.WriteLine(val + AllStrings.space); // Prints 1 2 3
+            //DebugLogger.Instance.WriteLine(val + AllStrings.space); // Prints 1 2 3
         }
 
     }

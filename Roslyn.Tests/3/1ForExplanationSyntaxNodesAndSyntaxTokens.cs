@@ -1,18 +1,19 @@
 ﻿using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using System;
 using System.Collections.Generic;
-using System;using Xunit;
+using Xunit;
 
 public partial class RoslynLearn
 {
 
-        class SimpleClass
+    class SimpleClass
+    {
+        public void SimpleMethod()
         {
-            public void SimpleMethod()
-            {
-                
-            }
-        }
 
-    
+        }
+    }
+
+
 }

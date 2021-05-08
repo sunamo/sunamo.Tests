@@ -8,6 +8,13 @@ using System.Threading.Tasks;
 [TestClass]
 public class CLTests
 {
+    public void ClearCurrentConsoleLineTest()
+    {
+        CL.WriteLine("abcde");
+        CL.ClearCurrentConsoleLine();
+        CL.WriteLine("12");
+    }
+
     //[TestMethod]
     public void CmdTableTest()
     {

@@ -19,6 +19,11 @@ public class TestHelper
         ThisApp.Name = "sunamo";
         ThisApp.Project = "sunamo";
 
+        // Dont - XlfResourcesH - error 'Could not load file or assembly 'System.Security.Principal.Windows, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a' or one of its dependencies. The system cannot find the file specified.'
+        //XlfResourcesH.SaveResouresToRL(VpsHelperSunamo.SunamoProject());
+        // OK XlfResourcesHSunamo
+        XlfResourcesHSunamo.SaveResouresToRLSunamo();
+
         //AppData.ci.GetFolderWithAppsFiles();
         AppData.ci.GetRootFolder();
     }

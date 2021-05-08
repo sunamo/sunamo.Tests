@@ -1,11 +1,12 @@
 ﻿using Microsoft.CodeAnalysis;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
-using System.Collections.Generic;
-using System;using Xunit;
 using Microsoft.CodeAnalysis.CSharp;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Editing;
 using Microsoft.CodeAnalysis.Text;
+using System;
+using System.Collections.Generic;
 using System.Linq;
+using Xunit;
 
 public partial class RoslynLearn
 {
@@ -39,7 +40,7 @@ public partial class RoslynLearn
         var document = workspace.AddDocument(newProject.Id, "NewFile.cs", sourceText);
         var syntaxRoot = await document.GetSyntaxRootAsync();
         var ifStatement = syntaxRoot.DescendantNodes().OfType<IfStatementSyntax>().Single();
-        
+
         var conditionWasTrueInvocation =
         SyntaxFactory.ExpressionStatement(
             SyntaxFactory.InvocationExpression(SyntaxFactory.IdentifierName("LogConditionWasTrue"))
@@ -54,7 +55,7 @@ public partial class RoslynLearn
                     .WithSemicolonToken(
                         SyntaxFactory.Token(
                             SyntaxKind.SemicolonToken));
-        
+
         var conditionWasFalseInvocation =
         SyntaxFactory.ExpressionStatement(
             SyntaxFactory.InvocationExpression(SyntaxFactory.IdentifierName("LogConditionWasFalse"))
@@ -69,14 +70,14 @@ public partial class RoslynLearn
                     .WithSemicolonToken(
                         SyntaxFactory.Token(
                             SyntaxKind.SemicolonToken));
-        
+
         //Finally/* ... */ create the document editor
         var documentEditor = await DocumentEditor.CreateAsync(document);
         //Insert LogConditionWasTrue() before the //DebugLogger.Instance.WriteLine()
         documentEditor.InsertBefore(ifStatement.Statement.ChildNodes().Single(), conditionWasTrueInvocation);
         //Insert LogConditionWasFalse() after the //DebugLogger.Instance.WriteLine()
         documentEditor.InsertAfter(ifStatement.Else.Statement.ChildNodes().Single(), conditionWasFalseInvocation);
-        
+
         var newDocument = documentEditor.GetChangedDocument();
 
     }

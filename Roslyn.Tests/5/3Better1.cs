@@ -1,8 +1,9 @@
 ﻿using Microsoft.CodeAnalysis;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
-using System.Collections.Generic;
-using System;using Xunit;
 using Microsoft.CodeAnalysis.CSharp;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+using System;
+using System.Collections.Generic;
+using Xunit;
 
 /*
  * public class Sample
@@ -22,23 +23,23 @@ using Microsoft.CodeAnalysis.CSharp;
 public partial class _3Better1
 {
 
-        // Instead of 1 odnt delete #region and comment near 
-        public class EmtpyStatementRemoval : CSharpSyntaxRewriter
+    // Instead of 1 odnt delete #region and comment near 
+    public class EmtpyStatementRemoval : CSharpSyntaxRewriter
+    {
+        public override SyntaxNode VisitEmptyStatement(EmptyStatementSyntax node)
         {
-            public override SyntaxNode VisitEmptyStatement(EmptyStatementSyntax node)
-            {
-                //Construct an EmptyStatementSyntax with a missing semicolon
-                return node.WithSemicolonToken(
-                    SyntaxFactory.MissingToken(SyntaxKind.SemicolonToken)
-                        .WithLeadingTrivia(node.SemicolonToken.LeadingTrivia)
-                        .WithTrailingTrivia(node.SemicolonToken.TrailingTrivia));
-            }
+            //Construct an EmptyStatementSyntax with a missing semicolon
+            return node.WithSemicolonToken(
+                SyntaxFactory.MissingToken(SyntaxKind.SemicolonToken)
+                    .WithLeadingTrivia(node.SemicolonToken.LeadingTrivia)
+                    .WithTrailingTrivia(node.SemicolonToken.TrailingTrivia));
         }
-        
-        [Fact]
-public void _3Better1Method()
-        {
-            var tree = CSharpSyntaxTree.ParseText(@"
+    }
+
+    [Fact]
+    public void _3Better1Method()
+    {
+        var tree = CSharpSyntaxTree.ParseText(@"
             public class Sample
             {
                public void Foo()
@@ -51,11 +52,11 @@ public void _3Better1Method()
                   ;
                 }
             }");
-        
-            var rewriter = new EmtpyStatementRemoval();
-            var result = rewriter.Visit(tree.GetRoot());
-            //DebugLogger.Instance.WriteLine(result.ToFullString());
-        }
 
-    
+        var rewriter = new EmtpyStatementRemoval();
+        var result = rewriter.Visit(tree.GetRoot());
+        //DebugLogger.Instance.WriteLine(result.ToFullString());
+    }
+
+
 }

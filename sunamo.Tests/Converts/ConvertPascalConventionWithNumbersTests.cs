@@ -16,4 +16,14 @@ public class ConvertPascalConventionWithNumbersTests
         Assert.Equal(false, ConvertPascalConvention.IsPascal(input2));
         Assert.Equal(false, ConvertPascalConvention.IsPascal(input3));
     }
+
+    [Fact]
+    public void FromToPascalWithNumbers()
+    {
+        var input = "Hello world";
+        var to = ConvertPascalConventionWithNumbers.ToConvention(input);
+        var from = ConvertPascalConventionWithNumbers.FromConvention(to);
+
+        Assert.Equal(input, from);
+    }
 }

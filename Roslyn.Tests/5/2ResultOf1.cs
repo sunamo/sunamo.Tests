@@ -1,13 +1,14 @@
 ﻿using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using System;
 using System.Collections.Generic;
-using System;using Xunit;
+using Xunit;
 
 public partial class RoslynLearn
 {
 
-           public void Foo()
-           {
-              Console.WriteLine();
-            }
+    public void Foo()
+    {
+        Console.WriteLine();
+    }
 }

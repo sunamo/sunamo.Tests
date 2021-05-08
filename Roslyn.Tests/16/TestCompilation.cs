@@ -1,13 +1,14 @@
 ﻿using Microsoft.CodeAnalysis;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
-using System.Collections.Generic;
-using System;using Xunit;
 using Microsoft.CodeAnalysis.CSharp;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+using System;
+using System.Collections.Generic;
+using Xunit;
 
 public partial class RoslynLearn
 {
     [Fact]
-public void _TestCompilation2()
+    public void _TestCompilation2()
     {
         var tree = CSharpSyntaxTree.ParseText(@"
         using System;
@@ -19,18 +20,18 @@ public void _TestCompilation2()
                 Console.ReadLine();
             }   
         }");
-        
+
         var mscorlib = MetadataReference.CreateFromFile(typeof(object).Assembly.Location);
         var compilation = CSharpCompilation.Create("MyCompilation",
             syntaxTrees: new[] { tree }, references: new[] { mscorlib });
-        
+
         //Emitting to file is available through an extension method in the Microsoft.CodeAnalysis namespace
         var emitResult = compilation.Emit("output.exe", "output.pdb");
-        
+
         //If our compilation failed, we can discover exactly why.
-        if(!emitResult.Success)
+        if (!emitResult.Success)
         {
-            foreach(var diagnostic in emitResult.Diagnostics)
+            foreach (var diagnostic in emitResult.Diagnostics)
             {
                 //DebugLogger.Instance.WriteLine(diagnostic.ToString());
             }

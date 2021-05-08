@@ -1,8 +1,9 @@
 ﻿using Microsoft.CodeAnalysis;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
-using System.Collections.Generic;
-using System;using Xunit;
 using Microsoft.CodeAnalysis.CSharp;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+using System;
+using System.Collections.Generic;
+using Xunit;
 
 /*
  * How do I get a list of all of the types available to a compilation 
@@ -50,10 +51,10 @@ public partial class RoslynLearn
     }
 
     [Fact]
-public void _VisitAllSymbols()
+    public void _VisitAllSymbols()
     {
-        
-        
+
+
         //Now we need to use our visitor
         var tree = CSharpSyntaxTree.ParseText(@"
         class MyClass
@@ -65,11 +66,11 @@ public void _VisitAllSymbols()
             {
             }
         }");
-        
+
         var mscorlib = MetadataReference.CreateFromFile(typeof(object).Assembly.Location);
         var compilation = CSharpCompilation.Create("MyCompilation",
             syntaxTrees: new[] { tree }, references: new[] { mscorlib });
-        
+
         var visitor = new NamedTypeVisitor();
         visitor.Visit(compilation.GlobalNamespace);
 

@@ -1,12 +1,13 @@
 ﻿using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using System;
 using System.Collections.Generic;
-using System;using Xunit;
+using Xunit;
 
 public partial class RoslynLearn
 {
     [Fact]
-public void _Original2()
+    public void _Original2()
     {
         char key = Console.ReadKey().KeyChar;
         if (key == 'A')

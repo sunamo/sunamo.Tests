@@ -1,8 +1,9 @@
 ﻿using Microsoft.CodeAnalysis;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
-using System.Collections.Generic;
-using System;using Xunit;
 using Microsoft.CodeAnalysis.CSharp;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+using System;
+using System.Collections.Generic;
+using Xunit;
 
 /*
  Output:
@@ -13,28 +14,28 @@ MyOtherClass.MyMethod
 public partial class RoslynLearn
 {
 
-        // Instead of 2, there is only visit ClassDeclarationSyntax and MethodDeclarationSyntax
-        public class ClassMethodWalker : CSharpSyntaxWalker
+    // Instead of 2, there is only visit ClassDeclarationSyntax and MethodDeclarationSyntax
+    public class ClassMethodWalker : CSharpSyntaxWalker
+    {
+        string className = String.Empty;
+        public override void VisitClassDeclaration(ClassDeclarationSyntax node)
         {
-            string className = String.Empty;
-            public override void VisitClassDeclaration(ClassDeclarationSyntax node)
-            {
-                className = node.Identifier.ToString();
-                base.VisitClassDeclaration(node);
-            }
-        
-            public override void VisitMethodDeclaration(MethodDeclarationSyntax node)
-            {
-                string methodName = node.Identifier.ToString();
-                //DebugLogger.Instance.WriteLine(className + AllChars.dot + methodName);
-                base.VisitMethodDeclaration(node);
-            }
+            className = node.Identifier.ToString();
+            base.VisitClassDeclaration(node);
         }
-        
-        [Fact]
-public void _3PrintConcatenationClassAndMethod()
+
+        public override void VisitMethodDeclaration(MethodDeclarationSyntax node)
         {
-            var tree = CSharpSyntaxTree.ParseText(@"
+            string methodName = node.Identifier.ToString();
+            //DebugLogger.Instance.WriteLine(className + AllChars.dot + methodName);
+            base.VisitMethodDeclaration(node);
+        }
+    }
+
+    [Fact]
+    public void _3PrintConcatenationClassAndMethod()
+    {
+        var tree = CSharpSyntaxTree.ParseText(@"
             public class MyClass
             {
                 public void MyMethod()
@@ -48,10 +49,10 @@ public void _3PrintConcatenationClassAndMethod()
                 }
             }
            ");
-        
-            var walker = new ClassMethodWalker();
-            walker.Visit(tree.GetRoot());
-        }
 
-    
+        var walker = new ClassMethodWalker();
+        walker.Visit(tree.GetRoot());
+    }
+
+
 }

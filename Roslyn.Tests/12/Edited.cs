@@ -1,14 +1,15 @@
 ﻿using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using System;
 using System.Collections.Generic;
-using System;using Xunit;
+using Xunit;
 
 // Automatically add calling LogCondition*
 
 public partial class RoslynLearn
 {
     [Fact]
-public void _Edited()
+    public void _Edited()
     {
         char key = Console.ReadKey().KeyChar;
         if (key == 'A')

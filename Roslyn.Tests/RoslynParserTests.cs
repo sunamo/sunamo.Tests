@@ -8,6 +8,32 @@ using Xunit;
 public class RoslynParserTests
 {
     [Fact]
+    public static void ParseVariablesTest()
+    {
+        var s = @"
+class C1{
+   private int var1;
+   public string var2;
+
+   void action1()
+    {
+       int var3;
+       var3=var1*var1;
+       var2=""Completed"";
+   }
+}
+";
+
+        const string var1 = "var1";
+        const string var2 = "var2";
+        const string var3 = "var3";
+
+        var actual = RoslynParser.ParseVariables(s);
+        Assert.Equal<string>(CA.ToListString(var1, var2, var3), CA.ToListString(actual.Item1));
+        Assert.Equal<string>(CA.ToListString(var3, var2), actual.Item2);
+    }
+
+    [Fact]
     /// <summary>
     /// 
     /// </summary>

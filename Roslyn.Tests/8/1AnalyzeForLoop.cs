@@ -1,11 +1,12 @@
 ﻿using Microsoft.CodeAnalysis;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
-using System.Collections.Generic;
-using System;using Xunit;
 using Microsoft.CodeAnalysis.CSharp;
-using System.Linq;
-using System.Collections.Immutable;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using sunamo;
+using System;
+using System.Collections.Generic;
+using System.Collections.Immutable;
+using System.Linq;
+using Xunit;
 
 /* 
 AlwaysAssigned #0
@@ -40,7 +41,7 @@ get_Name: innerArray
 public partial class RoslynLearn
 {
     [Fact]
-public void _1AnalyzeForLoop()
+    public void _1AnalyzeForLoop()
     {
         var tree = CSharpSyntaxTree.ParseText(@"
         public class Sample
@@ -56,13 +57,13 @@ public void _1AnalyzeForLoop()
                 }
            }
         }");
-         
+
         var Mscorlib = MetadataReference.CreateFromFile(typeof(object).Assembly.Location);
-         
+
         var compilation = CSharpCompilation.Create("MyCompilation",
             syntaxTrees: new[] { tree }, references: new[] { Mscorlib });
         var model = compilation.GetSemanticModel(tree);
-         
+
         var forStatement = tree.GetRoot().DescendantNodes().OfType<ForStatementSyntax>().Single();
         DataFlowAnalysis result = model.AnalyzeDataFlow(forStatement);
         ImmutableArray<ISymbol> a = result.AlwaysAssigned;

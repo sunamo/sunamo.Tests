@@ -11,6 +11,10 @@ public class UnitTestsSqlHelper
     //[Fact]
     public static void Init(UnitTestInit i)
     {
+        XlfResourcesHSunamo.SaveResouresToRLSunamo();
+
+        CryptHelper.ApplyCryptData(CryptHelper.RijndaelBytes.Instance, CryptDataWrapper.rijn);
+
         // First must ApplyCryptData
         if (i.cryptData)
         {

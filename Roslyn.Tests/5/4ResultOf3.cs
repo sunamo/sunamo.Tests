@@ -1,22 +1,22 @@
 ﻿using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
-using System.Collections.Generic;
 using System;
+using System.Collections.Generic;
 
 public partial class RoslynLearn
 {
 
-        public class Sample
+    public class Sample
+    {
+        public void Foo()
         {
-           public void Foo()
-           {
             Console.WriteLine();
-              #region SomeRegion
-              //Some other code
-              #endregion
-        
-            }
-        }
+            #region SomeRegion
+            //Some other code
+            #endregion
 
-    
+        }
+    }
+
+
 }

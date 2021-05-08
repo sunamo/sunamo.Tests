@@ -1,9 +1,10 @@
 ﻿using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
-using System.Collections.Generic;
-using System;using Xunit;
-using System.Threading.Tasks;
 using Roslyn;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Xunit;
 
 /*
  * Only with searching is slower than SymbolFinder
@@ -13,35 +14,35 @@ using Roslyn;
 public partial class RoslynLearn
 {
 
-        public class CustomSymbolFinder
+    public class CustomSymbolFinder
+    {
+        public List<INamedTypeSymbol> GetAllSymbols(Compilation compilation)
         {
-            public List<INamedTypeSymbol> GetAllSymbols(Compilation compilation)
+
+            var visitor = new FindAllSymbolsVisitor();
+            visitor.Visit(compilation.GlobalNamespace);
+            return visitor.AllTypeSymbols;
+        }
+
+        private class FindAllSymbolsVisitor : SymbolVisitor
+        {
+            public List<INamedTypeSymbol> AllTypeSymbols { get; } = new List<INamedTypeSymbol>();
+
+            public override void VisitNamespace(INamespaceSymbol symbol)
             {
-            
-                var visitor = new FindAllSymbolsVisitor();
-                visitor.Visit(compilation.GlobalNamespace);
-                return visitor.AllTypeSymbols;
+                Parallel.ForEach(symbol.GetMembers(), s => s.Accept(this));
             }
-        
-            private class FindAllSymbolsVisitor : SymbolVisitor
+
+            public override void VisitNamedType(INamedTypeSymbol symbol)
             {
-                public List<INamedTypeSymbol> AllTypeSymbols { get; } = new List<INamedTypeSymbol>();
-        
-                public override void VisitNamespace(INamespaceSymbol symbol)
+                AllTypeSymbols.Add(symbol);
+                foreach (var childSymbol in symbol.GetTypeMembers())
                 {
-                    Parallel.ForEach(symbol.GetMembers(), s => s.Accept(this));
-                }
-        
-                public override void VisitNamedType(INamedTypeSymbol symbol)
-                {
-                    AllTypeSymbols.Add(symbol);
-                    foreach (var childSymbol in symbol.GetTypeMembers())
-                    {
-                        base.Visit(childSymbol);
-                    }
+                    base.Visit(childSymbol);
                 }
             }
         }
+    }
 
-    
+
 }

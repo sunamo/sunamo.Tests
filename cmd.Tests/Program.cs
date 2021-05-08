@@ -1,4 +1,5 @@
-﻿using sunamo.Helpers.Number;
+﻿using Roslyn;
+using sunamo.Helpers.Number;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +16,14 @@ namespace cmd.Tests
         static void Main(string[] args)
         {
             CLTests cl = new CLTests();
+            cl.ClearCurrentConsoleLineTest();
 
+            Console.WriteLine("Finished");
+            Console.ReadLine();
+        }
+
+        private static void ProgressBarTests()
+        {
             ProgressBar.OverallSongs += ProgressBar_OverallSongs;
             ProgressBar.AnotherSong += ProgressBar_AnotherSong;
             ProgressBar.WriteProgressBarEnd += ProgressBar_WriteProgressBarEnd;
@@ -37,9 +45,6 @@ namespace cmd.Tests
             //}
             ar.AsyncWaitHandle.WaitOne();
             #endregion
-
-            Console.WriteLine("Finished");
-            Console.ReadLine();
         }
 
         private static void ProgressBar_WriteProgressBarEnd()

@@ -1,16 +1,17 @@
 ﻿using Microsoft.CodeAnalysis;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
-using System.Collections.Generic;
-using System;using Xunit;
 using Microsoft.CodeAnalysis.CSharp;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+using System;
+using System.Collections.Generic;
 using System.Linq;
+using Xunit;
 
 public partial class RoslynLearn
 {
     // Analyze control flow - where code is changing directing
 
     [Fact]
-public void _BasicControlFlow()
+    public void _BasicControlFlow()
     {
         var tree = CSharpSyntaxTree.ParseText(@"
             class C
@@ -28,15 +29,15 @@ public void _BasicControlFlow()
                 }
             }
         ");
-        
+
         var Mscorlib = PortableExecutableReference.CreateFromFile(typeof(object).Assembly.Location);
         var compilation = CSharpCompilation.Create("MyCompilation",
             syntaxTrees: new[] { tree }, references: new[] { Mscorlib });
         var model = compilation.GetSemanticModel(tree);
-        
+
         var firstFor = tree.GetRoot().DescendantNodes().OfType<ForStatementSyntax>().Single();
         ControlFlowAnalysis result = model.AnalyzeControlFlow(firstFor.Statement);
-        
+
         //DebugLogger.Instance.WriteLine(result.Succeeded);            //True
         //DebugLogger.Instance.WriteLine(result.ExitPoints.Count());    //2 - continue, and break
 

@@ -1,14 +1,15 @@
 ﻿using Microsoft.CodeAnalysis;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
-using System.Collections.Generic;
-using System;using Xunit;
 using Microsoft.CodeAnalysis.CSharp;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+using System;
+using System.Collections.Generic;
 using System.Linq;
+using Xunit;
 
 public partial class RoslynLearn
 {
     [Fact]
-public void _EntryAndExitPoints()
+    public void _EntryAndExitPoints()
     {
         var tree = CSharpSyntaxTree.ParseText(@"
         class C
@@ -25,16 +26,16 @@ public void _EntryAndExitPoints()
             }
         }
         ");
-        
+
         var Mscorlib = PortableExecutableReference.CreateFromFile(typeof(object).Assembly.Location);
         var compilation = CSharpCompilation.Create("MyCompilation",
         syntaxTrees: new[] { tree }, references: new[] { Mscorlib });
         var model = compilation.GetSemanticModel(tree);
-        
+
         //Choose first and last statements
         var firstIf = tree.GetRoot().DescendantNodes().OfType<IfStatementSyntax>().First();
         var label3 = tree.GetRoot().DescendantNodes().OfType<LabeledStatementSyntax>().Skip(1).Take(1).Single();
-        
+
         ControlFlowAnalysis result = model.AnalyzeControlFlow(firstIf, label3);
         //DebugLogger.Instance.WriteLine(result.EntryPoints);      //1 - L3: ; //Label 3 is a candidate entry point within these statements
         //DebugLogger.Instance.WriteLine(result.ExitPoints);       //2 - goto L1;,goto L2; //goto L1 and goto L2 and candidate exit points
