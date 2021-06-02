@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using System.Threading.Tasks;
 using Xunit;
 
 namespace sunamo.Tests.Helpers.FileSystem
@@ -21,6 +22,22 @@ namespace sunamo.Tests.Helpers.FileSystem
         public void OrderByNaturalNumberSerieTest()
         {
 
+        }
+
+        [Fact]
+        public void GetFilesMoreMascAsyncTest()
+        {
+            FS.TryDeleteDirectoryOrFile(@"e:\Documents\Visual Studio 2017\Projects\sunamo.cz\apps.sunamo.cz\_\Content");
+
+            var folder = @"e:\Documents\Visual Studio 2017\Projects\sunamo.cz\";
+            string mask = AllStrings.ast;
+            var so = SearchOption.AllDirectories;
+            var gfmo = new GetFilesMoreMascArgs { deleteFromDriveWhenCannotBeResolved = true };
+
+            //var f = FS.GetFilesMoreMasc(folder, mask, so);
+            var r = Task.Run<List<string>>(async () => await FS.GetFilesMoreMascAsync(folder, mask, so));
+            var f = r.Result;
+            int i =0 ;
         }
 
         #region ctor

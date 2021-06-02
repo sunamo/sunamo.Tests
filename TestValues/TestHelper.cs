@@ -9,15 +9,18 @@ using sunamo.Essential;
 /// Right format of paths are:
 /// d:\_Test\SunamoCzAdmin\SunamoCzAdmin.Wpf\ConvertMetroCss3To4\
 /// d:\_Test\SunamoCzAdmin\SunamoCzAdmin.Wpf\ConvertMetroCss3To4_Original\
-/// 
-/// 
 /// </summary>
 public class TestHelper
 {
     public static void Init()
     {
-        ThisApp.Name = "sunamo";
-        ThisApp.Project = "sunamo";
+        Init("sunamo");
+    }
+
+    public static void Init(string appName)
+    {
+        ThisApp.Name = appName;
+        ThisApp.Project = appName;
 
         // Dont - XlfResourcesH - error 'Could not load file or assembly 'System.Security.Principal.Windows, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a' or one of its dependencies. The system cannot find the file specified.'
         //XlfResourcesH.SaveResouresToRL(VpsHelperSunamo.SunamoProject());
@@ -25,7 +28,9 @@ public class TestHelper
         XlfResourcesHSunamo.SaveResouresToRLSunamo();
 
         //AppData.ci.GetFolderWithAppsFiles();
-        AppData.ci.GetRootFolder();
+        //AppData.ci.GetRootFolder();
+        AppData.ci.CreateAppFoldersIfDontExists();
+
     }
 
     public static string DefaultFolderPath()
@@ -134,7 +139,16 @@ public class TestHelper
         string appName = ThisApp.Name;
         string project = ThisApp.Project;
 
-        return @"d:\_Test\" + appName + "\\" + project + SH.WrapWith(feature, AllChars.bs, true);
+        var f = @"d:\_Test\" + appName + "\\" + project + SH.WrapWith(feature, AllChars.bs, true);
+        FS.CreateFoldersPsysicallyUnlessThere(f);
+        return f;
+    }
+
+
+
+    public static string TestFile(object featureOrType, string fn)
+    {
+        return FS.Combine(FolderForTestFiles(featureOrType), fn);
     }
 
     /// <summary>

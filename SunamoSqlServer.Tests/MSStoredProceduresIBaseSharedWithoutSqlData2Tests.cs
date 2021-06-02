@@ -12,7 +12,7 @@ public class MSStoredProceduresIBaseSharedWithoutSqlData2Tests
     public void DeleteOneRowTest()
     {
         TestHelper.Init();
-        UnitTestsSqlHelper.Init(new UnitTestInit { databases = Databases.LearnTransactSql, cryptData = true });
+        TestSqlHelper.Init(new UnitTestInit { databases = Databases.LearnTransactSql, cryptData = true });
 
         Dictionary<string, MSColumnsDB> s = new Dictionary<string, MSColumnsDB>();
         const string tableName = "Test_PageVT";

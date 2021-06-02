@@ -5,8 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-//[TestClass]
-public class UnitTestsSqlHelper
+public class TestSqlHelper
 {
     //[Fact]
     public static void Init(UnitTestInit i)
@@ -14,6 +13,7 @@ public class UnitTestsSqlHelper
         XlfResourcesHSunamo.SaveResouresToRLSunamo();
 
         CryptHelper.ApplyCryptData(CryptHelper.RijndaelBytes.Instance, CryptDataWrapper.rijn);
+
 
         // First must ApplyCryptData
         if (i.cryptData)

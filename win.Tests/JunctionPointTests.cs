@@ -14,23 +14,30 @@ enum LinkType
 public class JunctionPointTests
 {
     string target = null;
-    const string target2 = @"d:\_Test\sunamo\win\JunctionPoint";
+    const string target2 = @"d:\_Test\sunamo\win\JunctionPoint\";
      string append = "Folder";
 
     [TestMethod]
     public void GetTargetTest()
     {
+        TestHelper.Init();
+
         var d = SetFor(LinkType.D);
         var td = JunctionPoint.GetTarget(d);
-        var rd = JunctionPoint.GetTarget(target);
+        // target2 - also folder
+        var rd = JunctionPoint.GetTarget(target2);
+        var ed = FS.ExistsDirectory(d);
 
         var j = SetFor(LinkType.J);
         var tj = JunctionPoint.GetTarget(j);
-        var rj = JunctionPoint.GetTarget(target);
+        //var rj = JunctionPoint.GetTarget(target);
+        var ej = FS.ExistsDirectory(j);
 
+        SetFor(LinkType.H);
         var h = SetFor(LinkType.H);
         var th = JunctionPoint.GetTarget(h);
         var rh = JunctionPoint.GetTarget(target);
+        var eh =FS.ExistsDirectory(h);
     }
 
     [TestMethod]
@@ -95,18 +102,25 @@ public class JunctionPointTests
     [TestMethod]
     public void MklinkH()
     {
-        JunctionPoint.MklinkH(H(), target);
+        var txt = AllExtensions.txt;
+        SetFor(LinkType.H);
+        JunctionPoint.MklinkH(H() +txt, target+txt);
     }
 
     [TestMethod]
     public void MklinkJ()
     {
-        JunctionPoint.MklinkJ(J(), target);
+        
+        SetFor(LinkType.J);
+        var j = J();
+        JunctionPoint.Delete(j);
+        JunctionPoint.MklinkJ(j, target);
     }
 
     [TestMethod]
     public void MklinkD()
     {
+        SetFor(LinkType.D);
         JunctionPoint.MklinkD(D(), target);
     }
 }

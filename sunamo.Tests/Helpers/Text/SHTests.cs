@@ -18,6 +18,8 @@ namespace sunamo.Tests.Helpers.Text
             //SH.AllHaveRightFormat(true, )
         }
 
+        
+
         [Fact]
         public void ReplaceAllDoubleSpaceToSingleTest()
         {
@@ -103,7 +105,7 @@ b";
         [Fact]
         public void SplitToPartsFromEndTest()
         {
-            var expected1 = @"D:\Documents\Visual Studio 2017\Haskell_Projects\LearnHaskell";
+            var expected1 = @"E:\Documents\Visual Studio 2017\Haskell_Projects\LearnHaskell";
             var expected2 = @"3Types.hs";
 
             var input = expected1 + "\\" + expected2;
@@ -555,11 +557,20 @@ ef";
         }
 
         [Fact]
-        public void IsWildcardTest()
+        public void  MatchWildcardTest()
         {
             var input = "sunamo.web";
             var actual = SH.MatchWildcard(input, "*.web");
 
+            Assert.True(actual);
+
+            
+        }
+
+        [Fact]
+        public void IsWildcardTest()
+        {
+            var actual = SH.IsWildcard("aaa*.cs");
             Assert.True(actual);
         }
 

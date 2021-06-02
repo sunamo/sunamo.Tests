@@ -75,6 +75,10 @@
       <Project>{bee17656-b10c-42b2-b3a4-70208323e3d7}</Project>
       <Name>win</Name>
     </ProjectReference>
+    <ProjectReference Include="..\TestValues\TestValues.csproj">
+      <Project>{5f7eb2b6-465b-4f1c-a164-2c933b25f7c1}</Project>
+      <Name>TestValues</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="PowershellRunnerTests.txt" />
