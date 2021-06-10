@@ -21,14 +21,14 @@ public class NormalizeDateTests
             dt = dt.AddMonths(1);
         }
 
-        s = NormalizeDate.From(Consts.nDtMinVal);
+        s = NormalizeDate.From(NumConsts.nDtMinVal);
         d = NormalizeDate.To(s);
 
-        Assert.Equal<short>(Consts.nDtMinVal, d);
+        Assert.Equal<short>(NumConsts.nDtMinVal, d);
 
-        s = NormalizeDate.From(Consts.nDtMaxVal);
+        s = NormalizeDate.From(NumConsts.nDtMaxVal);
         d = NormalizeDate.To(s);
 
-        Assert.Equal<short>(Consts.nDtMaxVal, d);
+        Assert.Equal<short>(NumConsts.nDtMaxVal, d);
     }
 }

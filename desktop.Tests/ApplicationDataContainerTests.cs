@@ -15,7 +15,7 @@ namespace sunamo.Tests.Storage
         const string key1 = "k1";
         const string key2 = "k2";
         const string value1 = "Love";
-        const int value2 = Consts.zeroInt;
+        const int value2 = NumConsts.zeroInt;
 
         public ApplicationDataContainerTests()
         {

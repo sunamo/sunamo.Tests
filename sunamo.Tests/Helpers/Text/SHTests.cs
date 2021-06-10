@@ -406,7 +406,7 @@ using Xunit; -> using Microsoft.VisualStudio.TestTools.UnitTesting;";
             string file = @"e:\Documents\Visual Studio 2017\Projects\sunamo.Tests\sunamo.Tests.Data\ReplaceManyFromString\In_ReplaceManyFromString.cs";
             var s = TF.ReadFile(file);
 
-            s = SH.ReplaceManyFromString(s, testString, "->");
+            s = SH.ReplaceManyFromString(s, testString, Consts.transformTo);
 
             TF.SaveFile(s, file);
         }

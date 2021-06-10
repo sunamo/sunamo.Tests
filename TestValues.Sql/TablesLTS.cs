@@ -11,12 +11,19 @@ using System.Threading.Tasks;
 public class TablesLTS
 {
     public const string TableToCopy = "TableToCopy";
+
+    #region Lyr
     public const string Test_PageNewLyrSong = "Test_PageNewLyrSong";
     public const string Test_PageLyrSong = "Test_PageLyrSong";
+    public const string Test_Lyr_Song = "Test_Lyr_Song"; 
+    #endregion
+
+    #region !Lyr
     public const string Test_PageNew3 = "Test_PageNew3";
     public const string Test_Page = "Test_Page";
-    public const string Test_Lyr_Song = "Test_Lyr_Song";
-    public const string Test_App_App = "Test_App_App";
+    public const string Test_App_App = "Test_App_App"; 
+    #endregion
+
     public const string Test_PageNew3_SI = "Test_PageNew3_SI";
 }
 
@@ -59,21 +66,14 @@ public class LTSLayer
         }
 
         #region Table structure
+        #region Lyr
         // Musí být bez _ protože aplikace mi přes něj parsují
         s.Add(TablesLTS.Test_PageLyrSong, new MSColumnsDB(true,
         MSSloupecDB.CI(SqlDbType2.Int, "ID", true),
         MSSloupecDB.CI(SqlDbType2.Int, "OverallViews")
         ));
 
-        s.Add(TablesLTS.Test_Page, new MSColumnsDB(true,
-                  MSSloupecDB.CI(SqlDbType2.Int, "ID", true),
-                  MSSloupecDB.CI(SqlDbType2.Bit, "IsOld"),
-                  MSSloupecDB.CI(SqlDbType2.Int, "OverallViews"),
-                  MSSloupecDB.CI(SqlDbType2.Bit, "AllowNewComments")
-                  ));
-
-
-
+        //Test_PageNewLyrSong
         s.Add(tableName4, new MSColumnsDB(true,
                // can't be primary key coz there will be many days for every days
                MSSloupecDB.CI(SqlDbType2.Int, ColumnNamesWeb.IDPageLyrSong),
@@ -81,17 +81,29 @@ public class LTSLayer
            MSSloupecDB.CI(SqlDbType2.Int, XlfKeys.Views)
            ));
 
+        //Test_Lyr_Song
         s.Add(tableEntity4, new MSColumnsDB(true,
           MSSloupecDB.CI(SqlDbType2.Int, "ID", true),
           MSSloupecDB.CI(SqlDbType2.Int, "ViewLastWeek"))
           );
+        #endregion
+
+
+        #region !Lyr
+        s.Add(TablesLTS.Test_Page, new MSColumnsDB(true,
+                  MSSloupecDB.CI(SqlDbType2.Int, "ID", true),
+                  MSSloupecDB.CI(SqlDbType2.Bit, "IsOld"),
+                  MSSloupecDB.CI(SqlDbType2.Int, "OverallViews"),
+                  MSSloupecDB.CI(SqlDbType2.Bit, "AllowNewComments")
+                  ));
 
         s.Add(tableName3, new MSColumnsDB(true,
                 MSSloupecDB.CI(SqlDbType2.Int, "IDItem"),
             MSSloupecDB.CI(SqlDbType2.Int, "IDPage"),
             MSSloupecDB.CI(SqlDbType2.SmallInt, "Day"),
             MSSloupecDB.CI(SqlDbType2.Int, XlfKeys.Views)
-            ));
+            )); 
+        #endregion
 
         s.Add(TablesLTS.Test_PageNew3_SI, new MSColumnsDB(true,
                 MSSloupecDB.CI(SqlDbType2.SmallInt, "IDItem"),

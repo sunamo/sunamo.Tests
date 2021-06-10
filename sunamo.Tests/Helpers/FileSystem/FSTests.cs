@@ -37,6 +37,7 @@ namespace sunamo.Tests.Helpers.FileSystem
             //var f = FS.GetFilesMoreMasc(folder, mask, so);
             var r = Task.Run<List<string>>(async () => await FS.GetFilesMoreMascAsync(folder, mask, so));
             var f = r.Result;
+            f.Sort();
             int i =0 ;
         }
 
