@@ -13,6 +13,14 @@ namespace sunamo.Tests.Helpers.Text
         readonly List<string> expected = CA.ToListString("Shared settings", "aplikace");
 
         [Fact]
+        public void IncrementLastNumberTest()
+        {
+            var v = "PK";
+            SH.IncrementLastNumber(ref v);
+            SH.IncrementLastNumber(ref v);
+        }
+
+        [Fact]
         public void AllHaveRightFormatTest()
         {
             //SH.AllHaveRightFormat(true, )
