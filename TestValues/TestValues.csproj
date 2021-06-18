@@ -7,6 +7,7 @@
     <PackageReference Include="xunit.extensibility.core" Version="2.4.1" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\sunamo\SunamoSqlServer\SunamoSqlServer.csproj" />
     <ProjectReference Include="..\..\sunamo\sunamo\sunamo.csproj" />
   </ItemGroup>
 </Project>
