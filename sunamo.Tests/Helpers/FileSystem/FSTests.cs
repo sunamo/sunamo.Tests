@@ -27,9 +27,9 @@ namespace sunamo.Tests.Helpers.FileSystem
         [Fact]
         public void GetFilesMoreMascAsyncTest()
         {
-            FS.TryDeleteDirectoryOrFile(@"e:\Documents\Visual Studio 2017\Projects\sunamo.cz\apps.sunamo.cz\_\Content");
+            FS.TryDeleteDirectoryOrFile(@"e:\Documents\vs\Projects\sunamo.cz\apps.sunamo.cz\_\Content");
 
-            var folder = @"e:\Documents\Visual Studio 2017\Projects\sunamo.cz\";
+            var folder = @"e:\Documents\vs\Projects\sunamo.cz\";
             string mask = AllStrings.ast;
             var so = SearchOption.AllDirectories;
             var gfmo = new GetFilesMoreMascArgs { deleteFromDriveWhenCannotBeResolved = true };
@@ -198,8 +198,8 @@ namespace sunamo.Tests.Helpers.FileSystem
         [Fact]
         public void GetRelativePathTest()
         {
-            var a1 = @"e:\Documents\Visual Studio 2017\Projects\EverythingClient\";
-            var a2 = @"e:\Documents\Visual Studio 2017\Projects\sunamo\sunamo\sunamo.csproj";
+            var a1 = @"e:\Documents\vs\Projects\EverythingClient\";
+            var a2 = @"e:\Documents\vs\Projects\sunamo\sunamo\sunamo.csproj";
 
             var expected = @"..\sunamo\sunamo\sunamo.csproj";
 
@@ -219,8 +219,8 @@ namespace sunamo.Tests.Helpers.FileSystem
         [Fact]
         public void GetRelativePathTest2()
         {
-            var a1 = @"e:\Documents\Visual Studio 2017\Projects\EverythingClient";
-            var a2 = @"e:\Documents\Visual Studio 2017\Projects\sunamo\sunamo\sunamo.csproj";
+            var a1 = @"e:\Documents\vs\Projects\EverythingClient";
+            var a2 = @"e:\Documents\vs\Projects\sunamo\sunamo\sunamo.csproj";
 
             var expected = @"..\sunamo\sunamo\sunamo.csproj";
 

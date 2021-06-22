@@ -113,7 +113,7 @@ b";
         [Fact]
         public void SplitToPartsFromEndTest()
         {
-            var expected1 = @"E:\Documents\Visual Studio 2017\Haskell_Projects\LearnHaskell";
+            var expected1 = @"E:\Documents\vs\Haskell_Projects\LearnHaskell";
             var expected2 = @"3Types.hs";
 
             var input = expected1 + "\\" + expected2;
@@ -411,7 +411,7 @@ Assert.AreEqual<*> -> CollectionAssert.AreEqual
 using Xunit; -> using Microsoft.VisualStudio.TestTools.UnitTesting;";
             testString = "Assert.AreEqual<*> -> CollectionAssert.AreEqual";
 
-            string file = @"e:\Documents\Visual Studio 2017\Projects\sunamo.Tests\sunamo.Tests.Data\ReplaceManyFromString\In_ReplaceManyFromString.cs";
+            string file = @"e:\Documents\vs\Projects\sunamo.Tests\sunamo.Tests.Data\ReplaceManyFromString\In_ReplaceManyFromString.cs";
             var s = TF.ReadFile(file);
 
             s = SH.ReplaceManyFromString(s, testString, Consts.transformTo);
