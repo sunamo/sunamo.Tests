@@ -74,14 +74,23 @@ b";
             var excepted = @"a
 
 b";
+//            CA.DoubleOrMoreMultiLinesToSingle(ref input);
+//            Assert.Equal(excepted, input);
+
+//            input = @"a
+
+
+
+//b";
+
             CA.DoubleOrMoreMultiLinesToSingle(ref input);
             Assert.Equal(excepted, input);
 
-            input = @"a
-
-
-
-b";
+            input = @"@media screen and (min-width: 1025px) and (max-width: 1280px) {
+	#cd {
+		width: 200px;
+	}
+}";
 
             CA.DoubleOrMoreMultiLinesToSingle(ref input);
             Assert.Equal(excepted, input);

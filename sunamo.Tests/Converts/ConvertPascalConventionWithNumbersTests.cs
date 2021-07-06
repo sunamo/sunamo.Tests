@@ -18,12 +18,16 @@ public class ConvertPascalConventionWithNumbersTests
     }
 
     [Fact]
-    public void FromToPascalWithNumbers()
+    public void FromToPascalWithNumbersTest()
     {
-        var input = "Hello world";
+        var input = "hello world";
         var to = ConvertPascalConventionWithNumbers.ToConvention(input);
         var from = ConvertPascalConventionWithNumbers.FromConvention(to);
 
+        input = SH.FirstCharUpper(input);
+
         Assert.Equal(input, from);
     }
+
+
 }

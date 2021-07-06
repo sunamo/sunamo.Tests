@@ -20,7 +20,7 @@ public class ConvertCamelConventionWithNumbersTests
     }
 
     [Fact]
-    public void FromToCamelWithNumbers()
+    public void FromToCamelWithNumbersTest()
     {
         // w must be lower
         var input = "hello world";
